@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Responsible__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>For Demorequest Team Leads only</inlineHelpText>
+    <label>Central Assigned PSX</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Evelina Simaškaitė</fullName>
+                <default>false</default>
+                <label>Evelina Simaškaitė</label>
+            </value>
+            <value>
+                <fullName>Paulius Sparnaitis</fullName>
+                <default>false</default>
+                <label>Paulius Sparnaitis</label>
+            </value>
+            <value>
+                <fullName>Simona Žilėnaitė</fullName>
+                <default>false</default>
+                <label>Simona Žilėnaitė</label>
+            </value>
+            <value>
+                <fullName>Vilius Adomaitis</fullName>
+                <default>false</default>
+                <label>Vilius Adomaitis</label>
+            </value>
+            <value>
+                <fullName>Agnė Matuzevičiūtė</fullName>
+                <default>false</default>
+                <label>Agnė Matuzevičiūtė</label>
+            </value>
+            <value>
+                <fullName>Adelė Vainoraitė</fullName>
+                <default>false</default>
+                <label>Adelė Vainoraitė</label>
+            </value>
+            <value>
+                <fullName>Agnis Vaičiūnas</fullName>
+                <default>false</default>
+                <label>Agnis Vaičiūnas</label>
+            </value>
+            <value>
+                <fullName>Aivaras Maceina</fullName>
+                <default>false</default>
+                <label>Aivaras Maceina</label>
+            </value>
+            <value>
+                <fullName>Aleksandras Jakuchinas</fullName>
+                <default>false</default>
+                <label>Aleksandras Jakuchinas</label>
+            </value>
+            <value>
+                <fullName>Aurimas Kraujalis</fullName>
+                <default>false</default>
+                <label>Aurimas Kraujalis</label>
+            </value>
+            <value>
+                <fullName>Elžbieta Kašinskaja</fullName>
+                <default>false</default>
+                <label>Elžbieta Kašinskaja</label>
+            </value>
+            <value>
+                <fullName>Gabrielė Kašauskaitė</fullName>
+                <default>false</default>
+                <label>Gabrielė Kašauskaitė</label>
+            </value>
+            <value>
+                <fullName>Lina Jančytė</fullName>
+                <default>false</default>
+                <label>Lina Jančytė</label>
+            </value>
+            <value>
+                <fullName>Milda Gudonavičienė</fullName>
+                <default>false</default>
+                <label>Milda Gudonavičienė</label>
+            </value>
+            <value>
+                <fullName>Rokas Armalis</fullName>
+                <default>false</default>
+                <label>Rokas Armalis</label>
+            </value>
+            <value>
+                <fullName>Aivaras Šiurkus</fullName>
+                <default>false</default>
+                <label>Aivaras Šiurkus</label>
+            </value>
+            <value>
+                <fullName>Andrius Katinas</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Andrius Katinas</label>
+            </value>
+            <value>
+                <fullName>Ieva Griskūnaitė</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ieva Griskūnaitė</label>
+            </value>
+            <value>
+                <fullName>Ieva Juonytė</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ieva Juonytė</label>
+            </value>
+            <value>
+                <fullName>Marytė Baktytė</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marytė Baktytė</label>
+            </value>
+            <value>
+                <fullName>Mikas Stankevičius</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mikas Stankevičius</label>
+            </value>
+            <value>
+                <fullName>Ramona Rudgalvytė</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ramona Rudgalvytė</label>
+            </value>
+            <value>
+                <fullName>Ramunė Vėlyvytė</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ramunė Vėlyvytė</label>
+            </value>
+            <value>
+                <fullName>Sigita Martinaitytė</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sigita Martinaitytė</label>
+            </value>
+            <value>
+                <fullName>Tomas Ivanauskas</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tomas Ivanauskas</label>
+            </value>
+            <value>
+                <fullName>Tomas Riauka</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tomas Riauka</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

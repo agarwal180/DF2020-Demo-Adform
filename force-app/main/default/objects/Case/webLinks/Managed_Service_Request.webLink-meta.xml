@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Managed_Service_Request</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Internal Service Request</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/setup/ui/recordtypeselect.jsp?ent=Case&amp;save_new_url=/500/e?cas4={!Account.Name}&amp;CF00N2000000A19Cw_lkid={!Opportunity.Id}&amp;CF00N2000000A19Cw={!Opportunity.Name}&amp;retURL={!Opportunity.Id}</url>
+</WebLink>

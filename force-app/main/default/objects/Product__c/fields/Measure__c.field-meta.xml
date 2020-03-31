@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Measure__c</fullName>
+    <externalId>false</externalId>
+    <label>Measure</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+                <label>Fixed</label>
+            </value>
+            <value>
+                <fullName>%</fullName>
+                <default>false</default>
+                <label>%</label>
+            </value>
+            <value>
+                <fullName>CPM</fullName>
+                <default>false</default>
+                <label>CPM</label>
+            </value>
+            <value>
+                <fullName>CPC</fullName>
+                <default>false</default>
+                <label>CPC</label>
+            </value>
+            <value>
+                <fullName>% from RTB budget spend</fullName>
+                <default>false</default>
+                <label>% from RTB budget spend</label>
+            </value>
+            <value>
+                <fullName>Fixed per app install</fullName>
+                <default>false</default>
+                <label>Fixed per app install</label>
+            </value>
+            <value>
+                <fullName>Report</fullName>
+                <default>false</default>
+                <label>Report</label>
+            </value>
+            <value>
+                <fullName>Hour</fullName>
+                <default>false</default>
+                <label>Hour</label>
+            </value>
+            <value>
+                <fullName>Month</fullName>
+                <default>false</default>
+                <label>Month</label>
+            </value>
+            <value>
+                <fullName>% (adserving cost)</fullName>
+                <default>false</default>
+                <label>% (adserving cost)</label>
+            </value>
+            <value>
+                <fullName>All</fullName>
+                <default>false</default>
+                <label>All</label>
+            </value>
+            <value>
+                <fullName>KB</fullName>
+                <default>false</default>
+                <label>KB</label>
+            </value>
+            <value>
+                <fullName>Imp</fullName>
+                <default>false</default>
+                <label>Imp</label>
+            </value>
+            <value>
+                <fullName>CPM (incremental per MB)</fullName>
+                <default>false</default>
+                <label>CPM (incremental per MB)</label>
+            </value>
+            <value>
+                <fullName>Thousand Impressions</fullName>
+                <default>false</default>
+                <label>Thousand Impressions</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Thousand Impressions (incremental per each 1,000 KB above 3,000 KB)</fullName>
+                <default>false</default>
+                <label>Thousand Impressions (incremental per each 1,000 KB above 3,000 KB)</label>
+            </value>
+            <value>
+                <fullName>Search Engine Costs</fullName>
+                <default>false</default>
+                <label>Search Engine Costs</label>
+            </value>
+            <value>
+                <fullName>Click</fullName>
+                <default>false</default>
+                <label>Click</label>
+            </value>
+            <value>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+                <label>Campaign</label>
+            </value>
+            <value>
+                <fullName>TPAS fees</fullName>
+                <default>false</default>
+                <label>TPAS fees</label>
+            </value>
+            <value>
+                <fullName>TPAS and Third Party Tracking with Adform fees</fullName>
+                <default>false</default>
+                <label>TPAS and Third Party Tracking with Adform fees</label>
+            </value>
+            <value>
+                <fullName>RTB Service Fee Units indicated above or CPM</fullName>
+                <default>false</default>
+                <label>RTB Service Fee Units indicated above or CPM</label>
+            </value>
+            <value>
+                <fullName>Banner Created</fullName>
+                <default>false</default>
+                <label>Banner Created</label>
+            </value>
+            <value>
+                <fullName>Trading Desk Fee</fullName>
+                <default>false</default>
+                <label>Trading Desk Fee</label>
+            </value>
+            <value>
+                <fullName>-</fullName>
+                <default>false</default>
+                <label>-</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

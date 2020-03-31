@@ -1,0 +1,40 @@
+<apex:page sidebar="false" showHeader="false" lightningStylesheets="true">
+<apex:outputtext >
+    <style>
+        .sidebarModule1 {
+            border-bottom: 2px solid #fff;
+            overflow: hidden;
+            border: 0 none;
+            background-color: transparent;
+            margin: 0 0 20px;
+            background: #cfeef8 url('/img/alohaSkin/sidebar_sprite.png') -9px bottom no-repeat;
+        }
+        .sidebarModuleHeader{
+            padding: 0;
+            color: #fff;
+            background: #1797c0 url('/img/alohaSkin/sidebar_sprite.png') -209px -2px no-repeat;
+            font-weight: bold;
+        }
+        .sidebarModuleHeader h2 {
+            padding: 5px 9px;
+            display: block;
+            background: transparent url('/img/alohaSkin/sidebar_sprite.png') -9px bottom no-repeat;
+        }
+        .sidebarModuleBody{
+            padding: 12px 9px 10px;
+            background: transparent url('/img/alohaSkin/sidebar_sprite.png') -209px top no-repeat;
+        }
+    </style>
+</apex:outputtext>
+<div class="sidebarModule1 htmlAreaComponentModule">
+    <div class="sidebarModuleHeader brandPrimaryBgr">
+        <h2 class="brandPrimaryFgr">Billing Title</h2>
+    </div>
+    <div class="sidebarModuleBody">
+        <form action="/apex/BillingTitleSearchResults" method="post" name="advsrch" target="_parent" >
+            <input class="searchTextBox" maxlength="80" size="18" name="sbstr" id="customsbStr"/>
+            <input class="btn" value=" Go! " type="submit"/>
+        </form>
+    </div>
+</div>
+</apex:page>

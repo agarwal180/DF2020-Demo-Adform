@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Large Enterprise (&gt;100 employees)
+Medium Enterprise (50-100 employees)
+Small Enterprise (10-50 employees)
+Startup (1-10 employees)</inlineHelpText>
+    <label>Company Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Large Enterprise</fullName>
+                <default>false</default>
+                <label>Large Enterprise</label>
+            </value>
+            <value>
+                <fullName>Medium Enterprise</fullName>
+                <default>false</default>
+                <label>Medium Enterprise</label>
+            </value>
+            <value>
+                <fullName>Small Enterprise</fullName>
+                <default>false</default>
+                <label>Small Enterprise</label>
+            </value>
+            <value>
+                <fullName>Startup</fullName>
+                <default>false</default>
+                <label>Startup</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

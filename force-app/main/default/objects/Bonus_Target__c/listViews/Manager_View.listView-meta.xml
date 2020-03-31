@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manager_View</fullName>
+    <columns>NAME</columns>
+    <columns>Manager_User__c</columns>
+    <columns>Employee__c</columns>
+    <columns>Product__c</columns>
+    <columns>Customer_Type__c</columns>
+    <columns>Office__c</columns>
+    <columns>Bonus_split__c</columns>
+    <columns>Target__c</columns>
+    <columns>LY_Actual__c</columns>
+    <columns>YoY_new__c</columns>
+    <columns>Target_Q1__c</columns>
+    <columns>Target_Q2__c</columns>
+    <columns>Target_Q3__c</columns>
+    <columns>Target_Q4__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Stage__c</field>
+        <operation>equals</operation>
+        <value>Manager,SVP</value>
+    </filters>
+    <filters>
+        <field>Is_Active_For_User__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Manager View</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Partner Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>3rd Party Data</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3rd Party Data</label>
+            </value>
+            <value>
+                <fullName>APP</fullName>
+                <default>false</default>
+                <label>APP</label>
+            </value>
+            <value>
+                <fullName>Brand Safety</fullName>
+                <default>false</default>
+                <label>Brand Safety</label>
+            </value>
+            <value>
+                <fullName>CMS</fullName>
+                <default>false</default>
+                <label>CMS</label>
+            </value>
+            <value>
+                <fullName>Data Provider</fullName>
+                <default>false</default>
+                <label>Data Provider</label>
+            </value>
+            <value>
+                <fullName>DCO Tools</fullName>
+                <default>false</default>
+                <label>DCO Tools</label>
+            </value>
+            <value>
+                <fullName>DMPs in Adform DMP</fullName>
+                <default>false</default>
+                <label>DMPs in Adform DMP</label>
+            </value>
+            <value>
+                <fullName>DOOH</fullName>
+                <default>false</default>
+                <label>DOOH</label>
+            </value>
+            <value>
+                <fullName>DOOH Supply</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DOOH Supply</label>
+            </value>
+            <value>
+                <fullName>DSPs in Adform DMP</fullName>
+                <default>false</default>
+                <label>DSPs in Adform DMP</label>
+            </value>
+            <value>
+                <fullName>DSPs in Adform DSP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DSPs in Adform DSP</label>
+            </value>
+            <value>
+                <fullName>DSPs in Adform SSP</fullName>
+                <default>false</default>
+                <label>DSPs in Adform SSP</label>
+            </value>
+            <value>
+                <fullName>Email/ Martech</fullName>
+                <default>false</default>
+                <label>Email/ Martech</label>
+            </value>
+            <value>
+                <fullName>Ext. Demand</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ext. Demand</label>
+            </value>
+            <value>
+                <fullName>Ext. DMP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ext. DMP</label>
+            </value>
+            <value>
+                <fullName>Ext. Supply</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ext. Supply</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>Fraud Detection</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fraud Detection</label>
+            </value>
+            <value>
+                <fullName>Measurement/ Verification</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Measurement/ Verification</label>
+            </value>
+            <value>
+                <fullName>Panel Verification Partner</fullName>
+                <default>false</default>
+                <label>Panel Verification Partner</label>
+            </value>
+            <value>
+                <fullName>Personalisation</fullName>
+                <default>false</default>
+                <label>Personalisation</label>
+            </value>
+            <value>
+                <fullName>Research/ Audience Verification</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Research/ Audience Verification</label>
+            </value>
+            <value>
+                <fullName>SSPs on Adform DSPs</fullName>
+                <default>false</default>
+                <label>SSPs on Adform DSPs</label>
+            </value>
+            <value>
+                <fullName>Tracking/Measurement Partner</fullName>
+                <default>false</default>
+                <label>Tracking/Measurement Partner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outside_Agency_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>For Brand Opps where the Brand is represented by an Agency Account outside of the Brand&#39;s normal hierarchy, enter that outside Agency Name here.  The primary Brand record name for the sale should be entered in the &quot;Account Name&quot; field above.</inlineHelpText>
+    <label>Outside Agency Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>You have either entered the name of an Account that doesn&#39;t exist in the system, or an Account that does not have an &quot;Agency&quot; Relationship Type value.  Please correct your entry.</errorMessage>
+        <filterItems>
+            <field>Account.Account_Level__c</field>
+            <operation>equals</operation>
+            <value>Subsidiary Agency,Standalone Agency</value>
+        </filterItems>
+        <infoMessage>Search for the full name of the Agency Account record for this sale. If you search for an Account that does not have an &quot;Agency&quot; Relationship Type value, you will see no results here.</infoMessage>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Outside Agency Opportunities</relationshipLabel>
+    <relationshipName>Outside_Agency_Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

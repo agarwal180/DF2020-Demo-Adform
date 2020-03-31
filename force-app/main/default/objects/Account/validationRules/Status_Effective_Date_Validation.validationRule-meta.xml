@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Effective_Date_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(OR(ISPICKVAL(Account_Status__c, &#39;Suspended&#39;),ISPICKVAL(Account_Status__c, &#39;Blocked&#39;)),   ISNULL(Status_Effective_Date__c))</errorConditionFormula>
+    <errorDisplayField>Status_Effective_Date__c</errorDisplayField>
+    <errorMessage>Status Effective Date is required if client status is Suspended or Blocked.</errorMessage>
+</ValidationRule>

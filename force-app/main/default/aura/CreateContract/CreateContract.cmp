@@ -1,0 +1,54 @@
+<aura:component controller="Aura_OpportunityController" access="global" implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:appHostable,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="l_recordTypes" type="RecordType[]"/>
+    <aura:attribute name="l_contacts" type="Contact[]"/>
+    <aura:attribute name="opp" type="Opportunity"/>
+    <aura:attribute name="SelectedContact" type="String"/>
+    <aura:attribute name="SelectedEmail" type="String"/>
+    <aura:attribute name="isSelectContact" type="Boolean" default="false"/>
+    <aura:attribute name="selectedRT" type="String"/>
+    <header class="slds-modal__header">
+        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create new Contract</h2>
+    </header>
+    <aura:if isTrue="{!v.isSelectContact}">
+        <fieldset class="slds-form-element">
+            <legend class="slds-form-element__label slds-text-title_caps">Select Receiver of contract</legend>
+            <div class="slds-form-element__group">
+                <div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_1-of-1">
+                        <ui:inputSelect  label="Select a Contact person:" aura:id="Contact" value="{!v.SelectedContact}">
+                            <aura:iteration items="{!v.l_contacts}" var="contact">
+                                <ui:inputSelectOption text="{!contact.Id}" label="{!contact.Name}"/>
+                            </aura:iteration>
+                        </ui:inputSelect>
+                    </div>
+                    <div class="slds-form-element slds-size_1-of-1">
+                        <ui:inputSelect label="Select an email:" aura:id="Email" value="{!v.SelectedEmail}">
+                            <aura:iteration items="{!v.l_contacts}" var="contact">
+                                <ui:inputSelectOption text="{!contact.Email}" label="{!contact.Email}"/>
+                            </aura:iteration>
+                        </ui:inputSelect>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <aura:set attribute="else">
+            <fieldset class="slds-form-element">
+                <legend class="slds-form-element__legend slds-form-element__label">Select a record type</legend>
+                <div class="slds-form-element__control">
+                    <br/>
+                        <ui:inputSelect label="Record Type" aura:id="recordtype" value="{!v.selectedRT}">
+                            <aura:iteration items="{!v.l_recordTypes}" var="recordtype">
+                                <ui:inputSelectOption text="{!recordtype.Id}" label="{!recordtype.Name}"/>
+                            </aura:iteration>
+                        </ui:inputSelect>
+                    <br/>
+                </div>
+            </fieldset>
+        </aura:set>
+    </aura:if>
+    <footer class="slds-modal__footer">
+        <lightning:button variant="brand" label="Next" title="Next" onclick="{!c.nextStep}"/>
+    </footer>
+</aura:component>

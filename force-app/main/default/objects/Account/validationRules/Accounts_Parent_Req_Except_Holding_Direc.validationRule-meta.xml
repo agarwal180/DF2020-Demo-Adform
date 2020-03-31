@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounts_Parent_Req_Except_Holding_Direc</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT( Is_From_Lead__c ) &amp;&amp; 
+ISBLANK( ParentId ) &amp;&amp;
+(ISPICKVAL(Account_Level__c,&quot;Holding Company Division&quot;)  || (ISPICKVAL(Account_Level__c,&quot;Holding Company Agency&quot;)))</errorConditionFormula>
+    <errorDisplayField>ParentId</errorDisplayField>
+    <errorMessage>In order to maintain an accurate hierarchy of Adform Account records, Parent Account is required to link this Account to its ownership Holding Company Group Account.  If the Holding Group Account record doesn&#39;t already exist, create that record first.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buying_Fee_Configuration__c</fullName>
+    <externalId>false</externalId>
+    <label>Buying Fee Configuration</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Contract_Type_DMP__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MAX</fullName>
+                <default>false</default>
+                <label>MAX</label>
+            </value>
+            <value>
+                <fullName>SUM</fullName>
+                <default>false</default>
+                <label>SUM</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Enterprise</controllingFieldValue>
+            <controllingFieldValue>Pay As You Go</controllingFieldValue>
+            <valueName>MAX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Enterprise</controllingFieldValue>
+            <controllingFieldValue>Pay As You Go</controllingFieldValue>
+            <valueName>SUM</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

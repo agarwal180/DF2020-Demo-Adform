@@ -1,0 +1,19 @@
+<apex:page controller="BillingTitleSearchResultsController" lightningStylesheets="true">
+    <apex:sectionHeader title="Account" subtitle="Accounts"/>
+    <div class="ptBreadcrumb">
+        &nbsp;«&nbsp;<a href="/home/home.jsp">Back to Home</a>
+    </div>
+    <apex:form id="search-result">
+        <apex:pageMessage summary="You do not have accounts with such billing title" severity="info" strength="3" rendered="{!l_accounts.size = 0}"/>
+        <apex:pageBlock mode="edit" rendered="{!l_accounts.size > 0}">
+            <apex:pageBlockTable value="{!l_accounts}" var="item">
+                <apex:repeat value="{!$ObjectType.Account.FieldSets.foundAccounts}" var="field">
+                    <apex:column headerValue="{!field.Label}">
+                        <apex:outputLink value="/{!item.Id}" id="theLink" rendered="{!field.fieldPath = 'Name'}">{!item[field.fieldPath]}</apex:outputLink>
+                        <apex:outputField value="{!item[field.fieldPath]}" rendered="{!field.fieldPath != 'Name'}"/>
+                    </apex:column>
+                </apex:repeat>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

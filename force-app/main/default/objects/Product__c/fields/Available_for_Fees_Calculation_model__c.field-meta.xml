@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_for_Fees_Calculation_model__c</fullName>
+    <externalId>false</externalId>
+    <label>Available for Fees Calculation model</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Included Fees</fullName>
+                <default>false</default>
+                <label>Included Fees</label>
+            </value>
+            <value>
+                <fullName>On Top Fees</fullName>
+                <default>false</default>
+                <label>On Top Fees</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

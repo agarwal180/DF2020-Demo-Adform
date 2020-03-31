@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closure_Notes__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Once this Opportunity reaches the Stage &quot;Closed/Won&quot;, or &quot;Closed/Lost&quot;, this is the field for a narrative on what occurred to warrant the closure.</inlineHelpText>
+    <label>Closure Notes</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

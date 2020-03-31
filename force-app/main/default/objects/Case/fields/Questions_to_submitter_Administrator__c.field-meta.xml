@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Questions_to_submitter_Administrator__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Include your question to the Administrator or Submitter here. On Save, an email will be sent to the User if the Status = &quot;Under Review | Awaiting Admin&quot; or Case submitter if Status = &quot;Under Review | Awaiting Submitter&quot;</inlineHelpText>
+    <label>Questions to Submitter/Administrator</label>
+    <length>10000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Payment_Terms_Higher__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(NOT(ISNULL(Payment_Term__c)), Contract__r.RecordType.Name = &#39;BMSA&#39;, VALUE(TEXT(Payment_Terms_Code__c)) &gt; VALUE(TEXT(Payment_Term__r.Maximum_Payment_Terms__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Payment Terms Higher</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

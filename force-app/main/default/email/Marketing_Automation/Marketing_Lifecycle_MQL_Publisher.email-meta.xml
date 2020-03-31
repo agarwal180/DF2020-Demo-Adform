@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template for Marketing Automation Leads - MQL (webinar, newsletter, whitepaper) - Publisher</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Marketing_Automation</letterhead>
+    <name>Marketing Lifecycle - MQL - Publisher</name>
+    <style>freeForm</style>
+    <subject>Did you find what you were looking for?</subject>
+    <textOnly>Get The Most Out Of Your Digital Advertising
+
+It’s important to us that you&#39;re having the best possible experience with Adform. If you would like a demo with one of our specialists, please fill in the contact form on our website. In the meantime, here are more resources on how Adform helps publishers put their inventory to work.
+
+Watch our full stack advertising platform show reel or join our Global Publisher Solutions Lead, Jesper Schwartz, on What’s New in Publisher Edge.
+
+Make sure to check out our Knowledge base if you would like to find out more about our latest research, more detailed information about our products, or register for one of our free webinars.
+
+{!Lead.OwnerFullName}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);">Hello,</span><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">Your&nbsp;Platform account request for<a href="https://adform.my.salesforce.com/{!Account.Id}">&nbsp;{!Case.Account}&nbsp;</a>Closed Rejected.</div><div style=""><font face="arial"><br></font></div><div style=""><font face="arial">Please check if all necessary information is provided correctly and try submitting the form again.</font></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>Bonus targets notification</name>
+    <style>freeForm</style>
+    <subject>New sales targets are available and waiting for your approval</subject>
+    <textOnly>Hello {!User.Name}
+
+Please be informed that new sales targets are available and waiting for your approval. You can find them here</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

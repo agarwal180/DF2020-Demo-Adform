@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends an email notification after RFP is submitted via Salesforce</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>RFP request Submission</name>
+    <style>formalLetter</style>
+    <subject>RFP request for {!Opportunity.Name}</subject>
+    <textOnly>RFP request for {!Opportunity.Name} Opportunity Opportunity Name: {!Opportunity.Name}
+Estimate Close Date: {!Opportunity.CloseDate}
+Stage: {!Opportunity.StageName}
+Opportunity Owner: {!Opportunity.OwnerFullName}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

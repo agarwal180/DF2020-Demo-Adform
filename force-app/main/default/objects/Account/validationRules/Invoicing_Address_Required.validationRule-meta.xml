@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoicing_Address_Required</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISBLANK (ShippingAddress)</errorConditionFormula>
+    <errorDisplayField>ShippingCountry</errorDisplayField>
+    <errorMessage>Adress information is required before Account can be saved.</errorMessage>
+</ValidationRule>

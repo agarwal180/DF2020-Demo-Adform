@@ -1,0 +1,19 @@
+<apex:component access="global">
+    <apex:attribute name="price" description="Main Price value" type="Contract_Price__c" />
+    <apex:outputPanel rendered="{!price.Product_Price__r.Text_Price__c = null}">
+        <apex:outputpanel style="display:inline-block;">
+        <apex:outputText value="{0, number, ###,###,##0.0000}" rendered="{!price.Price__c != null}">
+            <apex:param value="{!price.Price__c}" />
+        </apex:outputText>
+        <apex:outputText value="{0, number, ###,###,##0.00}" rendered="{!price.Price_Percent__c != null}">
+            <apex:param value="{!price.Price_Percent__c}" />
+        </apex:outputText><apex:outputText rendered="{!price.Price_Percent__c != null}">%</apex:outputText>
+        <apex:outputText value="N/A" rendered="{!price = null}"></apex:outputText>
+        </apex:outputpanel>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!price.Product_Price__r.Text_Price__c != null}">
+        <apex:outputpanel style="display:inline-block;">
+            <apex:outputText value="{!price.Product_Price__r.Text_Price__c}"/>
+        </apex:outputpanel>
+    </apex:outputPanel>
+</apex:component>

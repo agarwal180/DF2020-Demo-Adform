@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_selected_must_add_Closure_Note</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+OR (
+ISPICKVAL(Reason_Won__c, &quot;Other&quot;),
+ISPICKVAL(Reason_Lost__c, &quot;Other&quot;)),
+ISBLANK(Closure_Notes__c))</errorConditionFormula>
+    <errorMessage>Because Reason Lost is marked &quot;Other&quot;, must fill out Closure Notes  with &quot;Other&quot; reason</errorMessage>
+</ValidationRule>

@@ -1,0 +1,441 @@
+<apex:page docType="html-5.0" standardController="Contract" extensions="RC_MSAContractController" lightningStylesheets="true">
+    <apex:includescript value="{!URLFOR($Resource.Jquery)}" />
+    <apex:sectionHeader title="Pricing selection" subtitle="New logic for pricing selection"/>
+    <apex:outputtext rendered="{!NOT(isEditMode)}">
+        <script >
+            var myobj = JSON.parse('{!contactToemailJson}');
+        </script>
+    </apex:outputtext>
+    <script >
+
+
+        function setvalueForPicklist(parentSelect, childSelect) {
+            var inValue = jQuery('[id$='+parentSelect+']').val();
+            var email = myobj[inValue];
+            jQuery('[id$='+childSelect+']').val(email);
+        }
+    </script>
+    <apex:form >
+        <apex:actionFunction name="changeValue" action="{!getProducts}" rerender="repeatBlock" status="processingImg">
+            <apex:param name="recId"  value="" />
+            <apex:param name="priceType"  value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="changeAccount" action="{!changeAccount}" rerender="ContractBlock" status="processingImg">
+            <apex:param name="accName"  value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="changeValueByFee" action="{!getProductsByFees}" rerender="repeatBlock" status="processingImg">
+            <apex:param name="recId"  value="" />
+            <apex:param name="feeType"  value="" />
+            <apex:param name="priceType"  value="" />
+        </apex:actionFunction>
+        <apex:pageMessages />
+        <apex:pageBlock title="New contract" mode="edit" id="ContractBlock" rendered="{!NOT(isEditMode)}">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton onclick="return validateBeforeSave();" action="{!saveAction}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2" title="Client information" >
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Contract Name"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="ContractName" value="{!contract.Name}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$Label.Contact_person}"/>
+                    <apex:selectList value="{!contract.Client_s_contact_name__c}" multiselect="false" id="contactName" size="1" onchange="setvalueForPicklist('contactName','contactEmail')">
+                        <apex:selectOptions value="{!contacts}"/>
+                    </apex:selectList>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Company Registration Number"/>
+                    <apex:outputfield id="Company_registration_number__c" value="{!contract.Company_registration_number__c}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Contact Email"/>
+                    <apex:selectList value="{!contract.Client_s_contact_e_mail__c}"  id="contactEmail" multiselect="false" size="1">
+                        <apex:selectOptions value="{!emails}"/>
+                    </apex:selectList>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="VAT Number"/>
+                    <apex:outputfield id="VAT_number__c" value="{!contract.VAT_number__c}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Invoice person"/>
+                    <apex:selectList value="{!contract.Billing_contact_name_position__c}" id="invoiceContactName" onchange="setvalueForPicklist('invoiceContactName','invoiceContactEmail')" multiselect="false" size="1">
+                        <apex:selectOptions value="{!contacts}"/>
+                    </apex:selectList>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Purchase orders / PO numbers"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="Purchase_orders_PO_numbers__c" value="{!contract.Purchase_orders_PO_numbers__c}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Email to send invoices"/>
+                    <apex:selectList value="{!contract.Invoicing_e_mail__c}" id="invoiceContactEmail" multiselect="false" size="1">
+                        <apex:selectOptions value="{!emails}"/>
+                    </apex:selectList>
+                </apex:pageblocksectionitem>
+                <apex:outputfield value="{!contract.CurrencyIsoCode}"/>
+                <apex:outputfield value="{!contract.AccountId}" rendered="{!NOT(isClone)}"/>
+                <apex:inputfield value="{!contract.AccountId}" rendered="{!isClone}" onchange="changeAccount(this.value)"/>
+                <apex:inputfield value="{!contract.Comments__c}"/>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="2" title="Address information" >
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.ShippingStreet.Label}"/>
+                    <apex:outputfield id="ShippingStreet" value="{!contract.ShippingStreet}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.BillingStreet.Label}"/>
+                    <apex:outputfield id="BillingStreet" value="{!contract.BillingStreet}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.ShippingCountryCode.Label}"/>
+                    <apex:outputfield id="ShippingCountryCode" value="{!contract.ShippingCountryCode}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.BillingCountryCode.Label}"/>
+                    <apex:outputfield id="BillingCountryCode" value="{!contract.BillingCountryCode}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.ShippingStateCode.Label}"/>
+                    <apex:outputfield id="ShippingStateCode" value="{!contract.ShippingStateCode}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.BillingStateCode.Label}"/>
+                    <apex:outputfield id="BillingStateCode" value="{!contract.BillingStateCode}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.ShippingCity.Label}"/>
+                    <apex:outputfield id="ShippingCity" value="{!contract.ShippingCity}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.BillingCity.Label}"/>
+                    <apex:outputfield id="BillingCity" value="{!contract.BillingCity}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.ShippingPostalCode.Label}"/>
+                    <apex:outputfield id="ShippingPostalCode" value="{!contract.ShippingPostalCode}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Contract.fields.BillingPostalCode.Label}"/>
+                    <apex:outputfield id="BillingPostalCode" value="{!contract.BillingPostalCode}"/>
+                </apex:pageblocksectionitem>
+            </apex:pageBlockSection>
+
+
+
+
+            <apex:pageBlockSection columns="2" title="Agreement details" >
+
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Agrement Type"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="aggrimentType" value="{!contract.Agreement_type__c}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Effective Date"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:selectList id="EffectiveElement" value="{!contract.Effective_date__c}" multiselect="false" size="1">
+                            <apex:selectOptions value="{!effectivedays}"/>
+                        </apex:selectList>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Create Pricing Variation" mode="edit" id="ContractBlockVariation" rendered="{!isVariation}">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton onclick="return validateBeforeSave();" action="{!saveAction}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" title="Agreement details" >
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Effective Date"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:selectList id="EffectiveElement" value="{!contract.Effective_date__c}" multiselect="false" size="1">
+                            <apex:selectOptions value="{!effectivedays}"/>
+                        </apex:selectList>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem>
+                    <apex:outputLabel value="Invoicing currency"/>
+               		<apex:inputfield value="{!contract.CurrencyIsoCode}"/>
+                </apex:pageblocksectionitem>
+                <apex:pageBlockSectionItem>
+                    <apex:outputLabel value="Minimum Fee Period"/>
+                    <apex:inputField value="{!contract.Minimum_Fee_Period__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <!-- contract part -->
+        <apex:outputpanel id="mainpanel">
+
+
+            <apex:outputpanel id="repeatBlock">
+                <apex:pageMessages />
+
+                <apex:pageBlock rendered="{!AND(isEditMode, NOT(isVariation))}">
+                    <apex:pageBlockSection columns="1">
+                        <apex:pageblocksectionitem >
+                            <apex:outputLabel value="Effective Date"/>
+                            <apex:outputpanel layout="block" styleclass="requiredInput">
+                                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                <apex:selectList id="EffectiveElement" value="{!contract.Effective_date__c}" multiselect="false" size="1">
+                                    <apex:selectOptions value="{!effectivedays}"/>
+                                </apex:selectList>
+                            </apex:outputpanel>
+                        </apex:pageblocksectionitem>
+                        <apex:pageblocksectionitem >
+                            <apex:outputLabel value="Invoicing currency"/>
+                            <apex:inputfield value="{!contract.CurrencyIsoCode}"/>
+                        </apex:pageblocksectionitem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:repeat var="pg" value="{!l_productGroups}">
+                    <apex:pageblock title="{!pg.productGroup.Label__c}" mode="edit" rendered="{!AND(OR(pg.productGroup.Show_Invoice_Details__c, pg.productGroup.Show_Invoice_Level__c, pg.productGroup.Show_Pricing_Models__c,pg.products.size > 0), NOT(pg.productGroup.Read_Only__c))}">
+                        <apex:pageBlockSection columns="1" collapsible="false" title="{!IF(pg.productGroup.Information_Section_Label__c != null,pg.productGroup.Information_Section_Label__c,'Pricing Details')}" id="InfoSection" rendered="{!OR(pg.productGroup.Show_Pricing_Models__c, pg.l_fees.size > 0, pg.productGroup.Show_Payment_Terms__c, pg.productGroup.Show_Invoice_Level__c, pg.productGroup.Show_Invoice_Details__c)}">
+                            <apex:pageblocksectionitem rendered="{!pg.productGroup.Show_Pricing_Models__c}">
+                                <apex:outputLabel value="Pricing Model"/>
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                    <apex:selectList id="selectElementPrice" value="{!pg.invoiceTemplate.Pricing_Model__c}" multiselect="false" size="1" onchange="changeValueByFee('{!pg.productGroup.Id}',jQuery('[id$=selectElement]').val(),this.value)">
+                                        <apex:selectOptions value="{!pg.l_pricingModel}"/>
+                                    </apex:selectList>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem rendered="{!pg.l_fees.size > 0}">
+                                <apex:outputLabel value="Fees Calculation model"/>
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                    <apex:selectList id="selectElement" value="{!pg.invoiceTemplate.Fees_Calculation_model__c}" multiselect="false" size="1" onchange="changeValueByFee('{!pg.productGroup.Id}',this.value, '{!pg.invoiceTemplate.Pricing_Model__c}')">
+                                        <apex:selectOptions value="{!pg.l_fees}"/>
+                                    </apex:selectList>
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem rendered="{!pg.productGroup.Show_Payment_Terms__c}" helpText="{!pg.productGroup.Help_Text__c}">
+                                <apex:outputLabel value="Payment Terms"/>
+                                <apex:outputpanel layout="block" styleclass="requiredInput">
+                                    <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                                    <apex:selectList id="selectPaymentTerms" value="{!pg.invoiceTemplate.Payment_Terms_Code__c}" multiselect="false" size="1">
+                                        <apex:selectOptions value="{!pg.l_paymentTerms}"/>
+                                    </apex:selectList>
+                                    <apex:inputHidden value="{!pg.invoiceTemplate.Maximum_Payment_Terms__c}" id="maximumPaymentTerms" rendered="{!pg.invoiceTemplate.Maximum_Payment_Terms__c != null}" />
+                                </apex:outputpanel>
+                            </apex:pageblocksectionitem>
+                            <apex:outputpanel style="display:none">
+                                <apex:inputfield required="true" value="{!pg.invoiceTemplate.File_Type__c}"/>
+                            </apex:outputpanel>
+                            <apex:inputfield required="true" value="{!pg.invoiceTemplate.Invoice_Level__c}" rendered="{!pg.productGroup.Show_Invoice_Level__c}"/>
+                            <apex:inputfield required="true" value="{!pg.invoiceTemplate.Invoice_Details__c}" rendered="{!pg.productGroup.Show_Invoice_Details__c}"/>
+                        </apex:pageBlockSection>
+                        <apex:outputpanel id="productsPanel">
+                            <apex:pageBlockSection collapsible="false" columns="1" title="{!IF(pg.productGroup.Products_Section_Label__c != null,pg.productGroup.Products_Section_Label__c,'Pricing Rates')}" id="productsSection" rendered="{!pg.products.size > 0}">
+                                <apex:repeat var="p" value="{!pg.products}">
+                                    <apex:pageblocksectionitem helpText="{!p.product.Help_Text__c}" rendered="{!IF(p.contractPrice.Main_Contract_Price__c != 'false', true, false)}">
+                                        <apex:outputLabel value="{!p.product.Name}" for="rec__name"/>
+                                        <apex:outputpanel id="rec__name">
+                                            <apex:outputpanel style="display:inline-block;">
+                                                <apex:inputfield required="true" id="priceElement" value="{!p.price.Price__c}" rendered="{!NOT(p.product.Read_Only__c)}"/>
+                                                <apex:outputField value="{!p.price.Price__c}" id="readOnlyPriceElement" rendered="{!p.product.Read_Only__c}"/>
+                                                <apex:inputHidden value="{!p.price.Minimum_Price_Currency__c}" id="minimumPrice" rendered="{!p.price.Minimum_Price_Currency__c != null}"/>
+                                                <apex:inputHidden value="{!p.price.Minimum_Price_Percent__c}" id="minimumPricePercent" rendered="{!p.price.Minimum_Price_Percent__c != null}"/>
+                                            </apex:outputpanel>
+                                            &nbsp;<apex:outputtext style="display:inline-block;"  value="{!p.additionalText}"/>
+                                        </apex:outputpanel>
+                                    </apex:pageblocksectionitem>
+                                </apex:repeat>
+                            </apex:pageBlockSection>
+                        </apex:outputpanel>
+                    </apex:pageblock>
+                </apex:repeat>
+            </apex:outputpanel>
+            <apex:pageblock title="Other Pricing Information" mode="edit" id="bottomBlock">
+                <apex:pageBlockSection collapsible="false" columns="1" title="Pricing Information" >
+                    <apex:inputfield value="{!contract.Automated_Guaranteed__c}" />
+                    <apex:inputfield value="{!contract.Trading_Desk_Fee__c}" />
+                    <apex:inputfield value="{!contract.Pre_payment__c}" >
+                        <apex:actionSupport event="onchange" rerender="bottomBlock" status="counterStatus"/>
+                    </apex:inputfield>
+                    <apex:inputfield value="{!contract.Pre_payment_Amount__c}" rendered="{!contract.Pre_payment__c}"/>
+                </apex:pageBlockSection>
+
+                <apex:pageBlockButtons location="bottom" >
+                    <apex:commandButton onclick="return validateBeforeSave();" action="{!saveAction}" value="Save"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:pageBlockButtons>
+            </apex:pageblock>
+        </apex:outputpanel>
+        <apex:actionstatus id="processingImg" starttext="Loading">
+            <apex:facet name="start">
+                <div id="salesforceSource_blurybackground" style="z-index: 100;position:fixed; left:0; top:0; bottom:0; right:0;background-color: #dcdcdc; opacity:0.6;filter:alpha(opacity=60)"></div>
+                <div id="FormAction_loading" class="waitingSearchDiv" style="width: 100%; height: 80%; display: ''; ">
+                    <div style="width: 50%;vertical-align: middle;" class="waitingHolder">
+                        <table align="center" valign="top" style="width: 100%; height: 30%">
+                            <tr align="center" valign="top" style="width: 100%; height: 30%">
+                                <td valign="top">
+                                    <img class="waitingImage" src="/img/loading.gif" />
+                                    <span class="waitingDescription">Loading...</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="FormAction_loading" class="waitingSearchDiv" style="width: 100%; height: 100%; display: ''; " />
+                <script>document.getElementById('FormAction_loading').height = window.innerHeight * (3/4);</script>
+            </apex:facet>
+            <apex:facet name="stop" />
+        </apex:actionstatus>
+    </apex:form>
+    <script>
+        function validateBeforeSave() {
+            var isSetFocus = false;
+            var error_message = '';
+            var elem_id = '';
+            var elem_err_value = '';
+            var isLower = false;
+            var isHigher = false;
+            var maxPaymentTerms = null;
+            error_message = 'Error: Field Is required';
+            elem_id = 'EffectiveElement';
+            isSetFocus = handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, false);
+            elem_id = 'aggrimentType';
+            isSetFocus = handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, false);
+            elem_id = 'Purchase_orders_PO_numbers__c';
+            isSetFocus = handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, false);
+            elem_id = 'ContractName';
+            isSetFocus = handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, false);
+            jQuery.each( jQuery('[id$=selectElement]'), function( ) {
+                error_message = 'Error: Field Is required';
+                elem_id = jQuery(this).attr('Id');
+                elem_err_value = '';
+                console.log('ELELMENT ID ------'+elem_id);
+                isSetFocus = handleErrorForElementFullId(elem_id,elem_err_value,error_message,isSetFocus, false);
+            });
+            jQuery.each( jQuery('[id$=selectElementPrice]'), function( ) {
+                error_message = 'Error: Field Is required';
+                elem_id = jQuery(this).attr('Id');
+                elem_err_value = '';
+                console.log('ELELMENT ID ------'+elem_id);
+                isSetFocus = handleErrorForElementFullId(elem_id,elem_err_value,error_message,isSetFocus, false);
+            });
+            jQuery.each( jQuery('[id$=priceElement]'), function( ) {
+                elem_id = jQuery(this).attr('Id');
+                isLower = validatePrice(elem_id,isLower);
+            });
+            jQuery.each( jQuery('[id$=selectPaymentTerms]'), function( ) {
+                elem_id = jQuery(this).attr('Id');
+                isHigher = validatePaymentTerms(elem_id,isHigher);
+            });
+            if (isSetFocus) {
+                return false;
+            }else {
+                if(isLower || isHigher) {
+                    if (confirm("Your rate card requires approval because of non standard prices or payment terms")) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        function handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, isNumber) {
+            if (jQuery('[id$='+elem_id+']').css('display') != 'none'  &&  jQuery('[id$='+elem_id+']').css('display') != undefined && jQuery('[id$='+elem_id+']').is(':disabled') == false) {
+                var inValue = jQuery('[id$='+elem_id+']').val();
+                var isError = false;
+                if (isNumber) {
+                    isError = (inValue== null || inValue.length == 0 || inValue == elem_err_value  || isNaN(inValue) || /^\s*$/.test(inValue));
+                }else {
+                    isError = (inValue== null || inValue.length == 0 || inValue == elem_err_value || (/^\s*$/.test(inValue) && jQuery('[id$='+elem_id+']').is('select') == false));
+                }
+                if(isError) {
+                    if(!isSetFocus) jQuery('[id$='+elem_id+']').focus();
+                    isSetFocus = true;
+                    if(jQuery('[id$='+elem_id+'_error]').length==0) jQuery('[id$='+elem_id+']').after('<span id="'+elem_id+'_error" style="color:red; width:125px; word-wrap: break-word;"><br />'+error_message+'</span>');
+                } else if(jQuery('[id$='+elem_id+'_error]').length>0) jQuery('[id$='+elem_id+'_error]').detach();
+                console.log('isSetFocus='+isSetFocus);
+                console.log('elem_id='+elem_id);
+                console.log('inValue='+inValue);
+                console.log('isNumber='+isNumber);
+            }
+            return isSetFocus;
+        }
+
+        function validatePrice(elem_id, isLower) {
+            var inValue = jQuery("input[id$='"+elem_id+"'").val();
+            var percentPath = elem_id.replace('priceElement', 'minimumPricePercent');
+            var percentPrice = jQuery("input[id$='"+percentPath+"'").val();
+            var pricePath = elem_id.replace('priceElement', 'minimumPrice');
+            var price = jQuery("input[id$='"+pricePath+"'").val();
+            inValue = inValue.replace(',','');
+            var isError = false;
+            isError = (price  != undefined && (Number(price) > Number(inValue)) || (percentPrice  != undefined && (Number(percentPrice) > Number(inValue)) ) );
+            var minimumPrice = '';
+            if(price  != undefined) {
+                minimumPrice = price;
+            }
+            else if (percentPrice  != undefined) {
+                minimumPrice = percentPrice;
+            }
+            var error_message = 'Minimum price is: '+minimumPrice;
+            if(isError) {
+                isLower = isError;
+                if(jQuery("span[id$='"+elem_id+"_error'").length==0) jQuery("input[id$='"+elem_id+"'").after('<span id="'+elem_id+'_error" style="color:red; width:125px; word-wrap: break-word;"><br /> <img src="/img/s.gif" class="unresolvedIcon" /> &nbsp;'+error_message+'</span>');
+            } else if(jQuery("span[id$='"+elem_id+"_error'").length>0) jQuery("span[id$='"+elem_id+"_error'").detach();
+            return isLower;
+        }
+
+        function validatePaymentTerms(elem_id, isHigher){
+            var inValue = jQuery("[id$='"+elem_id+"'").val();
+            var maxPaymentTerms = jQuery('[id$=maximumPaymentTerms]').val();
+            var isError = false;
+            var error_message = 'Maximum payment terms are: ' + maxPaymentTerms;
+            isError = (inValue > maxPaymentTerms);
+            if(isError){
+                isHigher = true;
+                if(jQuery("span[id$='"+elem_id+"_error'").length==0){
+                    jQuery("[id$='"+elem_id+"'").after('<span id="'+elem_id+'_error" style="color:red; width:125px; word-wrap: break-word;"><br /> <img src="/img/s.gif" class="unresolvedIcon" /> &nbsp;'+error_message+'</span>');
+                }
+            }
+            else if(jQuery("span[id$='"+elem_id+"_error'").length>0){
+                jQuery("span[id$='"+elem_id+"_error'").detach();
+            }
+            return isHigher;
+        }
+
+        function handleErrorForElementFullId(elem_id,elem_err_value,error_message,isSetFocus, isNumber) {
+            if (jQuery("select[id$='"+elem_id+"'").css('display') != 'none'  &&  jQuery("select[id$='"+elem_id+"'").css('display') != undefined) {
+                var inValue = jQuery("select[id$='"+elem_id+"'").val();
+                var isError = false;
+                if (isNumber) {
+                    isError = (inValue== null || inValue.length == 0 || inValue == elem_err_value  || isNaN(inValue) || inValue.indexOf(' ') >= 0);
+                }else {
+                    isError = (inValue== null || inValue.length == 0 || inValue == elem_err_value || /^\s*$/.test(inValue));
+                }
+                if(isError) {
+                    if(!isSetFocus) jQuery("select[id$='"+elem_id+"'").focus();
+                    isSetFocus = true;
+                    if(jQuery("span[id$='"+elem_id+"_error'").length==0) jQuery("select[id$='"+elem_id+"'").after('<span id="'+elem_id+'_error" style="color:red; width:125px; word-wrap: break-word;"><br />'+error_message+'</span>');
+                } else if(jQuery("span[id$='"+elem_id+"_error'").length>0) jQuery("span[id$='"+elem_id+"_error'").detach();
+                console.log('isSetFocus='+isSetFocus);
+                console.log('elem_id='+elem_id);
+            }
+            return isSetFocus;
+        }
+
+    </script>
+</apex:page>

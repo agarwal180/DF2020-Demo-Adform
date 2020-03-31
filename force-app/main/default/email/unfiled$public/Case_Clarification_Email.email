@@ -1,0 +1,10 @@
+Hello {!Case.Primary_User_Stakeholder__c}, 
+
+The Administrator requires clarification on Your Case # {!Case.CaseNumber}. The clarification required is: 
+
+{!Case.Questions_to_submitter_Administrator__c}
+
+Please visit the case and leave clarification of the issue using a Case Comment (with New button on the Case Comment related list): {!Case.Link} 
+
+Regards,
+Your Adform Salesforce.com Administrator

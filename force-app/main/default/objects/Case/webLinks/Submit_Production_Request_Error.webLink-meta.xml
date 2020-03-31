@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Submit_Production_Request_Error</fullName>
+    <availability>online</availability>
+    <description>Error message appears if cases status does not equal to Signed &amp; Start Production and attachment is not added.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Submit Production Request</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+var attachments = sforce.connection.query(&quot;SELECT Id, Name, ParentId, Parent.Type FROM Attachment where Parent.Type = &#39;Case&#39; and ParentId = &#39;{!Case.Id}&#39;&quot;);
+var attachmentQuantity = attachments.size;
+var status = &#39;{!Case.Status}&#39;;
+if(status != &#39;Signed and start production&#39; &amp;&amp; status != &#39;Start Production&#39;){
+alert(&#39;Form can not be submited if there is legal document signed. Please make sure legal document is in the system&#39;);
+}
+else if (attachmentQuantity == 0 &amp;&amp; status != &#39;Start Production&#39;){
+alert(&#39;Please provide signed Creative Production Order&#39;);
+}
+else{
+location.href = &#39;/apex/Creative_form?scontrolCaching=1&amp;id={!Case.Id}&#39;;
+}</url>
+</WebLink>

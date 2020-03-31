@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>Engagement Requests Email Notification</name>
+    <style>freeForm</style>
+    <subject>Engagement Request for {!Case.Opportunity__c}</subject>
+    <textOnly>The following Engagement Request has been submitted/updated and is requiring your assistance.
+
+Opportunity: {!Case.Opportunity__c}
+Account: {!Account.Name}
+Account Tier: {!Account.Customer_Tier__c}
+Products: {!Case.Managed_Service_type__c}
+
+Account Country: {!Account.BillingCountry}
+Case Priority: {!Case.Priority}
+Case Status: {!Case.Status}
+Engagement Type:{!Case.Engagment__c}
+
+Start Date: {!Case.Start_Date__c}
+End Date: {!Case.End_Date__c}
+
+Requested by: {!Case.OwnerFullName}
+Case: {!Case.CaseNumber}
+
+Requester Comments: {!Case.Description}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

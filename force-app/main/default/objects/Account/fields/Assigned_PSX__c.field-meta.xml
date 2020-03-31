@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_PSX__c</fullName>
+    <externalId>false</externalId>
+    <label>Assigned PSX</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Regional_PSX__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Marik Luidens</fullName>
+                <default>false</default>
+                <label>Marik Luidens</label>
+            </value>
+            <value>
+                <fullName>Adam Nykles</fullName>
+                <default>false</default>
+                <label>Adam Nykles</label>
+            </value>
+            <value>
+                <fullName>Ondrej Syncak</fullName>
+                <default>false</default>
+                <label>Ondrej Syncak</label>
+            </value>
+            <value>
+                <fullName>Kristoffer Køster</fullName>
+                <default>false</default>
+                <label>Kristoffer Køster</label>
+            </value>
+            <value>
+                <fullName>Martin Talarek</fullName>
+                <default>false</default>
+                <label>Martin Talarek</label>
+            </value>
+            <value>
+                <fullName>Mikas Stankevičius</fullName>
+                <default>false</default>
+                <label>Mikas Stankevičius</label>
+            </value>
+            <value>
+                <fullName>Jyrki Lauronen</fullName>
+                <default>false</default>
+                <label>Jyrki Lauronen</label>
+            </value>
+            <value>
+                <fullName>Helen Jara Ureta</fullName>
+                <default>false</default>
+                <label>Helen Jara Ureta</label>
+            </value>
+            <value>
+                <fullName>Jani Lahtinen</fullName>
+                <default>false</default>
+                <label>Jani Lahtinen</label>
+            </value>
+            <value>
+                <fullName>Sari Alakurtti</fullName>
+                <default>false</default>
+                <label>Sari Alakurtti</label>
+            </value>
+            <value>
+                <fullName>Liselotte Le Helloco</fullName>
+                <default>false</default>
+                <label>Liselotte Le Helloco</label>
+            </value>
+            <value>
+                <fullName>Nicolas Vittet</fullName>
+                <default>false</default>
+                <label>Nicolas Vittet</label>
+            </value>
+            <value>
+                <fullName>Claus Reuther</fullName>
+                <default>false</default>
+                <label>Claus Reuther</label>
+            </value>
+            <value>
+                <fullName>Anja Eckstein</fullName>
+                <default>false</default>
+                <label>Anja Eckstein</label>
+            </value>
+            <value>
+                <fullName>Giedrius Bielinis</fullName>
+                <default>false</default>
+                <label>Giedrius Bielinis</label>
+            </value>
+            <value>
+                <fullName>Kirsten Steiner</fullName>
+                <default>false</default>
+                <label>Kirsten Steiner</label>
+            </value>
+            <value>
+                <fullName>Sebastian Schmidt</fullName>
+                <default>false</default>
+                <label>Sebastian Schmidt</label>
+            </value>
+            <value>
+                <fullName>Andreas Kemper</fullName>
+                <default>false</default>
+                <label>Andreas Kemper</label>
+            </value>
+            <value>
+                <fullName>Florian Rolke</fullName>
+                <default>false</default>
+                <label>Florian Rolke</label>
+            </value>
+            <value>
+                <fullName>Marcel Ehrlitzer</fullName>
+                <default>false</default>
+                <label>Marcel Ehrlitzer</label>
+            </value>
+            <value>
+                <fullName>Tarek Muhyeddin</fullName>
+                <default>false</default>
+                <label>Tarek Muhyeddin</label>
+            </value>
+            <value>
+                <fullName>Thorsten Feldhege</fullName>
+                <default>false</default>
+                <label>Thorsten Feldhege</label>
+            </value>
+            <value>
+                <fullName>Daniela Forzinetti</fullName>
+                <default>false</default>
+                <label>Daniela Forzinetti</label>
+            </value>
+            <value>
+                <fullName>Valentina Mensi</fullName>
+                <default>false</default>
+                <label>Valentina Mensi</label>
+            </value>
+            <value>
+                <fullName>Enrico Trevisani</fullName>
+                <default>false</default>
+                <label>Enrico Trevisani</label>
+            </value>
+            <value>
+                <fullName>Tiziano Rescali</fullName>
+                <default>false</default>
+                <label>Tiziano Rescali</label>
+            </value>
+            <value>
+                <fullName>Tommaso Grimoldi</fullName>
+                <default>false</default>
+                <label>Tommaso Grimoldi</label>
+            </value>
+            <value>
+                <fullName>Vjedka Poldervaart</fullName>
+                <default>false</default>
+                <label>Vjedka Poldervaart</label>
+            </value>
+            <value>
+                <fullName>Fiona Fleur</fullName>
+                <default>false</default>
+                <label>Fiona Fleur</label>
+            </value>
+            <value>
+                <fullName>Teun Steverink</fullName>
+                <default>false</default>
+                <label>Teun Steverink</label>
+            </value>
+            <value>
+                <fullName>Mindaugas Bruzga</fullName>
+                <default>false</default>
+                <label>Mindaugas Bruzga</label>
+            </value>
+            <value>
+                <fullName>Steinar Kvam</fullName>
+                <default>false</default>
+                <label>Steinar Kvam</label>
+            </value>
+            <value>
+                <fullName>Gediminas Kybartas</fullName>
+                <default>false</default>
+                <label>Gediminas Kybartas</label>
+            </value>
+            <value>
+                <fullName>Ieva Kubiliute</fullName>
+                <default>false</default>
+                <label>Ieva Kubiliute</label>
+            </value>
+            <value>
+                <fullName>Fabian Bargielski</fullName>
+                <default>false</default>
+                <label>Fabian Bargielski</label>
+            </value>
+            <value>
+                <fullName>Łukasz Bańkowski</fullName>
+                <default>false</default>
+                <label>Łukasz Bańkowski</label>
+            </value>
+            <value>
+                <fullName>Jacek Wąs</fullName>
+                <default>false</default>
+                <label>Jacek Wąs</label>
+            </value>
+            <value>
+                <fullName>Jan Piskorski</fullName>
+                <default>false</default>
+                <label>Jan Piskorski</label>
+            </value>
+            <value>
+                <fullName>James Oyedele</fullName>
+                <default>false</default>
+                <label>James Oyedele</label>
+            </value>
+            <value>
+                <fullName>Alexandre Benavides</fullName>
+                <default>false</default>
+                <label>Alexandre Benavides</label>
+            </value>
+            <value>
+                <fullName>Jose Luis Carmona</fullName>
+                <default>false</default>
+                <label>Jose Luis Carmona</label>
+            </value>
+            <value>
+                <fullName>Elia Chicote</fullName>
+                <default>false</default>
+                <label>Elia Chicote</label>
+            </value>
+            <value>
+                <fullName>Iñigo Moran Gonzalez</fullName>
+                <default>false</default>
+                <label>Iñigo Moran Gonzalez</label>
+            </value>
+            <value>
+                <fullName>Jon Santurtun</fullName>
+                <default>false</default>
+                <label>Jon Santurtun</label>
+            </value>
+            <value>
+                <fullName>Juan Azabal Martínez de Morentin</fullName>
+                <default>false</default>
+                <label>Juan Azabal Martínez de Morentin</label>
+            </value>
+            <value>
+                <fullName>Martin Andersson</fullName>
+                <default>false</default>
+                <label>Martin Andersson</label>
+            </value>
+            <value>
+                <fullName>Louise Smith</fullName>
+                <default>false</default>
+                <label>Louise Smith</label>
+            </value>
+            <value>
+                <fullName>Mark Nolby</fullName>
+                <default>false</default>
+                <label>Mark Nolby</label>
+            </value>
+            <value>
+                <fullName>Anders Johansson</fullName>
+                <default>false</default>
+                <label>Anders Johansson</label>
+            </value>
+            <value>
+                <fullName>Emma Örnell</fullName>
+                <default>false</default>
+                <label>Emma Örnell</label>
+            </value>
+            <value>
+                <fullName>Filip Waenerlund</fullName>
+                <default>false</default>
+                <label>Filip Waenerlund</label>
+            </value>
+            <value>
+                <fullName>Michael Wejhem</fullName>
+                <default>false</default>
+                <label>Michael Wejhem</label>
+            </value>
+            <value>
+                <fullName>Lutfu Kocoglu</fullName>
+                <default>false</default>
+                <label>Lutfu Kocoglu</label>
+            </value>
+            <value>
+                <fullName>Ugur Sonmez</fullName>
+                <default>false</default>
+                <label>Ugur Sonmez</label>
+            </value>
+            <value>
+                <fullName>Jack Salisbury</fullName>
+                <default>false</default>
+                <label>Jack Salisbury</label>
+            </value>
+            <value>
+                <fullName>Taylor Cook</fullName>
+                <default>false</default>
+                <label>Taylor Cook</label>
+            </value>
+            <value>
+                <fullName>Adam Jones</fullName>
+                <default>false</default>
+                <label>Adam Jones</label>
+            </value>
+            <value>
+                <fullName>Michael Hutchings</fullName>
+                <default>false</default>
+                <label>Michael Hutchings</label>
+            </value>
+            <value>
+                <fullName>Tracy Ruan</fullName>
+                <default>false</default>
+                <label>Tracy Ruan</label>
+            </value>
+            <value>
+                <fullName>Vaida Norvilaite</fullName>
+                <default>false</default>
+                <label>Vaida Norvilaite</label>
+            </value>
+            <value>
+                <fullName>Simona Žilėnaitė</fullName>
+                <default>false</default>
+                <label>Simona Žilėnaitė</label>
+            </value>
+            <value>
+                <fullName>Ramune Rudgalvyte</fullName>
+                <default>false</default>
+                <label>Ramune Rudgalvyte</label>
+            </value>
+            <value>
+                <fullName>Ramune Velvyte</fullName>
+                <default>false</default>
+                <label>Ramune Velvyte</label>
+            </value>
+            <value>
+                <fullName>Evelina Simaskaite</fullName>
+                <default>false</default>
+                <label>Evelina Simaskaite</label>
+            </value>
+            <value>
+                <fullName>Paulius Sparnaitis</fullName>
+                <default>false</default>
+                <label>Paulius Sparnaitis</label>
+            </value>
+            <value>
+                <fullName>Kirsten Meier</fullName>
+                <default>false</default>
+                <label>Kirsten Meier</label>
+            </value>
+            <value>
+                <fullName>Christian Schuett</fullName>
+                <default>false</default>
+                <label>Christian Schuett</label>
+            </value>
+            <value>
+                <fullName>Jennifer Schawloski</fullName>
+                <default>false</default>
+                <label>Jennifer Schawloski</label>
+            </value>
+            <value>
+                <fullName>David Hillier</fullName>
+                <default>false</default>
+                <label>David Hillier</label>
+            </value>
+            <value>
+                <fullName>Gregory Cristal</fullName>
+                <default>false</default>
+                <label>Gregory Cristal</label>
+            </value>
+            <value>
+                <fullName>Jesper Schwartz</fullName>
+                <default>false</default>
+                <label>Jesper Schwartz</label>
+            </value>
+            <value>
+                <fullName>Jody Shillday</fullName>
+                <default>false</default>
+                <label>Jody Shillday</label>
+            </value>
+            <value>
+                <fullName>Marc-Oliver Michel</fullName>
+                <default>false</default>
+                <label>Marc-Oliver Michel</label>
+            </value>
+            <value>
+                <fullName>Johannes Therkelsen</fullName>
+                <default>false</default>
+                <label>Johannes Therkelsen</label>
+            </value>
+            <value>
+                <fullName>Anders Uhlbæk Nordsted</fullName>
+                <default>false</default>
+                <label>Anders Uhlbæk Nordsted</label>
+            </value>
+            <value>
+                <fullName>Mai Sloth Jørgensen</fullName>
+                <default>false</default>
+                <label>Mai Sloth Jørgensen</label>
+            </value>
+            <value>
+                <fullName>Rasmus Kjaer</fullName>
+                <default>false</default>
+                <label>Rasmus Kjaer</label>
+            </value>
+            <value>
+                <fullName>Pernille Verwohlt</fullName>
+                <default>false</default>
+                <label>Pernille Verwohlt</label>
+            </value>
+            <value>
+                <fullName>Ola Lindell</fullName>
+                <default>false</default>
+                <label>Ola Lindell</label>
+            </value>
+            <value>
+                <fullName>Patrick Delgado</fullName>
+                <default>false</default>
+                <label>Patrick Delgado</label>
+            </value>
+            <value>
+                <fullName>Milda Rezgytė</fullName>
+                <default>false</default>
+                <label>Milda Rezgytė</label>
+            </value>
+            <value>
+                <fullName>Greta Ghizzo</fullName>
+                <default>false</default>
+                <label>Greta Ghizzo</label>
+            </value>
+            <value>
+                <fullName>Milda Gudonavičienė</fullName>
+                <default>false</default>
+                <label>Milda Gudonavičienė</label>
+            </value>
+            <value>
+                <fullName>Aleksandras Jakuchinas</fullName>
+                <default>false</default>
+                <label>Aleksandras Jakuchinas</label>
+            </value>
+            <value>
+                <fullName>Elena Navarro</fullName>
+                <default>false</default>
+                <label>Elena Navarro</label>
+            </value>
+            <value>
+                <fullName>Michal Marek</fullName>
+                <default>false</default>
+                <label>Michal Marek</label>
+            </value>
+            <value>
+                <fullName>Radka Florekova</fullName>
+                <default>false</default>
+                <label>Radka Florekova</label>
+            </value>
+            <value>
+                <fullName>Zuzana Neupauerova</fullName>
+                <default>false</default>
+                <label>Zuzana Neupauerova</label>
+            </value>
+            <value>
+                <fullName>Dovydas Petkevicius</fullName>
+                <default>false</default>
+                <label>Dovydas Petkevicius</label>
+            </value>
+            <value>
+                <fullName>Tomas Riauka</fullName>
+                <default>false</default>
+                <label>Tomas Riauka</label>
+            </value>
+            <value>
+                <fullName>Martina Trezzi</fullName>
+                <default>false</default>
+                <label>Martina Trezzi</label>
+            </value>
+            <value>
+                <fullName>Lasse Windeck</fullName>
+                <default>false</default>
+                <label>Lasse Windeck</label>
+            </value>
+            <value>
+                <fullName>Rokas Armalis</fullName>
+                <default>false</default>
+                <label>Rokas Armalis</label>
+            </value>
+            <value>
+                <fullName>Adele Vainoraite</fullName>
+                <default>false</default>
+                <label>Adele Vainoraite</label>
+            </value>
+            <value>
+                <fullName>Aurimas Kraujalis</fullName>
+                <default>false</default>
+                <label>Aurimas Kraujalis</label>
+            </value>
+            <value>
+                <fullName>Jim Leseman</fullName>
+                <default>false</default>
+                <label>Jim Leseman</label>
+            </value>
+            <value>
+                <fullName>Mariam Parwez</fullName>
+                <default>false</default>
+                <label>Mariam Parwez</label>
+            </value>
+            <value>
+                <fullName>Achille Bemba</fullName>
+                <default>false</default>
+                <label>Achille Bemba</label>
+            </value>
+            <value>
+                <fullName>Greta Butvilaite</fullName>
+                <default>false</default>
+                <label>Greta Butvilaite</label>
+            </value>
+            <value>
+                <fullName>Federico Crivelli</fullName>
+                <default>false</default>
+                <label>Federico Crivelli</label>
+            </value>
+            <value>
+                <fullName>Hamed Ahmadi</fullName>
+                <default>false</default>
+                <label>Hamed Ahmadi</label>
+            </value>
+            <value>
+                <fullName>Aivaras Šiurkus</fullName>
+                <default>false</default>
+                <label>Aivaras Šiurkus</label>
+            </value>
+            <value>
+                <fullName>Camilla Annaniassen</fullName>
+                <default>false</default>
+                <label>Camilla Annaniassen</label>
+            </value>
+            <value>
+                <fullName>Leo Kielland</fullName>
+                <default>false</default>
+                <label>Leo Kielland</label>
+            </value>
+            <value>
+                <fullName>Arjuno Lewis</fullName>
+                <default>false</default>
+                <label>Arjuno Lewis</label>
+            </value>
+            <value>
+                <fullName>Dominik Kosorin</fullName>
+                <default>false</default>
+                <label>Dominik Kosorin</label>
+            </value>
+            <value>
+                <fullName>Terezie Říhová</fullName>
+                <default>false</default>
+                <label>Terezie Říhová</label>
+            </value>
+            <value>
+                <fullName>Rokas Gedvilas</fullName>
+                <default>false</default>
+                <label>Rokas Gedvilas</label>
+            </value>
+            <value>
+                <fullName>Egle Norkute</fullName>
+                <default>false</default>
+                <label>Egle Norkute</label>
+            </value>
+            <value>
+                <fullName>Kristijonas Pranskus</fullName>
+                <default>false</default>
+                <label>Kristijonas Pranskus</label>
+            </value>
+            <value>
+                <fullName>Lukas Valevičius</fullName>
+                <default>false</default>
+                <label>Lukas Valevičius</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Poland</controllingFieldValue>
+            <valueName>Fabian Bargielski</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Poland</controllingFieldValue>
+            <valueName>Łukasz Bańkowski</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Poland</controllingFieldValue>
+            <valueName>Jacek Wąs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Poland</controllingFieldValue>
+            <valueName>Jan Piskorski</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Singapore</controllingFieldValue>
+            <valueName>James Oyedele</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Singapore</controllingFieldValue>
+            <valueName>Zuzana Neupauerova</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spain</controllingFieldValue>
+            <valueName>Alexandre Benavides</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spain</controllingFieldValue>
+            <valueName>Jose Luis Carmona</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spain</controllingFieldValue>
+            <valueName>Elia Chicote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spain</controllingFieldValue>
+            <valueName>Iñigo Moran Gonzalez</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spain</controllingFieldValue>
+            <valueName>Jon Santurtun</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spain</controllingFieldValue>
+            <valueName>Juan Azabal Martínez de Morentin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Spain</controllingFieldValue>
+            <valueName>Elena Navarro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Martin Andersson</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Louise Smith</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Mark Nolby</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Anders Johansson</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Emma Örnell</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Filip Waenerlund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Michael Wejhem</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Ola Lindell</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Dovydas Petkevicius</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sweden</controllingFieldValue>
+            <valueName>Hamed Ahmadi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Turkey</controllingFieldValue>
+            <valueName>Lutfu Kocoglu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Turkey</controllingFieldValue>
+            <valueName>Ugur Sonmez</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <valueName>Jack Salisbury</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <valueName>Adam Jones</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <valueName>Michael Hutchings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <valueName>Milda Rezgytė</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United States</controllingFieldValue>
+            <valueName>Taylor Cook</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United States</controllingFieldValue>
+            <valueName>Tracy Ruan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United States</controllingFieldValue>
+            <valueName>Vaida Norvilaite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United States</controllingFieldValue>
+            <valueName>Mariam Parwez</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United States</controllingFieldValue>
+            <valueName>Greta Butvilaite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Belgium</controllingFieldValue>
+            <valueName>Marik Luidens</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Czech Republic</controllingFieldValue>
+            <valueName>Adam Nykles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Czech Republic</controllingFieldValue>
+            <valueName>Ondrej Syncak</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Czech Republic</controllingFieldValue>
+            <valueName>Michal Marek</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Czech Republic</controllingFieldValue>
+            <valueName>Radka Florekova</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Czech Republic</controllingFieldValue>
+            <valueName>Dominik Kosorin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Czech Republic</controllingFieldValue>
+            <valueName>Terezie Říhová</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denmark</controllingFieldValue>
+            <valueName>Kristoffer Køster</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denmark</controllingFieldValue>
+            <valueName>Martin Talarek</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denmark</controllingFieldValue>
+            <valueName>Mikas Stankevičius</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denmark</controllingFieldValue>
+            <valueName>Johannes Therkelsen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denmark</controllingFieldValue>
+            <valueName>Anders Uhlbæk Nordsted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denmark</controllingFieldValue>
+            <valueName>Mai Sloth Jørgensen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denmark</controllingFieldValue>
+            <valueName>Rasmus Kjaer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Denmark</controllingFieldValue>
+            <valueName>Pernille Verwohlt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Finland</controllingFieldValue>
+            <valueName>Jyrki Lauronen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Finland</controllingFieldValue>
+            <valueName>Helen Jara Ureta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Finland</controllingFieldValue>
+            <valueName>Jani Lahtinen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Finland</controllingFieldValue>
+            <valueName>Sari Alakurtti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Finland</controllingFieldValue>
+            <valueName>Rokas Armalis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>France</controllingFieldValue>
+            <valueName>Liselotte Le Helloco</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>France</controllingFieldValue>
+            <valueName>Achille Bemba</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Claus Reuther</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Anja Eckstein</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Giedrius Bielinis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Kirsten Steiner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Sebastian Schmidt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Andreas Kemper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Florian Rolke</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Marcel Ehrlitzer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Tarek Muhyeddin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Thorsten Feldhege</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Christian Schuett</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Germany</controllingFieldValue>
+            <valueName>Lasse Windeck</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italy</controllingFieldValue>
+            <valueName>Daniela Forzinetti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italy</controllingFieldValue>
+            <valueName>Valentina Mensi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italy</controllingFieldValue>
+            <valueName>Enrico Trevisani</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italy</controllingFieldValue>
+            <valueName>Tiziano Rescali</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italy</controllingFieldValue>
+            <valueName>Tommaso Grimoldi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italy</controllingFieldValue>
+            <valueName>Greta Ghizzo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italy</controllingFieldValue>
+            <valueName>Martina Trezzi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italy</controllingFieldValue>
+            <valueName>Federico Crivelli</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lithuania</controllingFieldValue>
+            <valueName>Tomas Riauka</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lithuania</controllingFieldValue>
+            <valueName>Lukas Valevičius</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Netherlands</controllingFieldValue>
+            <valueName>Vjedka Poldervaart</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Netherlands</controllingFieldValue>
+            <valueName>Fiona Fleur</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Netherlands</controllingFieldValue>
+            <valueName>Teun Steverink</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Netherlands</controllingFieldValue>
+            <valueName>Jim Leseman</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Norway</controllingFieldValue>
+            <valueName>Mindaugas Bruzga</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Norway</controllingFieldValue>
+            <valueName>Patrick Delgado</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Norway</controllingFieldValue>
+            <valueName>Camilla Annaniassen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Norway</controllingFieldValue>
+            <valueName>Leo Kielland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Norway</controllingFieldValue>
+            <valueName>Arjuno Lewis</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

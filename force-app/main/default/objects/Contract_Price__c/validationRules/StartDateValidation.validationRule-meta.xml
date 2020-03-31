@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StartDateValidation</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(OR(Starting_Date__c &lt; TODAY(), DAY(Starting_Date__c) !=1),  ISNULL(Ending_Date__c))</errorConditionFormula>
+    <errorDisplayField>Starting_Date__c</errorDisplayField>
+    <errorMessage>Select only 1st day of the month</errorMessage>
+</ValidationRule>

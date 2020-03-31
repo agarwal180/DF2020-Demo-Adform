@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Approval_needed_Payment_terms__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Account.Customer_Tier__c, &#39;Tier 3&#39;) , 
+            IF(OR(ISPICKVAL(CreatedBy.Country_Group__c, &#39;IT&#39;), ISPICKVAL(CreatedBy.Country_Group__c, &#39;FR&#39;), ISPICKVAL(CreatedBy.Country_Group__c, &#39;IB&#39;),
+ ISPICKVAL(CreatedBy.Country_Group__c, &#39;MENA&#39;) , ISPICKVAL(CreatedBy.Country_Group__c, &#39;Turkey&#39;), ISPICKVAL(CreatedBy.Country_Group__c, &#39;SG/Japan/South Korea&#39;), ISPICKVAL(CreatedBy.Country_Group__c, &#39;JAPAC (all other)&#39;),ISPICKVAL(CreatedBy.Country_Group__c, &#39;South Korea&#39;),ISPICKVAL(CreatedBy.Country_Group__c, &#39;Japan&#39;)), 
+                        IF( Highest_Payment_Terms_Code__c &gt; 30, true, false),
+                        IF( Highest_Payment_Terms_Code__c &gt; 15, true, false)
+                    ),
+            IF(OR(ISPICKVAL(CreatedBy.Country_Group__c, &#39;IT&#39;), ISPICKVAL(CreatedBy.Country_Group__c, &#39;FR&#39;), ISPICKVAL(CreatedBy.Country_Group__c, &#39;IB&#39;),
+ ISPICKVAL(CreatedBy.Country_Group__c, &#39;MENA&#39;) , ISPICKVAL(CreatedBy.Country_Group__c, &#39;Turkey&#39;), ISPICKVAL(CreatedBy.Country_Group__c, &#39;SG/Japan/South Korea&#39;), ISPICKVAL(CreatedBy.Country_Group__c, &#39;JAPAC (all other)&#39;),ISPICKVAL(CreatedBy.Country_Group__c, &#39;South Korea&#39;),ISPICKVAL(CreatedBy.Country_Group__c, &#39;Japan&#39;)), 
+                        IF( Highest_Payment_Terms_Code__c &gt; 45, true, false),
+                        IF( Highest_Payment_Terms_Code__c &gt; 30, true, false)
+                    )
+        )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Approval needed(Payment terms)</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

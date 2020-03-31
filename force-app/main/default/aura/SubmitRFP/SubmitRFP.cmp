@@ -1,0 +1,13 @@
+<aura:component controller="OpportunityController" access="global" implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" >
+        <header class="slds-modal__header">
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">RFP Request</h2>
+        </header>
+        <div class="containerStyle">
+            <p><b>Please don't forget to add an attachment in the following step.</b></p>
+            <p><b>Please add the questionnaire plus accompanying documents.</b></p>
+        </div>
+        <footer class="slds-modal__footer">
+            <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{!c.closePopUp}"/>
+            <lightning:button variant="brand" label="Ok" title="Ok" onclick="{!c.submit}"/>
+        </footer>
+</aura:component>

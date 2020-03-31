@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AdditionIncrementSizeValidation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Tier_Type__c, &#39;Additional&#39;),  ISNULL(Weight_Tier__c ))</errorConditionFormula>
+    <errorDisplayField>Weight_Tier__c</errorDisplayField>
+    <errorMessage>Additional increment size required if Tier Type: &quot;Additional&quot;</errorMessage>
+</ValidationRule>

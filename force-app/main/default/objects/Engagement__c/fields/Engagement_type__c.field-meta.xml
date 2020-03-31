@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_type__c</fullName>
+    <externalId>false</externalId>
+    <label>Engagement Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Presentation/Demo</fullName>
+                <default>false</default>
+                <label>Presentation/Demo</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>Workshop/Training</fullName>
+                <default>false</default>
+                <label>Workshop/Training</label>
+            </value>
+            <value>
+                <fullName>Special Creative Validation</fullName>
+                <default>false</default>
+                <label>Special Creative Validation</label>
+            </value>
+            <value>
+                <fullName>Hotdesking</fullName>
+                <default>false</default>
+                <label>Hotdesking</label>
+            </value>
+            <value>
+                <fullName>Product/Platform Updates</fullName>
+                <default>false</default>
+                <label>Product/Platform Updates</label>
+            </value>
+            <value>
+                <fullName>Setup/Strategy Evaluation</fullName>
+                <default>false</default>
+                <label>Setup/Strategy Evaluation</label>
+            </value>
+            <value>
+                <fullName>Escalation/Support</fullName>
+                <default>false</default>
+                <label>Escalation/Support</label>
+            </value>
+            <value>
+                <fullName>Media Spend Opt.</fullName>
+                <default>false</default>
+                <label>Media Spend Opt.</label>
+            </value>
+            <value>
+                <fullName>Report Analysis</fullName>
+                <default>false</default>
+                <label>Report Analysis</label>
+            </value>
+            <value>
+                <fullName>Billing Issue</fullName>
+                <default>false</default>
+                <label>Billing Issue</label>
+            </value>
+            <value>
+                <fullName>Custom Solution</fullName>
+                <default>false</default>
+                <label>Custom Solution</label>
+            </value>
+            <value>
+                <fullName>Consulting Service (paid)</fullName>
+                <default>false</default>
+                <label>Consulting Service (paid)</label>
+            </value>
+            <value>
+                <fullName>Handover to Support</fullName>
+                <default>false</default>
+                <label>Handover to Support</label>
+            </value>
+            <value>
+                <fullName>QBR</fullName>
+                <default>false</default>
+                <label>QBR</label>
+            </value>
+            <value>
+                <fullName>RFP</fullName>
+                <default>false</default>
+                <label>RFP</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

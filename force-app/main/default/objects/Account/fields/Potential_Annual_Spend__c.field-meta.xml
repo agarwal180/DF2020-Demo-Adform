@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_Annual_Spend__c</fullName>
+    <externalId>false</externalId>
+    <label>Potential Net Rev. YOY (EUR)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-50K</fullName>
+                <default>false</default>
+                <label>EUR 0.00 - EUR 50,000.00</label>
+            </value>
+            <value>
+                <fullName>50K-100K</fullName>
+                <default>false</default>
+                <label>EUR 50,000.00 - EUR 100,000.00</label>
+            </value>
+            <value>
+                <fullName>100-200K</fullName>
+                <default>false</default>
+                <label>EUR 100,000.00 - EUR 200,000.00</label>
+            </value>
+            <value>
+                <fullName>200K - 300K</fullName>
+                <default>false</default>
+                <label>EUR 200,000.00 - EUR 300,000.00</label>
+            </value>
+            <value>
+                <fullName>300K - 400K</fullName>
+                <default>false</default>
+                <label>EUR 300,000.00 - EUR 400,000.00</label>
+            </value>
+            <value>
+                <fullName>400K - 500K</fullName>
+                <default>false</default>
+                <label>EUR 400,000.00 - EUR 500,000.00</label>
+            </value>
+            <value>
+                <fullName>500K-1M</fullName>
+                <default>false</default>
+                <label>EUR 500,000.00 - EUR 750,000.00</label>
+            </value>
+            <value>
+                <fullName>750k - 1M</fullName>
+                <default>false</default>
+                <label>EUR 750,000.00 - EUR 1,000,000.00</label>
+            </value>
+            <value>
+                <fullName>1M+</fullName>
+                <default>false</default>
+                <label>&gt; EUR 1,000,000.00</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

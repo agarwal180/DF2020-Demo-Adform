@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specific_Name_of_Publisher__c</fullName>
+    <description>Name of the publisher in the Sell-side platform</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specify the name of the publisher which will be seen by the buyers on the platform</inlineHelpText>
+    <label>Specific Name of Publisher</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

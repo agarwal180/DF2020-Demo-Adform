@@ -1,0 +1,19 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" controller="EditLegalInfoRequestController">
+	<header>
+         <h2 class="inlineTitle slds-p-horizontal--medium slds-text-heading--medium"><center>Legal Info Request</center></h2>
+    </header>
+    <hr style="border-width:2px; margin-left:-30px; margin-right:-30px;"></hr>
+    <div class="slds-modal__content slds-p-left_xx-large slds-p-right_xx-large slds-p-top_small slds-p-bottom_large">
+        <h1 style="font-size:16px;"> <center>On the next step please attach documents needed for legal info update.</center></h1>
+    </div>
+    <footer class="slds-modal__footer" style="margin:0px -30px;">
+    <lightning:button variant="brand"
+                      label="OK"
+                      title="OK"
+                      onclick="{!c.onOkClick}"/>
+    <lightning:button variant="neutral"
+                      label="Cancel"
+                      title="Cancel"
+                      onclick="{! c.closeAction }"/> 
+    </footer>
+</aura:component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>Case: New User Login</name>
+    <style>freeForm</style>
+    <subject>New user login information for new account (Case: {!Case.Id})</subject>
+    <textOnly>Hello,
+
+Thank you for the request ({!Case.CaseNumber}).
+
+Login details were sent directly to the user&#39;s contact email provided in new platform account request form.
+
+Also, please let us know if other features (like Adwords, Marathon Integration, User switching, etc) are needed.
+
+Have a lovely day!</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

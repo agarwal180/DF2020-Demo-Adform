@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_is_BrandAdvertiser</fullName>
+    <active>false</active>
+    <description>When Account Type is Brand/Advertiser, Brand Name field is required</description>
+    <errorConditionFormula>ISPICKVAL( Relationship_Type__c, &quot;Brand/Advertiser&quot;) &amp;&amp; ISBLANK(Brand_Name__c )</errorConditionFormula>
+    <errorDisplayField>Brand_Name__c</errorDisplayField>
+    <errorMessage>When Account Type is Brand/Advertiser, you must enter a Brand Name.</errorMessage>
+</ValidationRule>

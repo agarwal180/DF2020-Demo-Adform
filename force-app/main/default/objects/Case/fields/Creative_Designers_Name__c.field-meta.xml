@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Creative_Designers_Name__c</fullName>
+    <externalId>false</externalId>
+    <label>Creative Designer&#39;s Name (if applicable)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Mykolas Suraučius</fullName>
+                <default>false</default>
+                <label>Mykolas Suraučius</label>
+            </value>
+            <value>
+                <fullName>Rytis Kasperavičius</fullName>
+                <default>false</default>
+                <label>Rytis Kasperavičius</label>
+            </value>
+            <value>
+                <fullName>Santa Dovydaityte</fullName>
+                <default>false</default>
+                <label>Santa Dovydaityte</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

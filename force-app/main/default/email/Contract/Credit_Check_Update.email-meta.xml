@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>Credit Check Update</name>
+    <style>freeForm</style>
+    <subject>Credit Check for Account - {!Account.Name}</subject>
+    <textOnly>Credit Check Information
+
+Account Name: {!Account.Name}
+Registered Address: {!Account.ShippingAddress}
+Billing Address: {!Account.BillingAddress}
+Legal Company name: {!Account.Legal_Company_Name__c}
+RTB limit: {!Account.RTB_Limit__c}
+Account Currency: {!Account.CurrencyIsoCode}
+Prepayment: {!Account.Prepayment__c}
+Credit Check Info
+VAT Number / Sales Tax: {!Account.VAT_Number__c}
+Registration Number: {!Account.Registered_Number__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

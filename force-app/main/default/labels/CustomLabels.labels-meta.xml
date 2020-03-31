@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Action</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Action</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>Add_Product</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Product</shortDescription>
+        <value>Add Product</value>
+    </labels>
+    <labels>
+        <fullName>Adform_contact</fullName>
+        <categories>Contract Preview</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Adform contact:</shortDescription>
+        <value>Adform contact:</value>
+    </labels>
+    <labels>
+        <fullName>Advertiser</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Advertiser:</shortDescription>
+        <value>Advertiser:</value>
+    </labels>
+    <labels>
+        <fullName>Available_Opportunity_Record_Types</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Available Opportunity Record Types</shortDescription>
+        <value>Available Opportunity Record Types</value>
+    </labels>
+    <labels>
+        <fullName>Billing_Contact_Position</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing Contact Position</shortDescription>
+        <value>Contact position:</value>
+    </labels>
+    <labels>
+        <fullName>Billing_address</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Billing address:</shortDescription>
+        <value>Address:</value>
+    </labels>
+    <labels>
+        <fullName>Billing_contact_name_position</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Billing contact name, position:</shortDescription>
+        <value>Contact name:</value>
+    </labels>
+    <labels>
+        <fullName>Billing_information</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Billing information</shortDescription>
+        <value>Billing information</value>
+    </labels>
+    <labels>
+        <fullName>CPM_for_booked_impressions</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>**CPM for booked impressions:</shortDescription>
+        <value>CPM for booked impressions:</value>
+    </labels>
+    <labels>
+        <fullName>Calculate_Revenue_Over_Month</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Calculate Revenue Over Month</shortDescription>
+        <value>Calculate Revenue Over Month</value>
+    </labels>
+    <labels>
+        <fullName>Cancel</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Client_Internal_Order_Number_Needed</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Internal Order Number Needed</shortDescription>
+        <value>Client Internal Order Number Needed:</value>
+    </labels>
+    <labels>
+        <fullName>Client_information</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client information</shortDescription>
+        <value>Client information</value>
+    </labels>
+    <labels>
+        <fullName>Client_s_contact_e_mail</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Client’s contact e-mail:</shortDescription>
+        <value>Contact e-mail:</value>
+    </labels>
+    <labels>
+        <fullName>Client_s_contact_name_position</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Client’s contact name, position:</shortDescription>
+        <value>Contact name:</value>
+    </labels>
+    <labels>
+        <fullName>Company_registration_number</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Company registration number :</shortDescription>
+        <value>Company registration number :</value>
+    </labels>
+    <labels>
+        <fullName>Contact_person</fullName>
+        <categories>Contact And Email Selection Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact person</shortDescription>
+        <value>Contact person</value>
+    </labels>
+    <labels>
+        <fullName>Contract_Preview</fullName>
+        <categories>Contract Preview</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contract Preview</shortDescription>
+        <value>Contract Preview</value>
+    </labels>
+    <labels>
+        <fullName>Creative_production_order</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Creative production order</shortDescription>
+        <value>CREATIVE PRODUCTION AND AD SERVING ORDER</value>
+    </labels>
+    <labels>
+        <fullName>Currency</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Currency:</shortDescription>
+        <value>Currency:</value>
+    </labels>
+    <labels>
+        <fullName>Data_collection_processing_and_storage</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Data collection, processing and storage</shortDescription>
+        <value>Data collection, processing and storage.</value>
+    </labels>
+    <labels>
+        <fullName>Deal_Value</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deal Value</shortDescription>
+        <value>Deal Value</value>
+    </labels>
+    <labels>
+        <fullName>Deal_Value_Recalculation</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deal Value Recalculation</shortDescription>
+        <value>Deal Value Recalculation</value>
+    </labels>
+    <labels>
+        <fullName>Delete</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>Description</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>Description_of_the_creative_production</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Description of the creative production</shortDescription>
+        <value>Description of the creative production</value>
+    </labels>
+    <labels>
+        <fullName>Devices</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Devices:</shortDescription>
+        <value>Devices:</value>
+    </labels>
+    <labels>
+        <fullName>Email</fullName>
+        <categories>Contact And Email Selection Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>Error_Message_to_create_contract_for_Blocked_Accounts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Message to create contract for Blocked Accounts</shortDescription>
+        <value>Account is blocked/suspended. Please contact collections@adform.com.</value>
+    </labels>
+    <labels>
+        <fullName>Format</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Format:</shortDescription>
+        <value>Format:</value>
+    </labels>
+    <labels>
+        <fullName>Full_company_name</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Full company name:</shortDescription>
+        <value>Full company name:</value>
+    </labels>
+    <labels>
+        <fullName>General_Terms_Conditions</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General Terms &amp; Conditions</shortDescription>
+        <value>General Terms &amp; Conditions</value>
+    </labels>
+    <labels>
+        <fullName>Governing_law_and_jurisdiction</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Governing law and jurisdiction.</shortDescription>
+        <value>Governing law and jurisdiction.</value>
+    </labels>
+    <labels>
+        <fullName>Indemnification</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Indemnification.</shortDescription>
+        <value>Indemnification.</value>
+    </labels>
+    <labels>
+        <fullName>Info_Contact_Position</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Info Contact Position</shortDescription>
+        <value>Contact Position:</value>
+    </labels>
+    <labels>
+        <fullName>Intellectual_Property</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Intellectual Property.</shortDescription>
+        <value>Intellectual Property.</value>
+    </labels>
+    <labels>
+        <fullName>Internal_order_number</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Internal order number:</shortDescription>
+        <value>Internal order number:</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Products_For_Opportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Products For Opportunity</shortDescription>
+        <value>Selected products have different Currency than Opportunity. 
+Please remove products and click on &#39;Save&#39; button.</value>
+    </labels>
+    <labels>
+        <fullName>Invoicing_e_mail</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Invoicing e-mail:</shortDescription>
+        <value>E-mail:</value>
+    </labels>
+    <labels>
+        <fullName>Invoicing_period</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Invoicing period :</shortDescription>
+        <value>Invoicing period :</value>
+    </labels>
+    <labels>
+        <fullName>Liability_Warranty_terms</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Liability &amp; Warranty terms.</shortDescription>
+        <value>Liability &amp; Warranty terms.</value>
+    </labels>
+    <labels>
+        <fullName>Month</fullName>
+        <categories>Opportunity Product Chart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month</shortDescription>
+        <value>Month</value>
+    </labels>
+    <labels>
+        <fullName>Name_surname_signature_of_the_representative_of_the_Client</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Name, surname, signature of the representative of the Client</shortDescription>
+        <value>Name, surname, signature of the representative of the Client</value>
+    </labels>
+    <labels>
+        <fullName>New_Contract</fullName>
+        <categories>Contact And Email Selection Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Contract</shortDescription>
+        <value>New Contract</value>
+    </labels>
+    <labels>
+        <fullName>New_Opportunity</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Opportunity</shortDescription>
+        <value>New Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>No_Products_For_Opportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Products For Opportunity</shortDescription>
+        <value>You must select at least one product.</value>
+    </labels>
+    <labels>
+        <fullName>Number_of_ordered_units</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Number of ordered units:</shortDescription>
+        <value>Number of ordered units:</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Edit</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Edit</shortDescription>
+        <value>Opportunity Edit</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Information</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Information</shortDescription>
+        <value>Opportunity Information</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Products</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Products</shortDescription>
+        <value>Products</value>
+    </labels>
+    <labels>
+        <fullName>Order_date</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Order date:</shortDescription>
+        <value>Order date:</value>
+    </labels>
+    <labels>
+        <fullName>Ordered_creative_production_and_provided_assets</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ordered creative production and provided assets.</shortDescription>
+        <value>Ordered creative production and provided assets.</value>
+    </labels>
+    <labels>
+        <fullName>Other_information_requirements</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other information/requirements:</shortDescription>
+        <value>Other information/requirements:</value>
+    </labels>
+    <labels>
+        <fullName>Other_pricing_details</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other pricing details:</shortDescription>
+        <value>Other pricing details:</value>
+    </labels>
+    <labels>
+        <fullName>Payment_terms</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Payment terms :</shortDescription>
+        <value>Payment terms (no. of days to pay):</value>
+    </labels>
+    <labels>
+        <fullName>Payment_terms_text</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payment terms.</shortDescription>
+        <value>Payment terms.</value>
+    </labels>
+    <labels>
+        <fullName>Please_select_Start_month_for_this_opportunity</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please select Start month for this opportunity</shortDescription>
+        <value>Please select Expected start month for revenue</value>
+    </labels>
+    <labels>
+        <fullName>Price_for_creative_production</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>*Price for creative production:</shortDescription>
+        <value>Price for creative production:</value>
+    </labels>
+    <labels>
+        <fullName>Pricing_terms</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricing terms</shortDescription>
+        <value>Pricing terms</value>
+    </labels>
+    <labels>
+        <fullName>Record_Type_Group</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Type Group</shortDescription>
+        <value>Record Type Group</value>
+    </labels>
+    <labels>
+        <fullName>Record_Type_Name</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Type Name</shortDescription>
+        <value>Record Type Name</value>
+    </labels>
+    <labels>
+        <fullName>Record_Type_of_new_record</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Type of new record</shortDescription>
+        <value>Record Type of new record</value>
+    </labels>
+    <labels>
+        <fullName>Record_Type_select_text</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Record Type select text</shortDescription>
+        <value>Select a record type for the new opportunity. To skip this page in the future, change your record type settings on your personal setup page.</value>
+    </labels>
+    <labels>
+        <fullName>Reporting_Services</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>**Reporting Services.</shortDescription>
+        <value>Reporting Services.</value>
+    </labels>
+    <labels>
+        <fullName>Revenue_Opportunity</fullName>
+        <categories>Opportunity Product Chart</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Revenue Opportunity</shortDescription>
+        <value>Revenue Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Rich_Media_Ad_Serving_Services</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>**Rich Media Ad Serving Services.</shortDescription>
+        <value>Rich Media Ad Serving Services.</value>
+    </labels>
+    <labels>
+        <fullName>Save</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Select</fullName>
+        <categories>Contact And Email Selection Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>Select_Contact_email</fullName>
+        <categories>Contact And Email Selection Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Contact &amp; email</shortDescription>
+        <value>Select receiver of contract</value>
+    </labels>
+    <labels>
+        <fullName>Select_Opportunity_Record_Type</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Opportunity Record Type</shortDescription>
+        <value>Select Opportunity Record Type</value>
+    </labels>
+    <labels>
+        <fullName>Send_to_Billing</fullName>
+        <categories>Contract Preview</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send to Billing</shortDescription>
+        <value>Send as Right Signature</value>
+    </labels>
+    <labels>
+        <fullName>Send_to_Client</fullName>
+        <categories>Contract Preview</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send to Client</shortDescription>
+        <value>Send as PDF</value>
+    </labels>
+    <labels>
+        <fullName>Technical_information</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Technical information.</shortDescription>
+        <value>Technical information.</value>
+    </labels>
+    <labels>
+        <fullName>These_General_Terms_Conditions</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>These General Terms  &amp; Conditions</shortDescription>
+        <value>These General Terms  &amp; Conditions (T&amp;C) shall apply to this order as filled out and submitted by the Client.</value>
+    </labels>
+    <labels>
+        <fullName>Total_Error</fullName>
+        <categories>Opportunity Edit Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total Error</shortDescription>
+        <value>Deal Value can&#39;t be less than month sum</value>
+    </labels>
+    <labels>
+        <fullName>Trafficking_Services</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>**Trafficking Services.</shortDescription>
+        <value>Trafficking Services.</value>
+    </labels>
+    <labels>
+        <fullName>VAT_number</fullName>
+        <categories>PDF Contract</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAT number :</shortDescription>
+        <value>VAT number :</value>
+    </labels>
+</CustomLabels>

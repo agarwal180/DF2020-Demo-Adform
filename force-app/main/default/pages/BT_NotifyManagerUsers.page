@@ -1,0 +1,17 @@
+<apex:page id="BonusTarget" standardController="Bonus_Target__c" recordSetVar="targets" tabStyle="Bonus_Target__c"
+           extensions="BT_BonusTargetControllerExtension" lightningStylesheets="true">
+
+    <apex:form >
+    <apex:pagemessages id="theMessages"/>
+    <apex:outputpanel layout="block" style="text-align: center; padding-top:50px;">
+        <apex:outputpanel layout="block">
+            <apex:outputtext style="font-size: 1.8em;   font-weight: normal;  line-height: 1.1em;" value="{!Message}"/>
+        </apex:outputpanel>
+        <apex:outputpanel layout="block" style="padding:20px;">
+            <apex:commandButton value="Notify" action="{!sendEmailToSvp}" id="theButton"/> &nbsp;
+            <apex:commandButton value="{!$Label.Cancel}" action="{!cancel}" id="theButton2"/>
+        </apex:outputpanel>
+    </apex:outputpanel>
+</apex:form>
+
+</apex:page>

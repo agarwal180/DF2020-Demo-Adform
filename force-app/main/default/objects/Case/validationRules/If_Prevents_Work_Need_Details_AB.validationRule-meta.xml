@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Prevents_Work_Need_Details_AB</fullName>
+    <active>true</active>
+    <description>If they select prevents work, they need to add more detail fields</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Prevented_from_working__c ,&quot;Yes&quot;),
+ISBLANK(  Actual_Behavior__c  )
+)</errorConditionFormula>
+    <errorDisplayField>Actual_Behavior__c</errorDisplayField>
+    <errorMessage>If you are prevented from working, you will need to add the actual behavior.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,97 @@
+<apex:page standardController="Opportunity" extensions="OpportunityProductsController" lightningStylesheets="true">
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <apex:outputtext rendered="{!products.size > 0}">
+        <script type="text/javascript">
+
+            google.charts.load('current', {'packages':['bar']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+            var headerArray = ['{!$Label.Month}'];
+             var headerJan= ['{!monthValues[0]}'];
+             var headerFeb = ['{!monthValues[1]}'];
+             var headerMar= ['{!monthValues[2]}'];
+             var headerApr = ['{!monthValues[3]}'];
+             var headerMay = ['{!monthValues[4]}'];
+             var headerJun = ['{!monthValues[5]}'];
+             var headerJul = ['{!monthValues[6]}'];
+             var headerAug = ['{!monthValues[7]}'];
+             var headerSep = ['{!monthValues[8]}'];
+             var headerOct = ['{!monthValues[9]}'];
+             var headerNov= ['{!monthValues[10]}'];
+             var headerDec= ['{!monthValues[11]}'];
+             <apex:repeat value="{!products}" var="elem">
+                headerArray.push('{!elem.Product2.Name}');
+                headerJan.push({!IF(ISNULL(elem.X1_Month__c), 0,elem.X1_Month__c )});
+                headerFeb.push({!IF(ISNULL(elem.X2_Month__c), 0,elem.X2_Month__c )});
+                headerMar.push({!IF(ISNULL(elem.X3_Month__c), 0,elem.X3_Month__c )});
+                headerApr.push({!IF(ISNULL(elem.X4_month__c), 0,elem.X4_month__c )});
+                headerMay.push({!IF(ISNULL(elem.X5_Month__c), 0,elem.X5_Month__c )});
+                headerJun.push({!IF(ISNULL(elem.X6_month__c), 0,elem.X6_month__c )});
+                headerJul.push({!IF(ISNULL(elem.X7_Month__c), 0,elem.X7_Month__c )});
+                headerAug.push({!IF(ISNULL(elem.X8_month__c), 0,elem.X8_month__c )});
+                headerSep.push({!IF(ISNULL(elem.X9_month__c), 0,elem.X9_month__c )});
+                headerOct.push({!IF(ISNULL(elem.X10_month__c), 0,elem.X10_month__c )});
+                headerNov.push({!IF(ISNULL(elem.X11_month__c), 0,elem.X11_month__c )});
+                headerDec.push({!IF(ISNULL(elem.X12_month__c), 0,elem.X12_month__c )});
+             </apex:repeat>
+
+                var data = google.visualization.arrayToDataTable([
+                    headerArray,
+                    headerJan,
+                    headerFeb,
+                    headerMar,
+                    headerApr,
+                    headerMay,
+                    headerJun,
+                    headerJul,
+                    headerAug,
+                 headerSep,
+                 headerOct,
+                    headerNov,
+                    headerDec
+                ]);
+
+                 var options = {
+                         title: '{!Opportunity.Name}',
+                         titleTextStyle: {
+                            color: 'black'
+                          },
+                        subtitle: '{!$Label.Revenue_Opportunity}',
+                        width: 1000,
+                        height: 500,
+                        legend: { position: 'top', maxLines: 3 },
+                        bar: { groupWidth: '75%' },
+                        isStacked: true,
+                    };
+
+                var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+                //chart.draw(data, options);
+                chart.draw(data, google.charts.Bar.convertOptions(options));
+
+            }
+
+        </script>
+        </apex:outputtext>
+    </head>
+    <body>
+        <apex:form >
+        <apex:pageblock mode="maindetail" >
+                 <div id="columnchart_material" style="width: 1000px; height: 500px;"></div>
+            <apex:pageblockTable value="{!products}" var="elem" rendered="{!products.size > 0 && isDealValueVisible = true}">
+                <apex:repeat value="{!$ObjectType.OpportunityLineItem.FieldSets.Opportunity_Product}" var="f">
+                    <apex:column value="{!elem[f.fieldPath]}" headerValue="{!headerValues[f.fieldPath]}" footerValue="{!footerValues[f.fieldPath]}" />
+                </apex:repeat>
+            </apex:pageblockTable>
+            <apex:pageblockTable value="{!products}" var="elem" rendered="{!products.size > 0 && isDealValueVisible = false}">
+                <apex:repeat value="{!$ObjectType.OpportunityLineItem.FieldSets.OpportunityProductWithRestriction}" var="f">
+                    <apex:column value="{!elem[f.fieldPath]}" headerValue="{!headerValues[f.fieldPath]}" footerValue="{!footerValues[f.fieldPath]}" />
+                </apex:repeat>
+            </apex:pageblockTable>
+        </apex:pageBlock>
+        </apex:form>
+    </body>
+</html>
+</apex:page>

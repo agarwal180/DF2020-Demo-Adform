@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="arial" style="font-size: 12pt;">Hello,&nbsp;</font><div style="font-size: 12pt;"><br></div><div><font face="arial"><span style="font-size: 12pt;">RFP proposal upload status&nbsp;</span><span style="font-size: 12pt;">&nbsp;-&nbsp;</span><span style="font-size: 12pt;"><b>{!Opportunity.RFP_Status__c}&nbsp;</b>for&nbsp;</span><a href="https://adform.my.salesforce.com/{!Opportunity.Id}">{!Opportunity.Name}</a></font></div><div><font face="arial"><br></font><br></div>]]></td>
+</tr>
+</table>

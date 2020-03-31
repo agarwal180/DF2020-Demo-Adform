@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Signed_and_start_production_error</fullName>
+    <active>true</active>
+    <description>Validation rule which does not allow to select particular value for standard user.</description>
+    <errorConditionFormula>AND(ISPICKVAL( Status , &#39;Production done and ready to bill&#39;), 
+$Profile.Name = &#39;Adform Standard User&#39;)</errorConditionFormula>
+    <errorMessage>You can not proceed with the request after Production is done, the responsible team will do changes in the system.</errorMessage>
+</ValidationRule>

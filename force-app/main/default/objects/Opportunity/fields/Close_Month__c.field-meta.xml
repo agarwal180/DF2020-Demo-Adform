@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Month__c</fullName>
+    <externalId>false</externalId>
+    <label>Close Month 2</label>
+    <summarizedField>OpportunityLineItem.X1_Month__c</summarizedField>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.LastModifiedDate</field>
+        <operation>greaterOrEqual</operation>
+        <value>12/31/2016 2:00 PM</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>OpportunityLineItem.LastModifiedDate</field>
+        <operation>lessOrEqual</operation>
+        <value>1/30/2017 2:00 PM</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

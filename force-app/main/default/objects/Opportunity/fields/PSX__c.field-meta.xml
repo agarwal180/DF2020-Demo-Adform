@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSX__c</fullName>
+    <externalId>false</externalId>
+    <label>PSX</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Greg Cristal</fullName>
+                <default>false</default>
+                <label>Greg Cristal</label>
+            </value>
+            <value>
+                <fullName>Jakob Bak</fullName>
+                <default>false</default>
+                <label>Jakob Bak</label>
+            </value>
+            <value>
+                <fullName>Luca Pellegrini</fullName>
+                <default>false</default>
+                <label>Luca Pellegrini</label>
+            </value>
+            <value>
+                <fullName>Marcel Ehrlitzer</fullName>
+                <default>false</default>
+                <label>Marcel Ehrlitzer</label>
+            </value>
+            <value>
+                <fullName>Marc-Oliver Michel</fullName>
+                <default>false</default>
+                <label>Marc-Oliver Michel</label>
+            </value>
+            <value>
+                <fullName>Nicolas Vittet</fullName>
+                <default>false</default>
+                <label>Nicolas Vittet</label>
+            </value>
+            <value>
+                <fullName>Tracy Ruan</fullName>
+                <default>false</default>
+                <label>Tracy Ruan</label>
+            </value>
+            <value>
+                <fullName>Vaida Norvilaite</fullName>
+                <default>false</default>
+                <label>Vaida Norvilaite</label>
+            </value>
+            <value>
+                <fullName>Vjedka Poldervaart</fullName>
+                <default>false</default>
+                <label>Vjedka Poldervaart</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

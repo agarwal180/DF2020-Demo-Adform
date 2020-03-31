@@ -1,0 +1,50 @@
+<apex:page id="BonusTarget"  controller="BonusTarget" lightningStylesheets="true">
+<apex:form >
+<apex:pageblock title="Bonus Targets report" id="bonusTargetReport" mode="edit">
+    
+    <apex:pageBlockSection columns="1" title="1. Employee & Manager info">
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Employee Name" for="employee__name"/>
+            <apex:outputText value="{!currentUser.FirstName &' ' & currentUser.lastName}" id="employee__name"/> 
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Manager Name" for="manager__name"/>
+            
+            <apex:outputfield value="{!currentUser.ManagerId}"/>
+        </apex:pageBlockSectionItem>
+
+    </apex:pageBlockSection>
+    <apex:pageBlockSection columns="1" title="2. Table of new bonus">
+        <apex:pageBlockTable value="{!l_target}" var="target" rendered="{!l_target.size > 0}">
+            <apex:column value="{!target.Target_ID__c}"/>
+            <apex:column value="{!target.Bonus_split__c}"/>
+            <apex:column value="{!target.Office__c}"/>
+            <apex:column value="{!target.Product__c}"/>
+            <apex:column value="{!target.Customer_Type__c}"/>
+            <apex:column value="{!target.Target__c}"/>
+            <apex:column value="{!target.Target_currency__c}"/>
+            <apex:column value="{!target.BONUS_OTE_in_l_c__c}"/>
+            <apex:column value="{!target.Bonus_Currency__c}"/>
+            <apex:column value="{!target.LY_Actual__c}"/>
+            <apex:column value="{!target.Target_Q1__c}"/>
+            <apex:column value="{!target.Target_Q2__c}"/>
+            <apex:column value="{!target.Target_Q3__c}"/>
+            <apex:column value="{!target.Target_Q4__c}"/>
+        </apex:pageBlockTable>
+         <apex:pageMessage summary="No Bonus Targets available" severity="warning" strength="3" rendered="{!l_target.size = 0}"/>
+        <apex:pageMessages />
+    </apex:pageBlockSection>
+    <apex:variable var="count" value="{!1}"/> 
+    <apex:variable var="titleCounter" value="{!3}"/> 
+    <apex:repeat value="{!l_target}" var="tar">
+        <apex:pageBlockSection columns="1" title="{!titleCounter}. Chart of what bonuses payout will look like (we could do with actual Target and Bonus numbers, not percentages) - for st {!count}target">
+            
+            <c:BonusChart sales="{!tar.Target__c}" bonus="{!tar.BONUS_OTE_in_l_c__c}" chartId="chart{!count}" linaName="Attainment" xName="Sales - {!tar.Target_currency__c}" yName="Bonus Payout - {!tar.Bonus_Currency__c}"/>
+            <apex:variable var="count" value="{!count + 1}"/>
+            <apex:variable var="titleCounter" value="{!titleCounter + 1}"/>
+        </apex:pageBlockSection>
+    </apex:repeat>
+
+</apex:pageblock>
+</apex:form>
+</apex:page>

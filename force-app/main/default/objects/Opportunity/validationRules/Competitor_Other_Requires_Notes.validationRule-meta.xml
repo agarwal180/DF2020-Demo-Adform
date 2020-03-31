@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_Other_Requires_Notes</fullName>
+    <active>true</active>
+    <description>If Primary Competitor is &quot;Other&quot;, Closure Notes must be filled in.</description>
+    <errorConditionFormula>ISPICKVAL (Reason_Lost__c, &quot;Competitor&quot;) &amp;&amp;
+ISBLANK( Closure_Notes__c )</errorConditionFormula>
+    <errorDisplayField>Closure_Notes__c</errorDisplayField>
+    <errorMessage>Since the primary Competitor marked on this Opp is &quot;Other&quot;, please elaborate here.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Status_Changes</fullName>
+    <active>true</active>
+    <description>Validation rule which does not allow to select particular value for standard user.</description>
+    <errorConditionFormula>AND( 
+RecordTypeId = &#39;0128E0000000xk4&#39;, 
+OR( 
+ISPICKVAL( Status, &#39;Rejected&#39;),
+ISPICKVAL( Status, &#39;New|Unreviewed&#39;), 
+ISPICKVAL( Status, &#39;Canceled&#39;),
+ISPICKVAL( Status, &#39;Assigned&#39;),
+ISPICKVAL( Status, &#39;Completed&#39;),
+ISPICKVAL( Status, &#39;On Hold&#39;)
+),
+ISCHANGED(Status), 
+$Profile.Name = &#39;Adform Standard User&#39;)</errorConditionFormula>
+    <errorMessage>You can not proceed with the request the responsible team will do changes on Status fiels</errorMessage>
+</ValidationRule>

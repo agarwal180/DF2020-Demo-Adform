@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Billing_Resources</fullName>
+    <columns>NAME</columns>
+    <columns>Billing_Resource__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Related Billing Resources</label>
+    <language>en_US</language>
+</ListView>

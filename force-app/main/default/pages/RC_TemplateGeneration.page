@@ -1,0 +1,20 @@
+<apex:page controller="RC_TemplateGenerationController" lightningStylesheets="true">
+<apex:sectionHeader title="Product Group" subtitle="Template generation"/>
+<apex:form >
+<apex:pageBlock title="New templatee logic" mode="edit" >
+    <apex:repeat var="pg" value="{!l_productGroups}">
+        <apex:pageBlockSection columns="1" title="{!pg.productGroup.Label__c}">
+            <apex:inputfield value="{!pg.productGroup.Payment_Terms__c}"/>
+            <apex:repeat var="p" value="{!pg.products}">
+                <apex:pageblocksectionitem helpText="{!p.product.Help_Text__c}">
+                    <apex:outputLabel value="{!p.product.Name}" for="rec__name"/>
+                    <apex:outputpanel id="rec__name">
+                        <apex:inputtext value="{!p.price.Price__c}"/> &nbsp; <apex:outputfield value="{!p.product.Measure__c}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+            </apex:repeat>
+        </apex:pageBlockSection>
+    </apex:repeat>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

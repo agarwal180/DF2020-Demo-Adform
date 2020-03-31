@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Account Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agency</fullName>
+                <default>false</default>
+                <label>Agency</label>
+            </value>
+            <value>
+                <fullName>Publisher</fullName>
+                <default>false</default>
+                <label>Publisher</label>
+            </value>
+            <value>
+                <fullName>Advertiser</fullName>
+                <default>false</default>
+                <label>Advertiser</label>
+            </value>
+            <value>
+                <fullName>Creative Agency</fullName>
+                <default>false</default>
+                <label>Creative Agency</label>
+            </value>
+            <value>
+                <fullName>Consultancy Partner</fullName>
+                <default>false</default>
+                <label>Consultancy Partner</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Standalone Agency</fullName>
+                <default>false</default>
+                <label>Standalone Agency</label>
+            </value>
+            <value>
+                <fullName>Trading Desk</fullName>
+                <default>false</default>
+                <label>Trading Desk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

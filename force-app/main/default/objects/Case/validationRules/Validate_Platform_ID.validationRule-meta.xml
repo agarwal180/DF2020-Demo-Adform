@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Platform_ID</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+RecordTypeId = &#39;0120J000000YfJsQAK&#39;,
+ISPICKVAL(Status, &#39;Closed Resolved&#39;),
+ISNULL(Platform_ID__c) 
+)</errorConditionFormula>
+    <errorDisplayField>Platform_ID__c</errorDisplayField>
+    <errorMessage>If status equals Closed Resolved, then Platform ID field should be filled in.</errorMessage>
+</ValidationRule>

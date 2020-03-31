@@ -1,0 +1,26 @@
+<apex:page standardController="Contract_Price__c" extensions="CVS_NewContractPriceController" lightningStylesheets="true">
+<apex:sectionHeader title="Create Variation Schedule" subtitle=" {!Contract_Price__c.Name} "/>
+<apex:form >
+<apex:pageMessages />
+    <apex:pageBlock title="Create Variation Schedule" id="search_results_id" mode="edit"  >
+    <apex:pageBlockButtons >
+            <apex:commandButton action="{!saveAction}" value="{!$Label.Save}"/>
+            <apex:commandButton action="{!cancel}" value="{!$Label.Cancel}"/>
+        </apex:pageBlockButtons>
+    <apex:pageBlockSection columns="1" title="Information" id="mainSection">
+        <apex:repeat value="{!$ObjectType.Contract_Price__c.FieldSets.Create_Variation_Schedule}" var="field">
+            <apex:inputfield value="{!Contract_Price__c[field]}" rendered="{!field != 'Starting_Date__c'}"/>
+            <apex:pageblocksectionitem rendered="{!field = 'Starting_Date__c'}">
+            <apex:outputLabel value="Starting Date" />
+            <apex:outputpanel layout="block" >
+                <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                <apex:selectList required="true" id="startdate" value="{!Contract_Price__c[field]}" multiselect="false" size="1">
+                    <apex:selectOptions value="{!startdate}"/>
+                </apex:selectList>
+            </apex:outputpanel>
+            </apex:pageblocksectionitem>
+        </apex:repeat>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

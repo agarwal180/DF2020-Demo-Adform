@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Terms_Contract_Attached__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>To be checked by manager or Legal user, if this Opportunity has at least one Product with non-standard terms, and those terms have been added to the &quot;Note and Attachments&quot; Related List on this record.</inlineHelpText>
+    <label>Special Terms Contract Attached</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

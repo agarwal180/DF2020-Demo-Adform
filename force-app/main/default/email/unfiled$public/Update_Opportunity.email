@@ -1,0 +1,6 @@
+Please update the following Opportunity:
+
+Name: {!Opportunity.Name}
+Close Date: {!Opportunity.CloseDate}
+Stage: {!Opportunity.StageName}
+Owner: {!Opportunity.OwnerFullName}

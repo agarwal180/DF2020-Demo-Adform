@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_for_Consultancy_Partner</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(LeadSource, &#39;Consultancy Partner&#39;), ISPICKVAL( Consultancy_Partner__c , &#39;&#39;))</errorConditionFormula>
+    <errorDisplayField>Consultancy_Partner__c</errorDisplayField>
+    <errorMessage>Consultancy Partner required</errorMessage>
+</ValidationRule>

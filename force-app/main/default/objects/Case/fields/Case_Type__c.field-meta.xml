@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>An internal Admin field used to categories Cases</inlineHelpText>
+    <label>Case Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TBD</fullName>
+                <default>true</default>
+                <label>TBD</label>
+            </value>
+            <value>
+                <fullName>Tier 1: Additional Training</fullName>
+                <default>false</default>
+                <label>Tier 1: Additional Training</label>
+            </value>
+            <value>
+                <fullName>Tier 2: Config Change</fullName>
+                <default>false</default>
+                <label>Tier 2: Config Change</label>
+            </value>
+            <value>
+                <fullName>Tier 3: Design Change</fullName>
+                <default>false</default>
+                <label>Tier 3: Design Change</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

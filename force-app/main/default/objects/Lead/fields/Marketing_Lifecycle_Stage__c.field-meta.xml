@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Lifecycle_Stage__c</fullName>
+    <description>Lead Qualification status</description>
+    <externalId>false</externalId>
+    <label>Marketing Lifecycle Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AQL</fullName>
+                <default>false</default>
+                <label>AQL</label>
+            </value>
+            <value>
+                <fullName>Profiled</fullName>
+                <default>false</default>
+                <label>Profiled</label>
+            </value>
+            <value>
+                <fullName>MQL</fullName>
+                <default>false</default>
+                <label>MQL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

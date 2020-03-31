@@ -1,0 +1,18 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+package.xml
+AppSwitcher.appMenu
+
+# was created to fix Entity of type 'CustomApplication' named 'Opportunity' cannot be found error
+force-app\main\default\flexipages\Opportunity_UtilityBar.flexipage-meta.xml
+force-app\main\default\applications\Opportunity.app-meta.xml
+force-app\main\default\standardValueSets\ContractStatus.standardValueSet-meta.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**

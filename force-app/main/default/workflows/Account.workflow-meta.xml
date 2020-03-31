@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Account_tier_Update_Notification</fullName>
+        <description>Account tier Update Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Contract/Account_Tier_Update_Owner_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Credit_Check_Status_Email_Alert_Refused</fullName>
+        <ccEmails>contract.pre-approval@adform.com</ccEmails>
+        <description>Credit Check Status Email Alert Refused</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/Credit_Check_Status_Update_Refused</template>
+    </alerts>
+    <alerts>
+        <fullName>Credit_Check_Status_Email_Alert_approved</fullName>
+        <description>Credit Check Status Email Alert Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/Credit_Check_Status_Update</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Account_Owner_legal_info</fullName>
+        <description>Notify Account Owner Legal Info</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Update_Legal_Info</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Client_Status_Locked</fullName>
+        <field>Account_Status__c</field>
+        <literalValue>Active</literalValue>
+        <name>Client Status Locked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lock_status</fullName>
+        <field>Lock_status__c</field>
+        <literalValue>Locked</literalValue>
+        <name>Lock status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_tier_if_US_account</fullName>
+        <description>Update account tier field if office field is equal to New York</description>
+        <field>Customer_Tier__c</field>
+        <literalValue>Tier 2</literalValue>
+        <name>Update tier if US account</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_tier_if_part_of_GHG</fullName>
+        <description>Update account tier if par of GHG field is not equal to none</description>
+        <field>Customer_Tier__c</field>
+        <literalValue>Tier 1</literalValue>
+        <name>Update tier if part of GHG</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Account Tier 2 for US</fullName>
+        <actions>
+            <name>Update_tier_if_US_account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Office__c</field>
+            <operation>equals</operation>
+            <value>New York</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Type_of_GHG__c</field>
+            <operation>notEqual</operation>
+            <value>Dentsu Aegis Network,Havas,Omnicom Media Group,IPG Mediabrands,Publicis,WPP,Local Planet,Other Global Partners</value>
+        </criteriaItems>
+        <description>System automatically set tier 2 for US (New York office) accounts. Exception if account is part of GHG.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account Tier Update</fullName>
+        <actions>
+            <name>Account_tier_Update_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISNEW()),ISCHANGED(Customer_Tier__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Company</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Relationship_Type__c</field>
+            <operation>equals</operation>
+            <value>Standalone Agency,Trading Desk</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Credit Check Status Update Approved</fullName>
+        <actions>
+            <name>Credit_Check_Status_Email_Alert_approved</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISNEW()),ISCHANGED(Credit_Check_Status__c),  OR(ISPICKVAL(Credit_Check_Status__c, &#39;Approved&#39;), ISPICKVAL(Credit_Check_Status__c,&#39;Approved for Sell-side&#39;)))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Credit Check Status Update Refused</fullName>
+        <actions>
+            <name>Credit_Check_Status_Email_Alert_Refused</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISNEW()),ISCHANGED(Credit_Check_Status__c), ISPICKVAL(Credit_Check_Status__c, &#39;Refused&#39;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>NAV ID Locked status</fullName>
+        <actions>
+            <name>Client_Status_Locked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lock_status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.NavisionID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>After NAV ID is added on account object value on Lock Status field updated automatically</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Tier 1 for GHG</fullName>
+        <actions>
+            <name>Update_tier_if_part_of_GHG</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Type_of_GHG__c</field>
+            <operation>equals</operation>
+            <value>Dentsu Aegis Network,Havas,Omnicom Media Group,IPG Mediabrands,Publicis,WPP,Local Planet,Other Global Partners</value>
+        </criteriaItems>
+        <description>System automatically updates account tier field if account is part of GHG.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Legal Info</fullName>
+        <actions>
+            <name>Notify_Account_Owner_legal_info</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(ISCHANGED(Registered_Number__c),  ISCHANGED(VAT_Number__c),  ISCHANGED(Legal_Company_Name__c),  ISCHANGED(BillingCountry),  ISCHANGED(BillingCity),  ISCHANGED(BillingStreet),  ISCHANGED(BillingPostalCode),  ISCHANGED(ShippingCity),  ISCHANGED(ShippingCountry),  ISCHANGED(ShippingStreet),  ISCHANGED(ShippingPostalCode),ISCHANGED(Relationship_Type__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

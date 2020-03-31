@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_internal_order_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(IF(ISPICKVAL( Client_Internal_Order_Number_Needed__c , &#39;Yes&#39;), true, false) ,Client_Internal_Order_Number__c = &#39;&#39;)</errorConditionFormula>
+    <errorDisplayField>Client_Internal_Order_Number__c</errorDisplayField>
+    <errorMessage>Client Internal Order Number is Required</errorMessage>
+</ValidationRule>

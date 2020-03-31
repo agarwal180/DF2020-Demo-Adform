@@ -1,0 +1,10 @@
+{
+  "name": "sfdx",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "filterxml": "latest",
+    "xml-js": "latest"
+  }
+}

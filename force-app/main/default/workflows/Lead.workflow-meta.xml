@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_notification_to_the_client_MQL_Agency</fullName>
+        <description>Email notification to the client - MQL - Agency</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Automation/Marketing_Lifecycle_MQL_Agency</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_notification_to_the_client_MQL_Webinar_registration_Newsletter</fullName>
+        <description>Email notification to the client - MQL Webinar registration,Newsletter</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Automation/Marketing_Lifecycle_MQL_Advertiser_to_use</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_notification_to_the_client_MQL_Webinar_registration_Newsletter_Publisher</fullName>
+        <description>Email notification to the client - MQL Webinar registration, Newsletter Publisher</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Marketing_Automation/Marketing_Lifecycle_MQL_Publisher</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_notification_to_the_lead_owner_whenever_new_lead_is_created</fullName>
+        <description>Send email notification to the lead owner whenever new lead is created</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Marketing_Lifecycle_AQL</fullName>
+        <description>Automatic field updates if the lead meets required criteria field updated automatically.</description>
+        <field>Marketing_Lifecycle_Stage__c</field>
+        <literalValue>AQL</literalValue>
+        <name>Marketing Lifecycle - AQL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Marketing_Lifecycle_MQL</fullName>
+        <description>Automatic field update when criteria are met - Marketing qualified - MQL</description>
+        <field>Marketing_Lifecycle_Stage__c</field>
+        <literalValue>MQL</literalValue>
+        <name>Marketing Lifecycle - MQL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Marketing_Lifecycle_MQL_Advertiser</fullName>
+        <field>Marketing_Lifecycle_Stage__c</field>
+        <literalValue>MQL</literalValue>
+        <name>Marketing Lifecycle - MQL - Advertiser</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Marketing_Lifecycle_Profiled</fullName>
+        <field>Marketing_Lifecycle_Stage__c</field>
+        <literalValue>Profiled</literalValue>
+        <name>Marketing Lifecycle - Profiled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Marketing_Lifecycle_Profiled_Other</fullName>
+        <field>Marketing_Lifecycle_Stage__c</field>
+        <literalValue>Profiled</literalValue>
+        <name>Marketing Lifecycle - Profiled - Other</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Marketing Email Notification - MQL Advertiser Newsletter%2C Webinar</fullName>
+        <actions>
+            <name>Email_notification_to_the_client_MQL_Webinar_registration_Newsletter</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Advertiser</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Marketing_Lifecycle_Stage__c</field>
+            <operation>equals</operation>
+            <value>MQL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company_Size__c</field>
+            <operation>equals</operation>
+            <value>11-100 employees,101-500 employees,500+ employess</value>
+        </criteriaItems>
+        <description>Sends email notification to the client to Advertiser leads, which registered for webinar &amp; subscribed for newsletter.</description>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Lead.CreatedDate</offsetFromField>
+            <timeLength>72</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Marketing Email Notification - MQL Agency Newsletter%2C Webinar</fullName>
+        <actions>
+            <name>Email_notification_to_the_client_MQL_Agency</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Agency</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Newsletter subscriptions,Webinar registrations</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Marketing_Lifecycle_Stage__c</field>
+            <operation>equals</operation>
+            <value>MQL</value>
+        </criteriaItems>
+        <description>Sends email notification to the client to Agency leads, which registered for webinar &amp; subscribed for newsletter.</description>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Lead.CreatedDate</offsetFromField>
+            <timeLength>72</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Marketing Email Notification - MQL Publisher Newsletter%2C Webinar</fullName>
+        <actions>
+            <name>Email_notification_to_the_client_MQL_Webinar_registration_Newsletter_Publisher</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Publisher</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Newsletter subscriptions,Webinar registrations</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Marketing_Lifecycle_Stage__c</field>
+            <operation>equals</operation>
+            <value>MQL</value>
+        </criteriaItems>
+        <description>Sends email notification to the client to Publisher leads, which registered for webinar &amp; subscribed for newsletter.</description>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Lead.CreatedDate</offsetFromField>
+            <timeLength>72</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Marketing Lifecycle - MQL</fullName>
+        <actions>
+            <name>Marketing_Lifecycle_MQL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 AND 2) OR (1 AND 3 AND 4)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Newsletter subscriptions,Webinar registrations,Whitepaper / One Pager downloads</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Agency,Publisher</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Advertiser</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company_Type__c</field>
+            <operation>greaterThan</operation>
+            <value>1-10 employees</value>
+        </criteriaItems>
+        <description>Criteria based on which leads are segmented.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Marketing Lifecycle - MQL - Advertiser</fullName>
+        <actions>
+            <name>Marketing_Lifecycle_MQL_Advertiser</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Demo requests,Newsletter subscriptions,Webinar registrations,Gartner Magic Quadrant</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company_Size__c</field>
+            <operation>equals</operation>
+            <value>11-100 employees,101-500 employees,500+ employess</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Advertiser</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Marketing Lifecycle - Profiled</fullName>
+        <actions>
+            <name>Marketing_Lifecycle_Profiled</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Advertiser</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company_Size__c</field>
+            <operation>equals</operation>
+            <value>1-10 employees</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Demo requests,Newsletter subscriptions,Webinar registrations,Gartner Magic Quadrant</value>
+        </criteriaItems>
+        <description>Automatic field update for profiled leads
+Marketing Lifecycle = Profiled</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Marketing Lifecycle - Profiled - Other</fullName>
+        <actions>
+            <name>Marketing_Lifecycle_Profiled_Other</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Partner,Other</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company_Size__c</field>
+            <operation>equals</operation>
+            <value>1-10 employees,11-100 employees,101-500 employees,500+ employess</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Demo requests,Newsletter subscriptions,Webinar registrations,Gartner Magic Quadrant</value>
+        </criteriaItems>
+        <description>Automatic field update for profiled leads
+Marketing Lifecycle = Profiled</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Marketing Lifecycle AQL</fullName>
+        <actions>
+            <name>Marketing_Lifecycle_AQL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 AND 2) OR (1 AND 3 AND 4)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Demo requests,Gartner Magic Quadrant</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Agency,Publisher</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Advertiser</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company_Size__c</field>
+            <operation>notEqual</operation>
+            <value>1-10 employees</value>
+        </criteriaItems>
+        <description>Automation Qualified Leads, which meets the required criteria for lead to be contacted by sales manager</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Marketing email notification whenever new lead is created - AQL</fullName>
+        <actions>
+            <name>Send_email_notification_to_the_lead_owner_whenever_new_lead_is_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Marketing_Lifecycle_Stage__c</field>
+            <operation>equals</operation>
+            <value>AQL</value>
+        </criteriaItems>
+        <description>Sends email notification to a lead owner whenever new lead is in AQL stage</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sends email notification whenever new lead is created</fullName>
+        <actions>
+            <name>Send_email_notification_to_the_lead_owner_whenever_new_lead_is_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>New/Unreviewed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Marketing_Lifecycle_Stage__c</field>
+            <operation>equals</operation>
+            <value>AQL</value>
+        </criteriaItems>
+        <description>Sends email notification to a lead owner whenever new lead is created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Media_Purchasing_History__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Used for narrative about past media purchasing bias. Mapped to Account upon Lead conversion.</inlineHelpText>
+    <label>Media Purchasing History</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>4</visibleLines>
+</CustomField>

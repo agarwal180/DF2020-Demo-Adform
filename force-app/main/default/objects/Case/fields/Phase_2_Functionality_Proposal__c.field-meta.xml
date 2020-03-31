@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phase_2_Functionality_Proposal__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Explains what the Phase 2 functionality should be like if flagged by the User as a potential design change.</inlineHelpText>
+    <label>Phase 2 Functionality Proposal</label>
+    <length>10000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

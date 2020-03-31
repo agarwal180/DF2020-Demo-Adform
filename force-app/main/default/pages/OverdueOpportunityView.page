@@ -1,0 +1,18 @@
+<apex:page controller="OverdueOpportunityViewController" lightningStylesheets="true">
+    <apex:sectionHeader title="Opportunity" subtitle="Overdue Opportunities"/>
+    <div class="ptBreadcrumb">&nbsp;«&nbsp;<a href="/home/home.jsp">Back to Home</a></div>
+    <apex:form id="search-result">
+        <apex:pageMessage summary="You do not have overdue opportunities" severity="info" strength="3" rendered="{!l_opportunities.size = 0}"/>
+        <apex:pageBlock mode="edit" rendered="{!l_opportunities.size > 0}" >
+            <apex:pageBlockTable value="{!l_opportunities}" var="item" >
+                <apex:column headerValue="Opporunity Name">
+                    <apex:outputLink value="/{!item.Id}" id="theLink">{!item.Name}</apex:outputLink>
+                </apex:column>
+                <apex:repeat value="{!$ObjectType.Opportunity.FieldSets.Overdue_Opportunity_view}" var="f">
+                     <apex:column value="{!item[f.fieldPath]}" rendered="{!AND(item[f.fieldPath] != 'Id',item[f.fieldPath] != 'Name')}"/>
+                </apex:repeat>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

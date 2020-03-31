@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X5_Month_Read_Only__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(CASE(Opportunity.Start_From__c, &#39;January&#39;, 1, &#39;February&#39;, 2,&#39;March&#39;, 
+	2,&#39;April&#39;, 4,&#39;May&#39;, 5,&#39;June&#39;, 6,&#39;July&#39;, 7,&#39;August&#39;,8,
+	&#39;September&#39;, 9,&#39;October&#39;, 10,&#39;November&#39;, 11,&#39;December&#39;, 12,1)+4, 
+1,&#39;Jan&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,2,&#39;Feb&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,
+3,&#39;Mar&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,4,&#39;Apr&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,
+5,&#39;May&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,6,&#39;Jun&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,
+7,&#39;Jul&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,8,&#39;Aug&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,
+9,&#39;Sep&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,10,&#39;Oct&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,
+11,&#39;Nov&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,12,&#39;Dec&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)),2) &amp;&#39;)&#39;,
+13,&#39;Jan&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate) +1),2) &amp;&#39;)&#39;,14,&#39;Feb&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate) +1),2) &amp;&#39;)&#39;,
+15,&#39;Mar&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,16,&#39;Apr&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,
+17,&#39;May&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,18,&#39;Jun&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,
+19,&#39;Jul&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,20,&#39;Aug&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,
+21,&#39;Sep&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,22,&#39;Oct&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,
+23,&#39;Nov&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,24,&#39;Dec&#39;&amp;&#39;(&#39;&amp; RIGHT(TEXT(YEAR(Opportunity.CloseDate)+1),2) &amp;&#39;)&#39;,
+&#39;&#39;)&amp; &#39; - &#39; &amp; TEXT(CurrencyIsoCode) &amp; &#39; - &#39;&amp; TEXT(X5_Month__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>5 Month(Read Only)</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Development_Owner__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Development Owner</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Ali Reza Amirmostofian</fullName>
+                <default>false</default>
+                <label>Ali Reza Amirmostofian</label>
+            </value>
+            <value>
+                <fullName>Alisa Gilbert</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Alisa Gilbert</label>
+            </value>
+            <value>
+                <fullName>Kamile Pakalnyte</fullName>
+                <default>false</default>
+                <label>Kamile Pakalnyte</label>
+            </value>
+            <value>
+                <fullName>Megd Abo Amsha</fullName>
+                <default>false</default>
+                <label>Megd Abo Amsha</label>
+            </value>
+            <value>
+                <fullName>Oliver Weiss</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Oliver Weiss</label>
+            </value>
+            <value>
+                <fullName>Simonas Savičius</fullName>
+                <default>false</default>
+                <label>Simonas Savičius</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

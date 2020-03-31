@@ -1,0 +1,32 @@
+<apex:page extensions="ContactSelectionForContract" standardController="Opportunity" lightningStylesheets="true">
+<apex:sectionHeader title="{!Opportunity.Name}" subtitle="{!$Label.New_Contract}"/>
+<apex:form >
+<apex:pageMessages />
+    <apex:pageBlock title="{!$Label.Select_Contact_email}" mode="edit" >
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!SelectInfo}" value="{!$Label.Select}"/>
+            <apex:commandButton action="{!cancelAction}" value="{!$Label.Cancel}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="1"  id="mainSection">
+            <apex:pageblocksectionitem >
+                <apex:outputLabel value="{!$Label.Contact_person}"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:selectList value="{!selectedContact}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!contacts}"/>
+                    </apex:selectList>
+                 </apex:outputPanel>
+            </apex:pageblocksectionitem>
+            <apex:pageblocksectionitem >
+                <apex:outputLabel value="{!$Label.Email}"/>
+                <apex:outputPanel layout="block" styleClass="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:selectList value="{!selectedEmail}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!emails}"/>
+                    </apex:selectList>
+                 </apex:outputPanel>
+            </apex:pageblocksectionitem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

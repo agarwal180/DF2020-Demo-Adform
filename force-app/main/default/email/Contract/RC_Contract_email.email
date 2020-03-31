@@ -1,0 +1,162 @@
+<messaging:emailTemplate subject="New Contract for approval" recipientType="User" relatedToType="Contract">
+<messaging:plainTextEmailBody >
+</messaging:plainTextEmailBody>
+
+<messaging:htmlEmailBody >
+<style type="text/css">
+        
+        
+        body {
+            font-family: "Arial" "Sans-Serif";
+            font-size:13px;
+        }
+        
+        .tablefirst{
+            font-weight: bold;
+            border: 1px solid black;
+         }
+        .tablesecond{
+            border: 1px solid black;
+        }
+        .titlemainText{
+            font-weight: bold;
+            font-size: 14px;
+        }
+        td {
+            padding: 3px;
+        }
+    </style>
+    
+<div><span class="titlemainText">Contract:</span>&nbsp;<apex:outputLink value="https://adform.my.salesforce.com/{!relatedTo.id}">{!relatedTo.name}</apex:outputLink></div>
+<div><span class="titlemainText">Comments:</span>&nbsp;<apex:outputField value="{!relatedTo.Comments__c}"/></div>
+    
+    <br/>
+<div><span class="titlemainText">Client information:</span></div>
+<br/>
+        <table style=" border: 2px solid black; width:500px; border-style: solid;
+    border-collapse: collapse; border-color: black;"  border ="1">
+                <tr >
+                    <td class="tablefirst">Company Name</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Account.Contract_Company_Name__c}"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="tablefirst">Registered Address:</td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Street Name, No.</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.ShippingStreet}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Post Code</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.ShippingPostalCode}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">City</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.ShippingCity}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Country</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.ShippingCountry}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Registered Number</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Company_registration_number__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">VAT Number</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.VAT_number__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Contact person for signature</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Client_s_contact_name__r.Name}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Position of contact person</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Client_s_contact_name__r.Title}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Contact email for signature</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Account.Contract_Company_Name__c}"/></td>
+                </tr>
+        </table>
+        
+<br/>
+<div><span class="titlemainText">Billing information:</span></div>
+<br/>
+    
+        <table style=" border: 2px solid black; width:500px; border-style: solid;
+    border-collapse: collapse; border-color: black;"  border ="1">
+            <tbody>
+                <tr>
+                    <td class="tablefirst" colspan="2">Invoicing Address:</td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Street Name, No.</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.BillingStreet}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Post Code</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.BillingPostalCode}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">City</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.BillingCity}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Country</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.BillingCountry}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Email to send invoices</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Billing_contact_name_position__r.Name}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Purchase orders / PO numbers</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Purchase_orders_PO_numbers__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst"> Invoice level</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Invoice_level__c}"/>/ <apex:outputfield value="{!relatedTo.Invoice_details__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst">Currency</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.CurrencyIsoCode}"/></td>
+                </tr>
+            </tbody>
+        </table>
+<br/>
+<div><span class="titlemainText">Agreement details:</span></div>
+<br/>
+   
+        <table style=" border: 2px solid black; width:500px; border-style: solid;
+    border-collapse: collapse; border-color: black;"  border ="1">
+            <tbody>
+                <tr>
+                    <td class="tablefirst" >Agreement type</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Agreement_type__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst" >Effective date</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Effective_date__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst" >Adform Sales Office</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.CreatedBy.Office__c}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst" >Adform Sales Responsible</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.CreatedBy.Name}"/></td>
+                </tr>
+                <tr>
+                    <td class="tablefirst" >Customer type</td>
+                    <td class="tablesecond"><apex:outputfield value="{!relatedTo.Customer_type__c}"/></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+<br/>
+<c:RC_InvoiceTemplatesHTML contrId="{!relatedTo.Id}"/> 
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

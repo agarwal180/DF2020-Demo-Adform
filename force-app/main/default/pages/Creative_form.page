@@ -1,0 +1,42 @@
+<apex:page standardController="Case" extensions="CreativeRequestController" lightningStylesheets="true">
+<apex:sectionHeader title="Submit Creative Production"/>
+<apex:form >
+<apex:pageMessages />
+    <apex:pageBlock title="Submit Creative Production Case" mode="edit" >
+        <apex:pageBlockButtons >
+         <apex:commandButton action="{!saveNew}" value="Send Request"/>
+         <apex:commandButton action="{!cancel}" value="Cancel"/>
+    </apex:pageBlockButtons>
+    <apex:pageBlockSection columns="1" title="Campaign Information">
+    <apex:outputlink value="/apex/customDetailPage?id={!Case.Contract__r.ContractNumber}"/>
+            <apex:outputfield value="{!Case.Contract__r.ContractNumber}"/>      
+            <apex:inputfield required="true" value="{!Case.Contract__r.Devices__c}"/>
+            <apex:inputfield value="{!Case.Contract__r.Format__c}"/>
+            <apex:inputfield required="true" value="{!Case.Contract__r.Advertiser__c}"/>
+            <apex:inputfield required="true" value="{!Case.Campaign__c}"/>
+            <apex:inputfield required="true" value="{!Case.Campaign_ID__c}"/>
+            <apex:inputfield required="true" value="{!Case.Contact_Email__c}"/>
+            <apex:inputfield required="true" value="{!Case.Start_Date__c}"/>
+            <apex:inputfield required="true" value="{!Case.End_Date__c}"/>
+            <apex:inputfield value="{!Case.Campaign_goal_KPI_s__c}"/>
+            </apex:pageBlockSection>
+    <apex:pageBlockSection columns="1" title="Creative Information">
+            <apex:inputfield required="true" value="{!Case.Placement_sizes__c}"/>
+            <apex:inputfield value="{!Case.Landing_Page__c}"/>
+            </apex:pageBlockSection>
+    <apex:pageBlockSection columns="1" title="Publisher Details">
+            <apex:inputfield required="true" value="{!Case.Channel__c}"/>
+            <apex:inputfield value="{!Case.Publisher_Domain__c}"/>
+            <apex:inputfield value="{!Case.Ad_Ops_email__c}"/>
+            <apex:inputfield value="{!Case.Impressions__c}"/>
+            <apex:inputfield value="{!Case.Frequency_capping__c}"/>
+            </apex:pageBlockSection>
+    <apex:pageBlockSection columns="1" title="Assets">
+            <apex:inputfield value="{!Case.Link_to_assets_pack__c}"/>
+            <apex:inputfield value="{!Case.Creative_Designers_Name__c}"/>
+            <apex:inputfield value="{!Case.Order_details__c}"/>
+            <apex:inputfield value="{!Case.Contract__r.Template__c}"/>
+     </apex:pageBlockSection> 
+    </apex:pageBlock>
+  </apex:form>  
+</apex:page>

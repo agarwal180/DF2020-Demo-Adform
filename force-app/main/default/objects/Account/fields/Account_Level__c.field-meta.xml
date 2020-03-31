@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Level__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If Agency is owned by a Holding Group, enter the name of the governing Account in the Parent Account field below.</inlineHelpText>
+    <label>Account Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Relationship_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Holding Company Group</fullName>
+                <default>false</default>
+                <label>Holding Company Group</label>
+            </value>
+            <value>
+                <fullName>Holding Company Division</fullName>
+                <default>false</default>
+                <label>Holding Company Division</label>
+            </value>
+            <value>
+                <fullName>Holding Company Agency</fullName>
+                <default>false</default>
+                <label>Holding Company Agency</label>
+            </value>
+            <value>
+                <fullName>Independent Agency</fullName>
+                <default>false</default>
+                <label>Independent Agency</label>
+            </value>
+            <value>
+                <fullName>Independent Publisher</fullName>
+                <default>false</default>
+                <label>Independent Publisher</label>
+            </value>
+            <value>
+                <fullName>Ad Network</fullName>
+                <default>false</default>
+                <label>Ad Network</label>
+            </value>
+            <value>
+                <fullName>Ad Tech</fullName>
+                <default>false</default>
+                <label>Ad Tech</label>
+            </value>
+            <value>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+                <label>Strategic</label>
+            </value>
+            <value>
+                <fullName>Preferred</fullName>
+                <default>false</default>
+                <label>Preferred</label>
+            </value>
+            <value>
+                <fullName>Niche</fullName>
+                <default>false</default>
+                <label>Niche</label>
+            </value>
+            <value>
+                <fullName>Legacy</fullName>
+                <default>false</default>
+                <label>Legacy</label>
+            </value>
+            <value>
+                <fullName>Approached</fullName>
+                <default>false</default>
+                <label>Approached</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Publisher</controllingFieldValue>
+            <valueName>Independent Publisher</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Publisher</controllingFieldValue>
+            <valueName>Ad Network</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Publisher</controllingFieldValue>
+            <valueName>Ad Tech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agency</controllingFieldValue>
+            <valueName>Holding Company Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agency</controllingFieldValue>
+            <valueName>Holding Company Division</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agency</controllingFieldValue>
+            <valueName>Holding Company Agency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agency</controllingFieldValue>
+            <valueName>Independent Agency</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

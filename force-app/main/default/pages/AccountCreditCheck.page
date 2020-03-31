@@ -1,0 +1,120 @@
+<apex:page standardController="Account" extensions="AccountRequestTier" lightningStylesheets="true">
+<apex:includescript value="{!URLFOR($Resource.Jquery)}" />
+<apex:sectionHeader title="Credit Check" subtitle="{!Account.Name}"/>
+<apex:form >
+<apex:pageMessages />
+    <apex:pageBlock title="Credit Check" mode="edit" >
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!SaveAction}" value="Send Request"/>
+            <apex:commandButton action="{!cancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="1" title="Credit Check Information" >
+            <apex:inputfield required="true" value="{!Account.Registered_Number__c}"/>
+            <apex:inputfield required="true" value="{!Account.VAT_Number__c}"/>
+           <apex:inputfield required="true" value="{!Account.Legal_Company_Name__c}"/>
+           <apex:inputfield required="true" value="{!Account.RTB_Limit__c}"/>
+           <apex:inputfield required="true" value="{!Account.CurrencyIsoCode}"/>
+           <apex:inputfield required="true" value="{!Account.Prepayment__c}"/>
+          
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="2" title="Address information" >
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.ShippingStreet.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="ShippingStreet" value="{!Account.ShippingStreet}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.BillingStreet.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="BillingStreet" value="{!Account.BillingStreet}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.ShippingCountryCode.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="ShippingCountryCode" value="{!Account.ShippingCountryCode}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.BillingCountryCode.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="BillingCountryCode" value="{!Account.BillingCountryCode}"/>
+                        <script>
+                            var BillingCountryCode = document.getElementById('{!$Component.BillingCountryCode}');
+                        </script>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.ShippingStateCode.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="ShippingStateCode" value="{!Account.ShippingStateCode}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.BillingStateCode.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="BillingStateCode" value="{!Account.BillingStateCode}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.ShippingCity.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="ShippingCity" value="{!Account.ShippingCity}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                 <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.BillingCity.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="BillingCity" value="{!Account.BillingCity}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                 <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.ShippingPostalCode.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="ShippingPostalCode" value="{!Account.ShippingPostalCode}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                 <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$ObjectType.Account.fields.BillingPostalCode.Label}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputfield id="BillingPostalCode" value="{!Account.BillingPostalCode}"/>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                
+                <apex:pageblockSectionItem />
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel value=""/>
+                    <a href="javascript:copyAdress()"> Copy Shipping Address to Invoice Address</a>
+                </apex:pageblockSectionItem>
+                <script>
+                    function copyAdress () {
+                        jQuery('[id$=BillingStreet]').val(jQuery('[id$=ShippingStreet]').val());
+                        jQuery('[id$=BillingCountryCode]').val(jQuery('[id$=ShippingCountryCode]').val());
+                        BillingCountryCode.onchange();
+                        jQuery('[id$=BillingStateCode]').val(jQuery('[id$=ShippingStateCode]').val());
+                        jQuery('[id$=BillingCity]').val(jQuery('[id$=ShippingCity]').val());
+                        jQuery('[id$=BillingPostalCode]').val(jQuery('[id$=ShippingPostalCode]').val());
+
+                   /* document.getElementById('{!$Component.BillingStreet}').value =  document.getElementById('{!$Component.ShippingStreet}').value;
+                    document.getElementById('{!$Component.BillingCountryCode}').value =  document.getElementById('{!$Component.ShippingCountryCode}').value;
+                   
+                    document.getElementById('{!$Component.BillingStateCode}').value =  document.getElementById('{!$Component.ShippingStateCode}').value;
+                    document.getElementById('{!$Component.BillingCity}').value =  document.getElementById('{!$Component.ShippingCity}').value;
+                    document.getElementById('{!$Component.BillingPostalCode}').value =  document.getElementById('{!$Component.ShippingPostalCode}').value;*/
+                    }
+                </script>
+            </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>  
+</apex:page>

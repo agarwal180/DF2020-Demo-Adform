@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends a notification if RTB managed service is needed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>RTB managed service Request</name>
+    <style>freeForm</style>
+    <subject>RTB managed services {!Engagement__c.Name}</subject>
+    <textOnly>The following Request has been submitted for RTB managed service
+
+
+
+Account Name:  {!Engagement_c.Account.Name}
+
+Account Tier: {!Engagement__c.Account_Tier__c}
+
+Account Type: {!Engagement__c.Account_Type__c}
+
+Account Owner: {!Engagement__c.Account_Owner__c}
+
+Sales Manager/Director: {!Account.Sales_Manager_Director__c}
+
+Account Manager/Director: {!Account.Responsible_Account_Manger__c}
+
+Assigned PSX: {!Engagement__c.Account_Assigned_PSX__c}
+
+Opportunity Name: {!Engagement__c.Opportunity__c}
+
+Office: {!User.Office__c}
+
+
+
+RTB Managed Service Fee information
+
+
+
+Campaign start date: {!Engagement__c.Campaign_Start_Date__c}
+
+Campaign end date: {!Engagement__c.Campaign_End_Date__c}
+
+Campaign Media Budget: {!Engagement__c.Campaign_Media_Budget__c}
+
+Managed services fee: {!Engagement__c.Managed_Services_Fee__c}
+
+Complexity score (%): {!Engagement__c.Complexity_Score__c}
+
+Comments: {!Engagement__c.Comment__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Included Fees</fullName>
+        <default>false</default>
+        <label>Included Fees</label>
+    </customValue>
+    <customValue>
+        <fullName>On Top Fees</fullName>
+        <default>false</default>
+        <label>On Top Fees</label>
+    </customValue>
+    <masterLabel>Selected Fees Calculation model</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

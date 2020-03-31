@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Contact</fullName>
+    <active>true</active>
+    <description>Adform Standard Users</description>
+    <label>Standard Contact</label>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Conference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demo requests</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enterprise Hunting OKR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newsletter subscriptions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sizmek hit list</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USA Lead Gen Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar registrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whitepaper %2F One Pager downloads</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inventory_ID__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Inventory Source ID must be specified in case customer has Own Inventory buying terms in the contract</inlineHelpText>
+    <label>Inventory ID</label>
+    <length>255</length>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

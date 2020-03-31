@@ -1,0 +1,3 @@
+<apex:page standardController="Opportunity" lightningStylesheets="true"> 
+    <apex:iframe src="https://my.rfp360.com/sf/pages/proposal?sessionID={!$Api.Session_ID}&serverUrl={!$Api.Partner_Server_URL_380}&salesforceOpportunityId={!opportunity.Id}&accountID=[ccfc00b1-65a4-41a0-b7db-8662ea06d3b0]&frame-referrer=force.com" scrolling="True"/>
+</apex:page>

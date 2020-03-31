@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BMSA</fullName>
+    <active>true</active>
+    <description>TPAS, DSP and related services</description>
+    <label>BMSA</label>
+</RecordType>

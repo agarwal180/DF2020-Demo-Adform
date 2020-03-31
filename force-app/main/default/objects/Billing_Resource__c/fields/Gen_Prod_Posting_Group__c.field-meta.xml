@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gen_Prod_Posting_Group__c</fullName>
+    <externalId>false</externalId>
+    <label>Gen. Prod. Posting Group</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GOODS</fullName>
+                <default>false</default>
+                <label>Goods</label>
+            </value>
+            <value>
+                <fullName>INTERESTS</fullName>
+                <default>false</default>
+                <label>INTERESTS</label>
+            </value>
+            <value>
+                <fullName>M SERVICES</fullName>
+                <default>false</default>
+                <label>M SERVICES</label>
+            </value>
+            <value>
+                <fullName>R SERV AG</fullName>
+                <default>false</default>
+                <label>R SERV AG</label>
+            </value>
+            <value>
+                <fullName>R SERV DIS</fullName>
+                <default>false</default>
+                <label>R SERV DIS</label>
+            </value>
+            <value>
+                <fullName>R SERVICES</fullName>
+                <default>false</default>
+                <label>R SERVICES</label>
+            </value>
+            <value>
+                <fullName>SERVICES</fullName>
+                <default>false</default>
+                <label>SERVICES</label>
+            </value>
+            <value>
+                <fullName>TRADING</fullName>
+                <default>false</default>
+                <label>TRADING</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

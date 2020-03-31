@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>RFP_Status_notification</fullName>
+        <description>RFP Status notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/RFP_Upload_Status</template>
+    </alerts>
+    <alerts>
+        <fullName>Update_Opportunity_Email</fullName>
+        <description>Update Opportunity Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Update_Opportunity</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Custom_Opportunity_Name</fullName>
+        <description>Stamps the Opty with a custom name</description>
+        <field>Name</field>
+        <formula>Account.Name  &amp;&quot; [&quot;&amp;
+Market__c  &amp;&quot; &quot;&amp;
+Month__c &amp;&quot;&quot;&amp; RIGHT(Text(Year( CloseDate )),2)&amp;&quot;] &quot;&amp;
+TEXT(CurrencyIsoCode) &amp;&quot; &quot;&amp; TEXT(Net_Value__c)</formula>
+        <name>Custom Opportunity Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opps_Stamp_Actual_Close_Date</fullName>
+        <description>Sets the actual date the Opp is set to the Closed/Won Stage.</description>
+        <field>Actual_Close_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Opps: Stamp Actual Close Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Opportunity_Name_with_Nickname</fullName>
+        <field>Name</field>
+        <formula>Opportunity_Nickname__c</formula>
+        <name>Update Opportunity Name with Nickname</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_renewal_counter</fullName>
+        <description>Stamps the Renewal counter with Parent counter +1</description>
+        <field>Renewal_Number__c</field>
+        <formula>Parent_Opportunity__r.Renewal_Number__c +1</formula>
+        <name>Update renewal counter</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Custom Opportunity Name</fullName>
+        <actions>
+            <name>Custom_Opportunity_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Nickname__c</field>
+            <operation>equals</operation>
+            <value/>
+        </criteriaItems>
+        <description>Stamps the Opportunity with a custom name</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Custom Opportunity Nickname</fullName>
+        <actions>
+            <name>Update_Opportunity_Name_with_Nickname</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Nickname__c</field>
+            <operation>notEqual</operation>
+            <value/>
+        </criteriaItems>
+        <description>Stamps the Opportunity with a custom Nickname (override the Standard naming)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity update reminder</fullName>
+        <actions>
+            <name>Update_Opportunity_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Alerts oppty owner when opportunity is out dated</description>
+        <formula>(CloseDate &lt; TODAY()  ||  CloseDate = TODAY()) &amp;&amp;
+(NOT(ISPICKVAL(StageName , &quot;Closed Won&quot;))  || 
+NOT(ISPICKVAL(StageName , &quot;Closed Lost&quot;)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opps%3A Stamp Actual Close Date</fullName>
+        <actions>
+            <name>Opps_Stamp_Actual_Close_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.IsWon</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Marks the date the Opp is moved to Closed/Won</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RFP status</fullName>
+        <actions>
+            <name>RFP_Status_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RFP_Status__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>An email notification is sent after RFP status updated.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stamp Renewal Counter</fullName>
+        <actions>
+            <name>Update_renewal_counter</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>IO Renewal,MSA Renewal</value>
+        </criteriaItems>
+        <description>Stamps the renewal counter as +1 from parent on create.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

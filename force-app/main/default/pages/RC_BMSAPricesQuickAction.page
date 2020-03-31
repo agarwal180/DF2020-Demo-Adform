@@ -1,0 +1,252 @@
+<apex:page standardController="Contract" showHeader="false" standardStylesheets="false"   extensions="RC_BMSAPriceController" contentType="application/vnd.ms-excel#MSAPriceInfo.xls"  lightningStylesheets="true">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <style type="text/css">
+        
+        
+        body {
+            font-family: "Arial" "Sans-Serif";
+            font-size:13px;
+        }
+        
+        .tablefirst{
+            font-weight: bold;
+            border: 1px solid black;
+         }
+        .tablesecond{
+            border: 1px solid black;
+        }
+        .titlemainText{
+            font-weight: bold;
+            font-size: 14px;
+        }
+        td {
+            padding:3px;
+        }
+        
+        th {
+            padding:3px;
+        }
+        
+    </style>
+</head>
+<apex:pageblock mode="maindetail">
+
+<apex:repeat var="templ" value="{!l_templates}">
+    <apex:pageblocksection collapsible="false" title="{!templ.Product_Group__r.Print_Out_Label__c}" 
+    rendered="{!AND(NOT(templ.Product_Group__r.Hide_on_Print_View__c),OR(AND(templ.Product_Group__r.Name != 'AG – Automated Guaranteed', templ.Product_Group__r.Name != 'Trading Desk Fee'), AND(contract.Automated_Guaranteed__c, templ.Product_Group__r.Name == 'AG – Automated Guaranteed'),
+    AND(contract.Trading_Desk_Fee__c, templ.Product_Group__r.Name == 'Trading Desk Fee'))) }">
+        <apex:outputpanel layout="block" styleclass="pbBody" rendered="{!OR(AND(templ.Product_Group__r.Name != 'Minimum Services Fee',templ.Product_Group__r.Name != 'AG – Automated Guaranteed', templ.Product_Group__r.Name != 'Trading Desk Fee'),OR(AND(contract.Automated_Guaranteed__c, templ.Product_Group__r.Name == 'AG – Automated Guaranteed'),
+    AND(contract.Trading_Desk_Fee__c, templ.Product_Group__r.Name == 'Trading Desk Fee')))}">
+                <table class="list"  style=" border: 2px solid black;  border-style: solid;
+            border-collapse: collapse; border-color: black;"  border ="1">
+                    <tbody>
+                        <tr class="headerRow">
+                            <th>Service Name</th>
+                            <th>Period of invoicing</th>
+                            <th>Currency</th>
+                            <th>Price</th>
+                            <th>Units</th>
+                            <apex:outputText rendered="{!templ.Fees_Calculation_model__c != null}"><th>Pricing Model</th></apex:outputText>  
+                            <apex:outputText rendered="{!templ.Fees_Calculation_model__c != null}"><th>Fee calculation model</th></apex:outputText>  
+                        </tr>
+                        <apex:repeat var="cp" value="{!templ.Contract_Prices__r}">
+                            <apex:outputPanel rendered="{!IF(cp.Main_Contract_Price__c != 'false', true, false)}">
+                                <tr>
+                                    <td>{!cp.ProductCustom__r.Name}</td>
+                                    <td>{!cp.ProductCustom__r.Period_Of_Invoicing__c}</td>
+                                    <td>{!currencyStr}</td>
+                                    <td>
+                                        <c:ContractPriceOutPut price="{!cp}"/>
+                                    </td>
+                                    <td>{!cp.ProductCustom__r.Measure__c}</td>
+                                    <apex:outputText rendered="{!templ.Fees_Calculation_model__c != null}"><td>{!IF(cp.ProductCustom__r.Hide_Pricing_Model__c, '-', templ.Pricing_Model__c)}</td></apex:outputText>
+                                    <apex:outputText rendered="{!templ.Fees_Calculation_model__c != null}"><td>{!IF(cp.ProductCustom__r.Hide_Pricing_Model__c, '-', templ.Fees_Calculation_model__c)}</td></apex:outputText>
+                                </tr>
+                            </apex:outputPanel>
+                        </apex:repeat>
+                        <apex:outputText rendered="{!templ.Product_Group__r.Name = 'Real Time Bidding (RTB) Services'}">
+                            <!-- Depricated -->
+                            <apex:repeat var="cp" value="{!l_contractPrices}">
+                                <tr>
+                                    <td>{!cp.Multiple_Billing_Resource_Name__c}</td>
+                                    <td>{!cp.ProductCustom__r.Period_Of_Invoicing__c}</td>
+                                    <td>{!currencyStr}</td>
+                                    <td>
+                                        <c:ContractPriceOutPut price="{!cp}"/>
+                                    </td>
+                                    <td>{!cp.ProductCustom__r.Measure__c}</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </apex:repeat>
+                           <tr>
+                                <td>Media Costs</td>
+                                <td>Monthly</td>
+                                <td>{!currencyStr}</td>
+                                <td>-</td>
+                                <td>Ad Exchange Costs</td>
+                                <td>-</td>
+                                <apex:outputText rendered="{!templ.Fees_Calculation_model__c != null}"><td>-</td></apex:outputText>
+                            </tr>
+                             <tr>
+                                <td>Creative Approval Costs</td>
+                                <td>Monthly</td>
+                                <td>{!currencyStr}</td>
+                                <td>-</td>
+                                <td>Ad Exchange Costs</td>
+                                <td>-</td>
+                                <apex:outputText rendered="{!templ.Fees_Calculation_model__c != null}"><td>-</td></apex:outputText> 
+                            </tr>
+                        </apex:outputText> 
+                    </tbody>
+                </table>
+            </apex:outputpanel>
+            <apex:outputpanel layout="block" styleclass="pbBody" rendered="{!templ.Product_Group__r.Name = 'Minimum Services Fee'}">
+                <table class="list"  style=" border: 2px solid black;  border-style: solid;
+            border-collapse: collapse; border-color: black;"  border ="1">
+                    <tbody>
+                        <tr class="headerRow">
+                            <th>Period of Invoicing</th>
+                            <th>Currency</th>
+                            <th>Price</th>
+                            <th>Units</th>
+                        </tr>
+                        <apex:repeat var="cp" value="{!templ.Contract_Prices__r}">
+                        <tr>
+                            <td>{!Contract.Minimum_Fee_Period__c}</td>
+                            <td>{!currencyStr}</td>
+                            <td>
+                               <c:ContractPriceOutPut price="{!cp}"/>
+                            </td>
+                            <td>Month</td>
+                        </tr>
+                         </apex:repeat>
+                    </tbody>
+                </table>
+                <br/>
+                <apex:outputpanel layout="block" id="helpTextMinimumFee" styleclass="pbBody"  style="font-size:8pt;" >
+                {!IF(Contract.Minimum_Fee_Period__c == 'Monthly', '1 During the term of this Agreement each month Client agrees to pay Adform Minimum Service Fee set out below. This fee is charged once per a calendar month. If at the end of a calendar month the total spent amount on Adform’s Services is lower than total amount of Minimum Service Fee for the Period of Invoicing, Adform will issue an additional invoice for the amount equal to the difference between total amount of Minimum Service Fee for the Period of Invoicing and the total spent amount. Total spent amount is calculated by issuing date of Adform’s Invoices and credit notes. Media Costs, Creative Approval Fees and other recharged services fees and costs, as well as DMP fees are excluded from the total spent amount calculation. Should this Agreement be terminated by Adform due to Client’s material breach of this Agreement, Adform shall be entitled to Minimum Service Fee for the outstanding term of this Agreement.', '1 During the term of this Agreement each month Client agrees to pay Adform Minimum Service Fee set out below. This fee is charged once per a calendar quarter. If at the end of a calendar quarter the total spent amount on Adform’s Services is lower than total amount of Minimum Service Fee for the Period of Invoicing, Adform will issue an additional invoice for the amount equal to the difference between total amount of Minimum Service Fee for the Period of Invoicing and the total spent amount. Total spent amount is calculated by issuing date of Adform’s Invoices and credit notes. Media Costs, Creative Approval Fees and other recharged services fees and costs, as well as DMP fees are excluded from the total spent amount calculation. Should this Agreement be terminated by Adform due to Client’s material breach of this Agreement, Adform shall be entitled to Minimum Service Fee for the outstanding term of this Agreement.')}
+                </apex:outputpanel>
+            </apex:outputpanel>
+            
+        </apex:pageblocksection>
+</apex:repeat>
+<!--
+<br/>
+<apex:pageblocksection collapsible="false" title="Creative Studio">
+<apex:outputpanel layout="block" styleclass="pbBody">
+    <table class="list" style=" border: 2px solid black;  border-style: solid;
+    border-collapse: collapse; border-color: black;"  border ="1">
+        <tbody>
+            <tr class="headerRow">
+                 <th>Service Name</th>
+                  <th>Period of invoicing</th>
+                  <th>Currency</th>
+                  <th>Price</th>
+                  <th>Units</th>
+            </tr>
+            <tr>
+                <td>Studio fee</td>
+                <td>Monthly</td>
+                <td>{!currencyStr}</td>
+                <td>Free</td>
+                <td>Banner Created</td>
+            </tr>
+        </tbody>
+        </table>
+    </apex:outputpanel>
+</apex:pageblocksection>
+<br/>
+<apex:pageblocksection collapsible="false" title="AG – Automated Guaranteed" rendered="{!contract.Automated_Guaranteed__c}">
+<apex:outputpanel layout="block" styleclass="pbBody">
+    <table class="list"  style=" border: 2px solid black;  border-style: solid;
+    border-collapse: collapse; border-color: black;"  border ="1">
+        <tbody>
+            <tr class="headerRow">
+                <th>Service Name</th>
+                <th>Period of invoicing</th>
+                <th>Currency</th>
+                <th>Price</th>
+                <th>Units</th>
+            </tr>
+            <tr>
+                <td>Media Costs</td>
+                <td>Monthly</td>
+                <td>{!currencyStr}</td>
+                <td>Media Costs (which according to publisher’s option shall be invoiced by Adform)</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+        </table>
+    </apex:outputpanel>
+</apex:pageblocksection>
+<br/>
+<apex:pageblocksection collapsible="false" title="Trading Desk Fee" rendered="{!contract.Trading_Desk_Fee__c}">
+<apex:outputpanel layout="block" styleclass="pbBody">
+    <table class="list"  style=" border: 2px solid black;  border-style: solid;
+    border-collapse: collapse; border-color: black;"  border ="1">
+        <tbody>
+            <tr class="headerRow">
+                <th>Name</th>
+                <th>Rate</th>
+                <th>Units</th>
+            </tr>
+            <tr>
+                <td>Trading Desk Fee Discount</td>
+                <td>100%</td>
+                <td>Trading Desk Fee</td>
+            </tr>
+        </tbody>
+        </table>
+    </apex:outputpanel>
+</apex:pageblocksection>
+<br/>
+<apex:pageblocksection collapsible="false" title="Third Party Data">
+<apex:outputpanel layout="block" styleclass="pbBody">
+    <table class="list" style=" border: 2px solid black;  border-style: solid;
+    border-collapse: collapse; border-color: black;"  border ="1">
+        <tbody>
+            <tr class="headerRow">
+                  <th>Service Name</th>
+                  <th>Period of invoicing</th>
+                  <th>Currency</th>
+                  <th>Price</th>
+                  <th>Units</th>
+            </tr>
+            <tr>
+                <td>Third Party Audience Data Costs</td>
+                <td>Monthly</td>
+                <td>{!currencyStr}</td>
+                <td>Data Provider Costs as shown in the targeting UI defined as X CPM</td>
+                <td>CPM</td>
+            </tr>
+            <tr>
+                <td>Brand Safety Costs</td>
+                <td>Monthly</td>
+                <td>{!currencyStr}</td>
+                <td>Brand Safety Provider Costs as shown in the Brand Protection UI defined as X% (of RTB Service Fee Units indicated above) or X CPM</td>
+                <td>RTB Service Fee Units indicated above or CPM</td>
+            </tr>
+            <tr>
+                <td>Contextual Targeting Costs</td>
+                <td>Monthly</td>
+                <td>{!currencyStr}</td>
+                <td>Contextual Targeting Provider Costs as shown in the contextual targeting filter defined as X% (of RTB Service Fee Units indicated above) or X CPM</td>
+                <td>RTB Service Fee Units indicated above or CPM</td>
+            </tr>
+            <tr>
+                <td>Cross-Device Costs</td>
+                <td>Monthly</td>
+                <td>{!currencyStr}</td>
+                <td>Cross-Device Provider Costs as shown in the Cross-Device targeting UI defined as X% (of RTB Service Fee Units indicated above) or X CPM</td>
+                <td>RTB Service Fee Units indicated above or CPM</td>
+            </tr>
+        </tbody>
+        </table>
+    </apex:outputpanel>
+</apex:pageblocksection>-->
+
+
+</apex:pageblock>
+</apex:page>

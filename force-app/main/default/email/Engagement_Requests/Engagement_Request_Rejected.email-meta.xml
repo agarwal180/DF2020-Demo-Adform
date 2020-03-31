@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends an email notification when engagement request based on the status</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>Engagement Request Updates</name>
+    <style>freeForm</style>
+    <subject>Your request for {!Case.CaseNumber} is {!Case.Status}</subject>
+    <textOnly>Hey,
+
+Your request for {!Case.CaseNumber} has been {!Case.Status} by {!Case.Case_Approver__c}.
+
+If you have any questions, please reach out directly.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

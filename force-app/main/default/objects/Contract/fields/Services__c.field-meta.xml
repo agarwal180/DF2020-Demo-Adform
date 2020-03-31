@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Services</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Based on Activities (CPM, CPC)</fullName>
+                <default>false</default>
+                <label>Based on Activities (CPM, CPC)</label>
+            </value>
+            <value>
+                <fullName>% of Adserving Cost</fullName>
+                <default>false</default>
+                <label>% of Adserving Cost</label>
+            </value>
+            <value>
+                <fullName>% of Campaign Budget</fullName>
+                <default>false</default>
+                <label>% of Campaign Budget</label>
+            </value>
+            <value>
+                <fullName>Fixed Fee for each Campaign</fullName>
+                <default>false</default>
+                <label>Fixed Fee for each Campaign</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

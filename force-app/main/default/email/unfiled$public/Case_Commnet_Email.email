@@ -1,0 +1,6 @@
+A comment has been received on Case {!Case.CaseNumber}:  
+Case Link:  {!Case.Link}
+Subject: {!Case.Subject}
+
+Comment:
+{!Case.Last_Case_Comment}

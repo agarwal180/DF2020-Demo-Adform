@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Company Size</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1-10 employees</fullName>
+                <default>false</default>
+                <label>1-10 employees</label>
+            </value>
+            <value>
+                <fullName>11-100 employees</fullName>
+                <default>false</default>
+                <label>11-100 employees</label>
+            </value>
+            <value>
+                <fullName>101-500 employees</fullName>
+                <default>false</default>
+                <label>101-500 employees</label>
+            </value>
+            <value>
+                <fullName>500+ employees</fullName>
+                <default>false</default>
+                <label>500+ employees</label>
+            </value>
+            <value>
+                <fullName>Large Enterprise</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Large Enterprise</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Small Enterprise</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Small Enterprise</label>
+            </value>
+            <value>
+                <fullName>Startup</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Startup</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

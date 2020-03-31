@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Central_PSX__c</fullName>
+    <externalId>false</externalId>
+    <label>Central PSX</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Operational_Team__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Adele Vainoraite</fullName>
+                <default>false</default>
+                <label>Adele Vainoraite</label>
+            </value>
+            <value>
+                <fullName>Agne Matuzeviciute</fullName>
+                <default>false</default>
+                <label>Agne Matuzeviciute</label>
+            </value>
+            <value>
+                <fullName>Agnis Vaiciunas</fullName>
+                <default>false</default>
+                <label>Agnis Vaiciunas</label>
+            </value>
+            <value>
+                <fullName>Aivaras Maceina</fullName>
+                <default>false</default>
+                <label>Aivaras Maceina</label>
+            </value>
+            <value>
+                <fullName>Aivaras Šiurkus</fullName>
+                <default>false</default>
+                <label>Aivaras Šiurkus</label>
+            </value>
+            <value>
+                <fullName>Aleksandras Jakuchinas</fullName>
+                <default>false</default>
+                <label>Aleksandras Jakuchinas</label>
+            </value>
+            <value>
+                <fullName>Aurimas Kraujalis</fullName>
+                <default>false</default>
+                <label>Aurimas Kraujalis</label>
+            </value>
+            <value>
+                <fullName>Egle Norkute</fullName>
+                <default>false</default>
+                <label>Egle Norkute</label>
+            </value>
+            <value>
+                <fullName>Elzbieta Kasinskaja</fullName>
+                <default>false</default>
+                <label>Elzbieta Kasinskaja</label>
+            </value>
+            <value>
+                <fullName>Evelina Simaskaite</fullName>
+                <default>false</default>
+                <label>Evelina Simaskaite</label>
+            </value>
+            <value>
+                <fullName>Gabriele Kasauskaite</fullName>
+                <default>false</default>
+                <label>Gabriele Kasauskaite</label>
+            </value>
+            <value>
+                <fullName>Ieva Juonytė</fullName>
+                <default>false</default>
+                <label>Ieva Juonytė</label>
+            </value>
+            <value>
+                <fullName>Karolis Lamsargis</fullName>
+                <default>false</default>
+                <label>Karolis Lamsargis</label>
+            </value>
+            <value>
+                <fullName>Kristijonas Pranskus</fullName>
+                <default>false</default>
+                <label>Kristijonas Pranskus</label>
+            </value>
+            <value>
+                <fullName>Lina Jancyte</fullName>
+                <default>false</default>
+                <label>Lina Jancyte</label>
+            </value>
+            <value>
+                <fullName>Michal Marek</fullName>
+                <default>false</default>
+                <label>Michal Marek</label>
+            </value>
+            <value>
+                <fullName>Milda Gudonavičienė</fullName>
+                <default>false</default>
+                <label>Milda Gudonavičienė</label>
+            </value>
+            <value>
+                <fullName>Paulius Sparnaitis</fullName>
+                <default>false</default>
+                <label>Paulius Sparnaitis</label>
+            </value>
+            <value>
+                <fullName>Ramona Rudgalvyte</fullName>
+                <default>false</default>
+                <label>Ramona Rudgalvyte</label>
+            </value>
+            <value>
+                <fullName>Ramune Velvyte</fullName>
+                <default>false</default>
+                <label>Ramune Velvyte</label>
+            </value>
+            <value>
+                <fullName>Rokas Armalis</fullName>
+                <default>false</default>
+                <label>Rokas Armalis</label>
+            </value>
+            <value>
+                <fullName>Rokas Gedvilas</fullName>
+                <default>false</default>
+                <label>Rokas Gedvilas</label>
+            </value>
+            <value>
+                <fullName>Rūta Voveraitienė</fullName>
+                <default>false</default>
+                <label>Rūta Voveraitienė</label>
+            </value>
+            <value>
+                <fullName>Simona Žilėnaitė</fullName>
+                <default>false</default>
+                <label>Simona Žilėnaitė</label>
+            </value>
+            <value>
+                <fullName>Tautvydas Gelumbickas</fullName>
+                <default>false</default>
+                <label>Tautvydas Gelumbickas</label>
+            </value>
+            <value>
+                <fullName>Unassigned</fullName>
+                <default>false</default>
+                <label>Unassigned</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Adele Vainoraite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Agne Matuzeviciute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Agnis Vaiciunas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Aivaras Maceina</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Aivaras Šiurkus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Aleksandras Jakuchinas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Aurimas Kraujalis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Egle Norkute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Elzbieta Kasinskaja</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Evelina Simaskaite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Gabriele Kasauskaite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Ieva Juonytė</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Karolis Lamsargis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Kristijonas Pranskus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Lina Jancyte</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Michal Marek</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Milda Gudonavičienė</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Paulius Sparnaitis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Ramona Rudgalvyte</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Ramune Velvyte</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Rokas Armalis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Rokas Gedvilas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Rūta Voveraitienė</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Simona Žilėnaitė</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Tautvydas Gelumbickas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central PSX</controllingFieldValue>
+            <valueName>Unassigned</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

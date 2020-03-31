@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPM_For_Booked_Impressions_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISNULL(CPM_for_booked_impressions__c)) , TEXT(CurrencyIsoCode)&amp;&#39; &#39;&amp;IF( 
+ CPM_for_booked_impressions__c  &gt;= 1000000, 
+TEXT(FLOOR(CPM_for_booked_impressions__c / 1000000)) &amp; &quot;,&quot;, 
+&quot;&quot;) &amp; 
+IF( 
+CPM_for_booked_impressions__c &gt;= 1000, 
+RIGHT(TEXT(FLOOR(CPM_for_booked_impressions__c / 1000)), 3) &amp; &quot;,&quot;, 
+&quot;&quot;) &amp; 
+RIGHT(TEXT(FLOOR(CPM_for_booked_impressions__c)), 3) &amp; &quot;.&quot; &amp; 
+IF( 
+MOD(CPM_for_booked_impressions__c , 1) * 100 &lt; 10, 
+&quot;0&quot; &amp; TEXT(ROUND(MOD(CPM_for_booked_impressions__c , 1), 2) * 100), 
+TEXT(MIN(ROUND(MOD(CPM_for_booked_impressions__c , 1), 2) * 100, 99)) 
+), &#39;&#39;)</formula>
+    <label>CPM For Booked Impressions Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

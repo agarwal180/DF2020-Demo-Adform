@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Case_Closure_Notification</fullName>
+        <description>Case Closure Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>k.marcinkevic@adform.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Resolution_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Cases_New_Case_Notification</fullName>
+        <description>Cases: New Case Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>k.marcinkevic@adform.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Submission_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Creative_Production_Done</fullName>
+        <description>Notification to sales manager that creative production - Done</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/Creative_Production_Done</template>
+    </alerts>
+    <alerts>
+        <fullName>DMP_ID_Account_Request_Closed</fullName>
+        <ccEmails>k.marcinkevic@adform.com</ccEmails>
+        <description>DMP ID Account Request Closed.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/DMP_ID_Account_Request_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Resolution_Sent_to_Issuer</fullName>
+        <ccEmails>german.girstautas@adform.com</ccEmails>
+        <description>Email Resolution Sent to Issuer</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Submitter_Email_Stamp__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Resolution_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Engagement_Request_Status_Update_II</fullName>
+        <description>Engagement Request Status Update</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Engagement_Requests/Engagement_Request_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Engagement_email_notification</fullName>
+        <description>Engagement email notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>k.marcinkevic@adform.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Engagement_Requests/Engagement_Requests_Email_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_DMP_ID_Request</fullName>
+        <ccEmails>audiencebase@adform.com</ccEmails>
+        <description>New DMP ID Request</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/New_DMP_ID_Account_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Sell_Side_ID_Request</fullName>
+        <ccEmails>publishers@adform.com</ccEmails>
+        <description>New Sell-Side ID Request</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/New_Sell_Side_ID_Account_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>New_User_Login_Notification_To_Case_Creator</fullName>
+        <description>New User Login Notification For Case Creator</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_New_User_Login</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_of_Adminstrator</fullName>
+        <description>Notification of Adminstrator</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>k.marcinkevic@adform.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Urgent_Case_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Platform_Account_Creation_Request</fullName>
+        <ccEmails>deal.desk@adform.com</ccEmails>
+        <description>Platform Account Creation Request</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/New_Platform_Account_Request</template>
+    </alerts>
+    <alerts>
+        <fullName>Platform_Account_Creation_Status_Rejected</fullName>
+        <description>Platform Account Creation Status Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/Platform_Account_Case_Closed_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Platform_account_request_for_Closed</fullName>
+        <description>Platform account request for Closed.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/Platform_account_request_closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Sell_Side_ID_Account_Request_Closed</fullName>
+        <ccEmails>k.marcinkevic@adform.com</ccEmails>
+        <description>Sell-Side ID Account Request Closed.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Contract/Sell_Side_ID_Account_Request_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Clarifying_Question_email</fullName>
+        <ccEmails>german.girstautas@adform.com</ccEmails>
+        <description>Send Clarifying Question email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Submitter_Email_Stamp__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Clarification_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Stamp_Submitter_Email_Stamp</fullName>
+        <field>Submitter_Email_Stamp__c</field>
+        <formula>Submitter_Email__c</formula>
+        <name>Stamp Submitter Email Stamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Question_Checkbock</fullName>
+        <field>Send_Clarifying_Question__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Question Checkbock</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Send_Email_Checkbox</fullName>
+        <field>Send_Resolution_Email__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Send Email Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Case Clarification Email Notification Sent</fullName>
+        <actions>
+            <name>Send_Clarifying_Question_email</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Uncheck_Question_Checkbock</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>EMAIL_Clarification_Question_Email_Sent</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Send_Clarifying_Question__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Questions_to_submitter_Administrator__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Under Review | Awaiting Admin,Under Review | Awaiting Submitter</value>
+        </criteriaItems>
+        <description>Sends a Case Clarification Email Notification if Checkbox checked, and Question not blank</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Resolution Email Notification Sent</fullName>
+        <actions>
+            <name>Email_Resolution_Sent_to_Issuer</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Uncheck_Send_Email_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>EMAIL_Case_Resolution_Email_Sent</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Send_Resolution_Email__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Issue_Resolution__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed Rejected,Closed Resolved,Pending | Phase 2 Consideration</value>
+        </criteriaItems>
+        <description>Sends a Case Resolution Email Notification if Checkbox checked, and Resolution not blank</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Case Closure Notification</fullName>
+        <actions>
+            <name>Case_Closure_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed Resolved,Closed Rejected,Closed Duplicate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Salesforce Support</value>
+        </criteriaItems>
+        <description>Notifies Adform &amp; Benissimo when Case closed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A New user login email notification</fullName>
+        <actions>
+            <name>New_User_Login_Notification_To_Case_Creator</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( ISCHANGED(Status), ISPICKVAL(Status, &#39;Closed Resolved&#39;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Submit Questions to Admin</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Under Review | Awaiting Admin</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Questions_to_submitter_Administrator__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Submits a question to the Admin if the Status =</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cases%3A New Support Case Submitted</fullName>
+        <actions>
+            <name>Cases_New_Case_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Creative Production Order</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Creative Production Done</fullName>
+        <actions>
+            <name>Creative_Production_Done</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Production done and ready to bill</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Engagement Request Email Notification</fullName>
+        <actions>
+            <name>Engagement_email_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Managed_Service_type__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Sens email notification whenever case is created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Engagement Request%2FManage Service Status Email Notification</fullName>
+        <actions>
+            <name>Engagement_Request_Status_Update_II</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Sends email notification every time the status is changed</description>
+        <formula>AND( OR(  RecordTypeId = &#39;0120J000000R37a&#39;),  ISCHANGED( Status ), $Profile.Name = &#39;System Administrator&#39;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Platform Account Case Closed Rejected</fullName>
+        <actions>
+            <name>Platform_Account_Creation_Status_Rejected</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Status_of_Platform_Account__c</field>
+            <operation>equals</operation>
+            <value>Closed Rejected</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>TPAS/DSP ID</value>
+        </criteriaItems>
+        <description>Sends an email notification after the status is changed to Closed Rejected.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Platform Account Case Created</fullName>
+        <actions>
+            <name>Platform_Account_Creation_Request</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Service_Agreement_Name__c</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>TPAS/DSP ID</value>
+        </criteriaItems>
+        <description>After Platform Account Request has been created it sends an email notification</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Platform account Moved to Closed</fullName>
+        <actions>
+            <name>Platform_account_request_for_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISNEW()),  				ISCHANGED(Status), 				ISPICKVAL(Status, &#39;Closed Resolved&#39;), RecordType.DeveloperName = &#39;Platform_Account_Creation&#39;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Submitter Email Stamp</fullName>
+        <actions>
+            <name>Stamp_Submitter_Email_Stamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.CreatedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Stamps the Email Stamp field when the record is saved. Enables email functionality of case resolution WFR.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Urgent Case Notification</fullName>
+        <actions>
+            <name>Notification_of_Adminstrator</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Prevented_from_working__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <description>Sends a message to Sara if an urgent case is received (prevents user from working)</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>EMAIL_Case_Resolution_Email_Sent</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>A Case Resolution email was sent to the Submitter with Resolution details included.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>EMAIL: Case Resolution Email Sent</subject>
+    </tasks>
+    <tasks>
+        <fullName>EMAIL_Clarification_Question_Email_Sent</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>A clarification question was sent by email to the submitter.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>EMAIL: Clarification Question Email Sent</subject>
+    </tasks>
+</Workflow>

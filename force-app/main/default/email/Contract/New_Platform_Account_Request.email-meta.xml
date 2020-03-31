@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>New Platform Account Request</name>
+    <style>freeForm</style>
+    <subject>New Platform Account Request for Case - {!Case.CaseNumber}</subject>
+    <textOnly>Hi,
+
+This is New Platform Account Request for Case - {!Case.CaseNumber}
+
+Account Name: {!Case.Account}
+
+Account Tier: {!Account.Customer_Tier__c}
+
+Part of GHG: {!Account.Type_of_GHG__c}
+
+
+
+Contract Status: {!Account.00N8E000001Dbaa}
+
+Effective Date:{!Account.Effective_Date__c}
+
+Agreement Type: {!Account.Agreement_Type__c}
+
+
+
+Credit Check Status: {!Account.Credit_Check_Status__c}
+
+Insurance Amount: {!Account.Insurance_amount__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

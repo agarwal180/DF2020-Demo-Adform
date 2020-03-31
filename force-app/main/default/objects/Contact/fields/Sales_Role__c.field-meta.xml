@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Role__c</fullName>
+    <externalId>false</externalId>
+    <label>Contact Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Key Decision Maker</fullName>
+                <default>false</default>
+                <label>Decision Maker</label>
+            </value>
+            <value>
+                <fullName>Influencer</fullName>
+                <default>false</default>
+                <label>Influencer</label>
+            </value>
+            <value>
+                <fullName>User</fullName>
+                <default>false</default>
+                <label>User</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+            <value>
+                <fullName>Media Planner</fullName>
+                <default>false</default>
+                <label>Media Planner</label>
+            </value>
+            <value>
+                <fullName>Trafficker</fullName>
+                <default>false</default>
+                <label>Trafficker</label>
+            </value>
+            <value>
+                <fullName>Partner Product Manager</fullName>
+                <default>false</default>
+                <label>Partner Product Manager</label>
+            </value>
+            <value>
+                <fullName>Partner Developer</fullName>
+                <default>false</default>
+                <label>Partner Developer</label>
+            </value>
+            <value>
+                <fullName>Invoicing Person</fullName>
+                <default>false</default>
+                <label>Invoicing Person</label>
+            </value>
+            <value>
+                <fullName>Signing Person</fullName>
+                <default>false</default>
+                <label>Signing Person</label>
+            </value>
+            <value>
+                <fullName>Specifier</fullName>
+                <default>false</default>
+                <label>Specifier</label>
+            </value>
+            <value>
+                <fullName>Ratifier</fullName>
+                <default>false</default>
+                <label>Ratifier</label>
+            </value>
+            <value>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+                <label>Procurement</label>
+            </value>
+            <value>
+                <fullName>Invoice Email To</fullName>
+                <default>false</default>
+                <label>Invoice Email To</label>
+            </value>
+            <value>
+                <fullName>Invoice Email CC</fullName>
+                <default>false</default>
+                <label>Invoice Email CC</label>
+            </value>
+            <value>
+                <fullName>Reminder Email To</fullName>
+                <default>false</default>
+                <label>Reminder Email To</label>
+            </value>
+            <value>
+                <fullName>Reminder Email CC</fullName>
+                <default>false</default>
+                <label>Reminder Email CC</label>
+            </value>
+            <value>
+                <fullName>Kayako Integration</fullName>
+                <default>false</default>
+                <label>Kayako Integration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

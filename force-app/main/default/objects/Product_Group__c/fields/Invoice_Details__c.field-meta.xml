@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Details__c</fullName>
+    <externalId>false</externalId>
+    <label>Invoice Details</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Minimal (agency level)</fullName>
+                <default>false</default>
+                <label>Minimal (agency level)</label>
+            </value>
+            <value>
+                <fullName>Medium (end client level)</fullName>
+                <default>false</default>
+                <label>Medium (end client level)</label>
+            </value>
+            <value>
+                <fullName>Maximum (campaign level)</fullName>
+                <default>false</default>
+                <label>Maximum (campaign level)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

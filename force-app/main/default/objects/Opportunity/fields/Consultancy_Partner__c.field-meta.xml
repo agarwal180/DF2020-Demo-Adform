@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consultancy_Partner__c</fullName>
+    <externalId>false</externalId>
+    <label>Consultancy Partner</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>McKinsey</fullName>
+                <default>false</default>
+                <label>McKinsey</label>
+            </value>
+            <value>
+                <fullName>BCG</fullName>
+                <default>false</default>
+                <label>BCG</label>
+            </value>
+            <value>
+                <fullName>Deloitte</fullName>
+                <default>false</default>
+                <label>Deloitte</label>
+            </value>
+            <value>
+                <fullName>Accenture</fullName>
+                <default>false</default>
+                <label>Accenture</label>
+            </value>
+            <value>
+                <fullName>IBM</fullName>
+                <default>false</default>
+                <label>IBM</label>
+            </value>
+            <value>
+                <fullName>Bain &amp; Company</fullName>
+                <default>false</default>
+                <label>Bain &amp; Company</label>
+            </value>
+            <value>
+                <fullName>CapGemini</fullName>
+                <default>false</default>
+                <label>CapGemini</label>
+            </value>
+            <value>
+                <fullName>Future Marketing</fullName>
+                <default>false</default>
+                <label>Future Marketing</label>
+            </value>
+            <value>
+                <fullName>Stack I/O</fullName>
+                <default>false</default>
+                <label>Stack I/O</label>
+            </value>
+            <value>
+                <fullName>Stream 20</fullName>
+                <default>false</default>
+                <label>Stream 20</label>
+            </value>
+            <value>
+                <fullName>Reply</fullName>
+                <default>false</default>
+                <label>Reply</label>
+            </value>
+            <value>
+                <fullName>Eley Consulting</fullName>
+                <default>false</default>
+                <label>Eley Consulting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

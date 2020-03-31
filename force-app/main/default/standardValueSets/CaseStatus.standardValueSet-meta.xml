@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>New | Unreviewed</fullName>
+        <default>true</default>
+        <label>New | Unreviewed</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Under Review | Awaiting Admin</fullName>
+        <default>false</default>
+        <label>Under Review | Awaiting Admin</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Under Review | Awaiting Submitter</fullName>
+        <default>false</default>
+        <label>Under Review | Awaiting Submitter</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Executive Review</fullName>
+        <default>false</default>
+        <label>Executive Review</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Resolved</fullName>
+        <default>false</default>
+        <label>Closed Resolved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Rejected</fullName>
+        <default>false</default>
+        <label>Closed Rejected</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Duplicate</fullName>
+        <default>false</default>
+        <label>Closed Duplicate</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Possible Future Project/Enhancement</fullName>
+        <default>false</default>
+        <label>Possible Future Project/Enhancement</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Requirements Development</fullName>
+        <default>false</default>
+        <label>Requirements Development</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Configuration &amp; Training</fullName>
+        <default>false</default>
+        <label>Configuration &amp; Training</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting Productionalization</fullName>
+        <default>false</default>
+        <label>Awaiting Productionalization</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Completed/Released</fullName>
+        <default>false</default>
+        <label>Completed/Released</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Completed/Deprioritized</fullName>
+        <default>false</default>
+        <label>Completed/Deprioritized</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Sent for signature</fullName>
+        <default>false</default>
+        <label>Sent for signature</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Signed and start production</fullName>
+        <default>false</default>
+        <label>Signed and start production</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Production done and ready to bill</fullName>
+        <default>false</default>
+        <label>Production done and ready to bill</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Signed but delay billing</fullName>
+        <default>false</default>
+        <label>Signed but delay billing</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Canceled</fullName>
+        <default>false</default>
+        <label>Canceled</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Start Production</fullName>
+        <default>false</default>
+        <label>Start Production</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Assigned</fullName>
+        <default>false</default>
+        <label>Assigned</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Completed</fullName>
+        <default>false</default>
+        <label>Completed</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>On hold</fullName>
+        <default>false</default>
+        <label>On hold</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pending | Phase 2 Consideration</fullName>
+        <default>false</default>
+        <label>Pending | Phase 2 Consideration</label>
+        <closed>true</closed>
+    </standardValue>
+</StandardValueSet>

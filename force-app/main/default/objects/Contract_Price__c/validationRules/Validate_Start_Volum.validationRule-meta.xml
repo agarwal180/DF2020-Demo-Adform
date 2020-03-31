@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Start_Volum</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(ISPICKVAL(Tier_Type__c, &#39;Main&#39;),   ISNULL(Volume_from__c))</errorConditionFormula>
+    <errorDisplayField>Volume_from__c</errorDisplayField>
+    <errorMessage>Field is Required when tier type is &#39;Main&#39;</errorMessage>
+</ValidationRule>

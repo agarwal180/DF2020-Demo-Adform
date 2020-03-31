@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_GHG__c</fullName>
+    <description>Account GHG</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Opportunity__r.Account.Type_of_GHG__c)</formula>
+    <label>Account GHG</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

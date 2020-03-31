@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends a notification of an Urgent case recieved</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Urgent Case Notification</name>
+    <style>none</style>
+    <subject>An URGENT Issue has been submitted by {!Case.Primary_User_Stakeholder__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

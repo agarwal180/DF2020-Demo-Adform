@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operational_Mode__c</fullName>
+    <externalId>false</externalId>
+    <label>Operational Mode</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Self-service</fullName>
+                <default>false</default>
+                <label>Self-service</label>
+            </value>
+            <value>
+                <fullName>Hybrid</fullName>
+                <default>false</default>
+                <label>Hybrid</label>
+            </value>
+            <value>
+                <fullName>Fully-Managed</fullName>
+                <default>false</default>
+                <label>Fully-Managed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

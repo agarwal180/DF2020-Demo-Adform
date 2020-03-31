@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Usage_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Usage Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Contract_Type_DMP__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1st party</fullName>
+                <default>false</default>
+                <label>1st party</label>
+            </value>
+            <value>
+                <fullName>2nd party</fullName>
+                <default>false</default>
+                <label>2nd party</label>
+            </value>
+            <value>
+                <fullName>3rd party</fullName>
+                <default>false</default>
+                <label>3rd party</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Enterprise</controllingFieldValue>
+            <controllingFieldValue>DSP Audience Connector</controllingFieldValue>
+            <controllingFieldValue>Pay As You Go</controllingFieldValue>
+            <valueName>1st party</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Selling (Revenue Share)</controllingFieldValue>
+            <valueName>2nd party</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Data Selling (Revenue Share)</controllingFieldValue>
+            <valueName>3rd party</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

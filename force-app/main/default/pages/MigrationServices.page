@@ -1,0 +1,115 @@
+<apex:page docType="html-5.0" standardController="Contract" extensions="MigrationServicesController" lightningStylesheets="true">
+    <apex:includescript value="{!URLFOR($Resource.Jquery)}" />
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="New contract" mode="edit" id="ContractBlock">
+            <apex:pageBlockSection columns="1" title="Product information">
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Migration Model"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList value="{!contract.Migration_Model__c}" id="migrationModel" multiselect="false" size="1">
+                            <apex:selectOptions value="{!migrationModels}"/>
+                        </apex:selectList>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Package Size"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList value="{!contract.Package_Size__c}" id="packageSize" multiselect="false" size="1">
+                            <apex:selectOptions value="{!packageSizes}"/>
+                        </apex:selectList>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="Client information">
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="{!$Label.Contact_person}"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList value="{!contract.Client_s_contact_name__c}" multiselect="false" id="contactName" size="1" onchange="setvalueForPicklist('contactName','contactEmail')">
+                            <apex:selectOptions value="{!contacts}"/>
+                        </apex:selectList>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Contact Email"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList value="{!contract.Client_s_contact_e_mail__c}" id="contactEmail" multiselect="false" size="1">
+                            <apex:selectOptions value="{!emails}"/>
+                        </apex:selectList>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel value="Effective Date"/>
+                    <apex:outputpanel layout="block" styleclass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                        <apex:selectList id="EffectiveElement" value="{!contract.Effective_date__c}" multiselect="false" size="1">
+                            <apex:selectOptions value="{!effectivedays}"/>
+                        </apex:selectList>
+                    </apex:outputpanel>
+                </apex:pageblocksectionitem>
+                <apex:outputfield value="{!contract.AccountId}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton onclick="return validateBeforeSave();" action="{!saveAction}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    <script >
+        function setvalueForPicklist(parentSelect, childSelect) {
+            var myobj = JSON.parse('{!contactToemailJson}');
+            var inValue = jQuery('[id$='+parentSelect+']').val();
+            var email = myobj[inValue];
+            jQuery('[id$='+childSelect+']').val(email);
+        }
+        
+        function validateBeforeSave() {
+            var isSetFocus = false;
+            var error_message = '';
+            var elem_id = '';
+            var elem_err_value = '';
+            var isLower = false;
+            var isHigher = false;
+            var maxPaymentTerms = null;
+            error_message = 'Error: Field Is required';
+            elem_id = 'EffectiveElement';
+            isSetFocus = handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, false);
+            elem_id = 'contactName';
+            isSetFocus = handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, false);
+            elem_id = 'contactEmail';
+            isSetFocus = handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, false);
+            jQuery.each( jQuery('[id$=selectElement]'), function( ) {
+                error_message = 'Error: Field Is required';
+                elem_id = jQuery(this).attr('Id');
+                elem_err_value = '';
+                console.log('ELELMENT ID ------'+elem_id);
+                isSetFocus = handleErrorForElementFullId(elem_id,elem_err_value,error_message,isSetFocus, false);
+            });
+            if (isSetFocus) {
+                return false;
+            }
+        }
+        
+        function handleErrorForElement(elem_id,elem_err_value,error_message,isSetFocus, isNumber) {
+            if (jQuery('[id$='+elem_id+']').css('display') != 'none'  &&  jQuery('[id$='+elem_id+']').css('display') != undefined && jQuery('[id$='+elem_id+']').is(':disabled') == false) {
+                var inValue = jQuery('[id$='+elem_id+']').val();
+                var isError = false;
+                if (isNumber) {
+                    isError = (inValue== null || inValue.length == 0 || inValue == elem_err_value  || isNaN(inValue) || /^\s*$/.test(inValue));
+                }else {
+                    isError = (inValue== null || inValue.length == 0 || inValue == elem_err_value || (/^\s*$/.test(inValue) && jQuery('[id$='+elem_id+']').is('select') == false));
+                }
+                if(isError) {
+                    if(!isSetFocus) jQuery('[id$='+elem_id+']').focus();
+                    isSetFocus = true;
+                    if(jQuery('[id$='+elem_id+'_error]').length==0) jQuery('[id$='+elem_id+']').after('<span id="'+elem_id+'_error" style="color:red; width:125px; word-wrap: break-word;"><br />'+error_message+'</span>');
+                } else if(jQuery('[id$='+elem_id+'_error]').length>0) jQuery('[id$='+elem_id+'_error]').detach();
+            }
+            return isSetFocus;
+        }
+    </script>
+</apex:page>

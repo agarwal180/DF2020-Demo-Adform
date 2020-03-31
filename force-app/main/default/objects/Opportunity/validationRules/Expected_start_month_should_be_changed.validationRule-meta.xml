@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_start_month_should_be_changed</fullName>
+    <active>false</active>
+    <description>Expected Start month for revenue should be changed if Estimated Close date was changed</description>
+    <errorConditionFormula>ISCHANGED(CloseDate) &amp;&amp; NOT(ISCHANGED(Start_From__c))</errorConditionFormula>
+    <errorDisplayField>Start_From__c</errorDisplayField>
+    <errorMessage>Please change Expected start month for revenue value</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_Minimum_Can_be_selected</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(File_Type__c, &#39;Minimum Fee&#39;),
+NOT(ISPICKVAL(Invoice_Details__c, &#39;Minimal (agency level)&#39;))
+)</errorConditionFormula>
+    <errorDisplayField>Invoice_Details__c</errorDisplayField>
+    <errorMessage>Only Minimal (agency level) can be selected for Minimum Fee</errorMessage>
+</ValidationRule>

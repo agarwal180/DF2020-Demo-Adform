@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Global_Assigned_PSX__c</fullName>
+    <externalId>false</externalId>
+    <label>Global Assigned PSX</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Operational_Team__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>David Hillier</fullName>
+                <default>false</default>
+                <label>David Hillier</label>
+            </value>
+            <value>
+                <fullName>Gregory Cristal</fullName>
+                <default>false</default>
+                <label>Gregory Cristal</label>
+            </value>
+            <value>
+                <fullName>Jesper Schwartz</fullName>
+                <default>false</default>
+                <label>Jesper Schwartz</label>
+            </value>
+            <value>
+                <fullName>Jody Shillday</fullName>
+                <default>false</default>
+                <label>Jody Shillday</label>
+            </value>
+            <value>
+                <fullName>Marc-Oliver Michel</fullName>
+                <default>false</default>
+                <label>Marc-Oliver Michel</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Global PSL</controllingFieldValue>
+            <valueName>David Hillier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global PSL</controllingFieldValue>
+            <valueName>Gregory Cristal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global PSL</controllingFieldValue>
+            <valueName>Jesper Schwartz</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global PSL</controllingFieldValue>
+            <valueName>Jody Shillday</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Global PSL</controllingFieldValue>
+            <valueName>Marc-Oliver Michel</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

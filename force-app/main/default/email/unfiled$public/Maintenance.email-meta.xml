@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Maintenance</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>Maintenance email</name>
+    <style>freeForm</style>
+    <subject>Maintenance of single sign-on to SalesForce</subject>
+    <textOnly>Dear all,
+Please be informed that this Friday 2018-12-28, 09:00 AM - 11:00 AM CET Time we will update certificate used for single sign-on to SalesForce.
+
+During this update in order to log in to SalesForce, you will need to use Username and Password. Please use &quot;Forgot Your Password&quot; button if you don&#39;t remember it.
+
+If any questions, please contact us at Team.Salesforce@adform.com
+
+
+Thanks
+SalesForce Team at Adform</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

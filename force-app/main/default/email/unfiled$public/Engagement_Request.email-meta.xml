@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Platform Solutions Request Template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>Engagement Request</name>
+    <style>freeForm</style>
+    <subject>[Action required - Please assign] New {!Engagement__c.Account_Tier__c} Request: {!Engagement__c.Lifecycle_phase__c} / {!Engagement__c.Engagement_type__c} / {!Engagement__c.Account_Name__c}</subject>
+    <textOnly>The following Request has been submitted requiring assistance. Please assign a PSX.
+
+Account Name: {!Engagement__c.Account_Name__c}
+Account Tier: {!Engagement__c.Account_Tier__c}
+Account Type: {!Engagement__c.Account_Type__c}
+Parent Account:{!Engagement__c.Account_Parent_Account__c}
+GHG: {!Engagement__c.Account_GHG__c}
+Account Owner: {!Engagement__c.Account_Owner__c}
+
+Relationship Status: {!Engagement__c.Account_Relationship_Status__c}
+Projected Net Rev. YOY (EUR){!Engagement__c.Account_Projected_Net_Rev_YOY__c}
+
+Assigned PSX :{!Engagement__c.Account_Assigned_PSX__c}
+Office: {!Engagement__c.Account_Office__c}
+Operational Phase: {!Engagement__c.Account_Operational_Phase__c}
+Operational Mode: {!Engagement__c.Account_Operational_Mode__c}
+
+Requester: {!Engagement__c.OwnerFullName}
+Request Name: {!Engagement__c.Name}
+Request Link: {!Engagement__c.Link}
+Requester Comments: {!Engagement__c.Requester_comments__c}
+
+Engagement Status: {!Engagement__c.Engagement_Status__c}
+Expected Engagement Start: {!Engagement__c.Expected_Engagement_Start__c}
+Expected Engagement Finish: {!Engagement__c.Expected_Engagement_Finish__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

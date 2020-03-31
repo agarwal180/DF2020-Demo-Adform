@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Approver__c</fullName>
+    <externalId>false</externalId>
+    <label>Case Approver</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fredrik Paul</fullName>
+                <default>false</default>
+                <label>Fredrik Paul</label>
+            </value>
+            <value>
+                <fullName>Greta Ghizzo</fullName>
+                <default>false</default>
+                <label>Greta Ghizzo</label>
+            </value>
+            <value>
+                <fullName>Jack Salisbury</fullName>
+                <default>false</default>
+                <label>Jack Salisbury</label>
+            </value>
+            <value>
+                <fullName>Janine Bilz</fullName>
+                <default>false</default>
+                <label>Janine Bilz</label>
+            </value>
+            <value>
+                <fullName>Jim Leseman</fullName>
+                <default>false</default>
+                <label>Jim Leseman</label>
+            </value>
+            <value>
+                <fullName>Maritza Goya Torres</fullName>
+                <default>false</default>
+                <label>Maritza Goya Torres</label>
+            </value>
+            <value>
+                <fullName>Martin Talarek</fullName>
+                <default>false</default>
+                <label>Martin Talarek</label>
+            </value>
+            <value>
+                <fullName>Oliver Schlüter</fullName>
+                <default>false</default>
+                <label>Oliver Schlüter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

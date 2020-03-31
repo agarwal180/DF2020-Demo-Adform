@@ -1,0 +1,3 @@
+{!Case.Primary_User_Stakeholder__c} has submitted an URGENT case # {!Case.CaseNumber} at {!Case.LastModifiedDate}. Please investigate. 
+
+Case details here: {!Case.Link}

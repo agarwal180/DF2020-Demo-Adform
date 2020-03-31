@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_of_Lead_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please specify the reason for lead disqualification</inlineHelpText>
+    <label>Reason of Lead Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bad Product Fit</fullName>
+                <default>false</default>
+                <label>Bad Product Fit</label>
+            </value>
+            <value>
+                <fullName>Bad Actor</fullName>
+                <default>false</default>
+                <label>Bad Actor</label>
+            </value>
+            <value>
+                <fullName>Too Small</fullName>
+                <default>false</default>
+                <label>Too Small</label>
+            </value>
+            <value>
+                <fullName>Regional Limitation</fullName>
+                <default>false</default>
+                <label>Regional Limitation</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Unqualified/Closed</controllingFieldValue>
+            <valueName>Bad Product Fit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified/Closed</controllingFieldValue>
+            <valueName>Bad Actor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified/Closed</controllingFieldValue>
+            <valueName>Too Small</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified/Closed</controllingFieldValue>
+            <valueName>Regional Limitation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified/Closed</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

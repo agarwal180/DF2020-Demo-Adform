@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_Annual_Spend__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Converted to Account upon Lead Conversion</inlineHelpText>
+    <label>Potential Annual Spend</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0-50K</fullName>
+                <default>false</default>
+                <label>0-50K</label>
+            </value>
+            <value>
+                <fullName>50K-100K</fullName>
+                <default>false</default>
+                <label>50K-100K</label>
+            </value>
+            <value>
+                <fullName>100-500K</fullName>
+                <default>false</default>
+                <label>100-500K</label>
+            </value>
+            <value>
+                <fullName>500K-1M</fullName>
+                <default>false</default>
+                <label>500K-1M</label>
+            </value>
+            <value>
+                <fullName>1M+</fullName>
+                <default>false</default>
+                <label>1M+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

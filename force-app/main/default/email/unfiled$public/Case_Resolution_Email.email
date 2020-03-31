@@ -1,0 +1,10 @@
+Hello {!Case.Primary_User_Stakeholder__c}, 
+
+Your Case # {!Case.CaseNumber} has been closed by {!Case.OwnerFullName}. The Status is now = {!Case.Status}.
+
+The Issue Resolution is:  {!Case.Issue_Resolution__c}
+
+If you would like further information about this case, please review the case comments at {!Case.Link} and email the case administrator. 
+
+Regards,
+Your Adform Salesforce.com Administrator

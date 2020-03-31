@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="1" >
+<![CDATA[<font size="4"><b style="">RFP request for&nbsp;</b><font face="arial" style=""><b style="">{!Opportunity.Name} Opportunity</b></font></font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="Arial, sans-serif" style=""><span style="background-color: rgb(255, 255, 255);"><b style="">Opportunity Name:</b>&nbsp;</span><font color="#0000ee" style=""><u><a href="http://adform.my.salesforce.com/{!Opportunity.Id}">{!Opportunity.Name}</a></u></font><br style=""><span style="background-color: rgb(255, 255, 255);"><b>Estimate Close Date:</b> {!Opportunity.CloseDate}&nbsp;</span><br style=""><span style="background-color: rgb(255, 255, 255);"><b>Stage:</b> {!Opportunity.StageName}&nbsp;</span><br style=""><span style="background-color: rgb(255, 255, 255);"><b style="">Opportunity Owner:</b> {!Opportunity.OwnerFullName}</span></font>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="1" >
+<![CDATA[]]></td>
+</tr>
+</table>

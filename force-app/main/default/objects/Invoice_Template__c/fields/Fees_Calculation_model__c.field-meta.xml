@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fees_Calculation_model__c</fullName>
+    <externalId>false</externalId>
+    <label>Fees Calculation model</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Pricing_Model__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Included Fees</fullName>
+                <default>false</default>
+                <label>Included Fees</label>
+            </value>
+            <value>
+                <fullName>On Top Fees</fullName>
+                <default>false</default>
+                <label>On Top Fees</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Pure media + Data</controllingFieldValue>
+            <controllingFieldValue>Gross Platform Spend</controllingFieldValue>
+            <controllingFieldValue>Pure Media</controllingFieldValue>
+            <valueName>Included Fees</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pure media + Data</controllingFieldValue>
+            <controllingFieldValue>Gross Platform Spend</controllingFieldValue>
+            <controllingFieldValue>Pure Media</controllingFieldValue>
+            <valueName>On Top Fees</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

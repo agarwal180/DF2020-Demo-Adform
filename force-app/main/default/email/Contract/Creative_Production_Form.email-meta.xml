@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends an email notification after Creative Production form is filled</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Adform_Letterhead</letterhead>
+    <name>Creative Production Form</name>
+    <style>freeForm</style>
+    <subject>Creative Production for {!Case.Campaign__c}</subject>
+    <textOnly>Creative Production form
+Campaign Information
+Case: {!Case.CaseNumber}
+Case owner: {!Case.OwnerFullName}
+Advertiser: {!Case.Advertiser_Brand__c}
+Campaign title: {!Case.Campaign__c}
+Campaign ID: {!Case.Campaign_ID__c}
+Campaign Start day: {!Case.Start_Date__c}
+Campaign End date: {!Case.End_Date__c}
+Campaign goal/KPI: {!Case.Campaign_goal_KPI_s__c}
+
+
+Creative Information
+Placement size: {!Case.Placement_sizes__c}
+Format: {!Case.Contract__r}
+Devices: {!Case.Contract__r}
+Landing Page: {!Case.Landing_Page__c}
+
+Publisher Details
+Channel: {!Case.Channel_c}
+Publisher Domain: {!Case.Publisher_Domain__c}
+Ad Ops email: {!Case.Ad_Ops_email__c}
+Impressions: {!Case.Impressions__c}
+
+Frequency capping:  {!Case.Frequency_capping__c}
+Assets
+Link to assets pack: {!Case.Link_to_assets_pack__c}
+Creative Designer&#39;s Name: {!Case.Creative_Designers_Name__c}
+Comments: {!Case.Order_details__c}
+Description: {!Contact.Description}
+Other Details: {!Case.Comments__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

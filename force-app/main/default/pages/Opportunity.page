@@ -1,0 +1,287 @@
+<apex:page standardController="Opportunity" extensions="OpportunityController" title="{!$Label.Opportunity_Edit}" lightningStylesheets="true">
+<style>
+    .deleteIcon{
+        background:url(/img/func_icons/util/trash20.gif) no-repeat left top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    .deleteIcon:hover{
+        background:url(/img/func_icons/util/trash20.gif) no-repeat right  top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    
+    .calculateTotal{
+        background:url(/img/func_icons/util/combobox20.gif) no-repeat left top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    .calculateTotal:hover{
+        background:url(/img/func_icons/util/combobox20.gif) no-repeat right  top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    
+    .calculateMonth{
+        transform: rotate(180deg);
+        background:url(/img/func_icons/util/combobox20.gif) no-repeat left top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    .calculateMonth:hover{
+        transform: rotate(180deg);
+        background:url(/img/func_icons/util/combobox20.gif) no-repeat right top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    .headerclass{
+        background: #f2f3f3;
+        color: #000;
+        font-size: .9em;
+        font-weight: bold;
+        border-bottom: 1px solid #e0e3e5;
+    }
+    .tableclass{
+        border: 1px solid #ededed;;
+        border-collapse: collapse;
+    }
+    .tableclass TH, .tableclass TD {
+        border: 1px solid #ededed;;
+        text-align: left;
+        padding: 4px; 
+        font-family: Arial,Helvetica,sans-serif;
+        color: #222;
+    }
+</style>
+<apex:includeScript value="{!URLFOR($Resource.Jquery)}" />
+<apex:sectionHeader title="{!$Label.New_Opportunity}" subtitle=" {!IF(NOT(isRecordTypeSelection),$Label.Opportunity_Edit, $Label.Select_Opportunity_Record_Type)} "/>
+<apex:form >
+<apex:pageMessages />
+    <apex:pageBlock title="{!$Label.Opportunity_Edit}" id="search_results_id" mode="edit"  rendered="{!NOT(isRecordTypeSelection)}">
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!saveRecords}" value="{!$Label.Save}"/>
+            <apex:commandButton action="{!cancel}" value="{!$Label.Cancel}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="2" title="{!$Label.Opportunity_Information}" rendered="{!isShowOpportuntiy}" id="mainSection">
+            <apex:repeat value="{!oppFields}" var="f">
+                <apex:inputField value="{!Opportunity[f.fieldPath]}" required="{!OR(f.required, f.dbrequired)}" rendered="{!NOT(OR(f.fieldPath='OwnerId', f.fieldPath = 'RecordTypeId',f.fieldPath = 'StageName', f.fieldPath = 'Probability'))}" />
+                <apex:outputField value="{!Opportunity[f.fieldPath]}"  rendered="{!OR(f.fieldPath='OwnerId', f.fieldPath = 'RecordTypeId')}"/>
+                <apex:inputField value="{!Opportunity[f.fieldPath]}" required="{!OR(f.required, f.dbrequired)}" rendered="{!f.fieldPath = 'Probability'}" id="Probability"/>
+                
+                <apex:inputField value="{!Opportunity[f.fieldPath]}" required="{!OR(f.required, f.dbrequired)}" rendered="{!f.fieldPath = 'StageName'}" id="StageName" onchange="changeProbability(this)" />
+            </apex:repeat>
+        </apex:pageBlockSection>
+        <script  type="text/javascript">
+            var stageObject = new Object();
+            <apex:repeat value="{!stageProbability}" var="stage">
+                stageObject['{!stage.ApiName}'] = '{!stage.DefaultProbability}';
+            </apex:repeat>
+            function changeProbability(selObj, probId) {
+                var probabilityid = document.getElementById(jQuery('[id$=Probability]').attr('Id'));
+                if(probabilityid != null) {
+                    probabilityid.value = stageObject[selObj.value];
+                }
+            }
+            </script>
+        <apex:pageBlockSection columns="1" title="{!$Label.Opportunity_Products}">
+            <apex:inputField value="{!Opportunity.Start_From__c}" id="StartFrom"/>
+            <apex:variable value="{!0}" var="rowNum"/>
+            <apex:pageBlockTable value="{!products}" var="rec" rendered="{!products.size > 0}">
+               
+                    <apex:column headerValue="{!$Label.Action}">
+                        
+                        <apex:outputpanel layout="block" style="width: 90px;">
+                        <!-- <apex:outputlink id="theImage" title="{!$Label.Calculate_Revenue_Over_Month}" styleClass="calculateMonth" value="javascript:calculaterevenue('{!$Component.theImage}')"/> -->
+                        <apex:commandlink action="{!calculatemonth}" id="theImage" styleClass="calculateMonth"   title="{!$Label.Calculate_Revenue_Over_Month}">
+                           <apex:param name="rowNumber" value="{!rowNum}" />
+                        </apex:commandlink>
+                        
+                        <!-- <apex:outputlink id="theImageRecalculation" title="{!$Label.Deal_Value_Recalculation}" styleClass="calculateTotal" value="javascript:totalCalculation('{!$Component.theImage}')"/> -->
+                        <apex:commandlink action="{!calculateTotalValue}" id="theImageRecalculation" styleClass="calculateTotal"   title="{!$Label.Deal_Value_Recalculation}">
+                           <apex:param name="rowNumber" value="{!rowNum}" />
+                        </apex:commandlink>
+                                           
+                        <apex:commandlink action="{!deleteRowElement}" styleClass="linkclass" styleclass="deleteIcon"  title="{!$Label.Delete}">
+                           <apex:param name="rowNumber" value="{!rowNum}" />
+                        </apex:commandlink>
+                        </apex:outputpanel>
+                         <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.fields.Product2Id.label}">
+                        <apex:selectList value="{!rec.PricebookEntryId}" multiselect="false" size="1">
+                            <apex:selectOptions value="{!AvailabelProducts}"/>
+                        </apex:selectList>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.fields.Contract_Type__c.label}">
+                        <apex:inputField value="{!rec.Contract_Type__c}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.Deal_Value}" rendered="{!isDealValueVisible}">
+                        <apex:inputField value="{!rec.UnitPrice}" style="width:80px;"  required="true" id="unitPrice"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">
+                            <div class="helpButton" id="headerGuaranty-_help">
+                            {!$ObjectType.OpportunityLineItem.fields.Guaranteed_Revenue__c.label}
+                            <img src="/s.gif" alt="" class="helpOrb" title="" style="right: -7px;"/>
+                            <script>
+                                sfdcPage.setHelp('headerGuaranty', '{!$ObjectType.OpportunityLineItem.Fields.Guaranteed_Revenue__c.InlineHelpText}');
+                            </script>
+                            </div>
+                            
+                        </apex:facet>
+                        <apex:inputField value="{!rec.Guaranteed_Revenue__c}" style="width:80px;"  id="Guaranteed_Revenue"/>
+                    </apex:column>
+                    <apex:column headerValue="1 month"  >
+                        <apex:inputField value="{!rec.X1_Month__c}" style="width:60px;"  id="x1stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="2 month" >
+                        <apex:inputField value="{!rec.X2_Month__c}" style="width:60px;" id="x2stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="3 month" >
+                        <apex:inputField value="{!rec.X3_Month__c}" style="width:60px;"  id="x3stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="4 month" >
+                        <apex:inputField value="{!rec.X4_month__c}" style="width:60px;" id="x4stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="5 month" >
+                        <apex:inputField value="{!rec.X5_Month__c}" style="width:60px;" id="x5stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="6 month" >
+                        <apex:inputField value="{!rec.X6_month__c}" style="width:60px;" id="x6stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="7 month" >
+                        <apex:inputField value="{!rec.X7_Month__c}" style="width:60px;" id="x7stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="8 month">
+                        <apex:inputField value="{!rec.X8_month__c}" style="width:60px;" id="x8stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="9 month">
+                        <apex:inputField value="{!rec.X9_month__c}" style="width:60px;" id="x9stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="10 month" >
+                        <apex:inputField value="{!rec.X10_month__c}" style="width:60px;" id="x10stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="11 month">
+                        <apex:inputField value="{!rec.X11_month__c}" style="width:60px;" id="x11stMonth"/>
+                    </apex:column>
+                    <apex:column headerValue="12 month">
+                        <apex:inputField value="{!rec.X12_month__c}" style="width:60px;" id="x12stMonth"/>
+                    </apex:column>
+                    
+            </apex:pageBlockTable>
+            <apex:commandButton action="{!addProduct}" value="{!$Label.Add_Product}" />
+        </apex:pageBlockSection>
+     </apex:pageBlock>
+     <apex:outputtext rendered="{!isRecordTypeSelection}">
+    <div class="bDescription">{!$Label.Record_Type_select_text}</div>
+     </apex:outputtext>
+     <apex:pageBlock title="{!$Label.Select_Opportunity_Record_Type}" rendered="{!isRecordTypeSelection}">
+     <apex:pageBlockButtons location="bottom">
+            <apex:commandButton action="{!prepareDataAfterselection}" value="Continue"/>
+            <apex:commandButton action="{!cancel}" value="{!$Label.Cancel}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="1"  id="recordTypeSection">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Record_Type_of_new_record}"/>
+                <apex:selectList value="{!SelectedRecordType}" multiselect="false" size="1">
+                    <apex:selectOptions value="{!recordTypes}"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+     </apex:pageBlock>
+     <apex:outputtext rendered="{!isRecordTypeSelection}">
+     <h3 class="recordTypesHeading">{!$Label.Available_Opportunity_Record_Types}</h3>
+     <table class="tableclass" style="table-layout: auto">
+        <th class="headerclass">{!$Label.Record_Type_Group}</th>
+        <th class="headerclass">{!$Label.Record_Type_Name}</th>
+        <th class="headerclass">{!$Label.Description}</th>
+        <apex:repeat value="{!recordTypesToDisplay}" var="item">
+            <tr>
+                <apex:outputtext rendered="{!item.RecordTypeGroup != null}">
+                <td rowspan="{!item.rowspan}" style="vertical-align: middle;font-weight: bold;">{!item.RecordTypeGroup}</td>
+                </apex:outputtext>
+                <td style="font-weight: bold;">{!item.R_Type.Name}</td>
+                <td>{!item.R_Type.Description}</td>
+            </tr>
+        </apex:repeat>
+     </table>
+     </apex:outputtext>
+    
+</apex:form>
+<script  type="text/javascript">
+
+    function totalCalculation (objectId) {
+        var mainPath = objectId.replace(new RegExp("theImage",'g'),"");
+        var arrayKey = ['x1stMonth', 'x2stMonth','x3stMonth','x4stMonth','x5stMonth','x6stMonth','x7stMonth','x8stMonth','x9stMonth','x10stMonth','x11stMonth','x12stMonth'];
+        var totalvalue = 0;
+        for (var i = 0; i < arrayKey.length; i++) {
+            var monthValue = document.getElementById(mainPath+arrayKey[i]).value;
+            if(monthValue != null) {
+                monthValue = Number(monthValue.replace(new RegExp(",",'g'),""));
+            }
+            else {
+                monthValue = 0;
+            }
+            totalvalue = totalvalue + monthValue;
+        }
+        var unitPrice = document.getElementById(mainPath+'unitPrice');
+        unitPrice.value = totalvalue.toFixed(2);
+    }
+    function calculaterevenue (objectId) {
+        var mainPath = objectId.replace(new RegExp("theImage",'g'),"");
+        var unitPrice = document.getElementById(mainPath+'unitPrice');
+        var Guaranteed_Revenue = document.getElementById(mainPath+'Guaranteed_Revenue');
+        if(unitPrice != null && (unitPrice.value=='' || unitPrice.value==null)) {
+            alert ('Please fill Deal Value');
+            return null;
+        }
+        var total = 0;
+        if(unitPrice != null && (unitPrice.value !='' && unitPrice.value != null)) {
+            total = Number(unitPrice.value.replace(new RegExp(",",'g'),""));
+        }
+        var quaranty = 0;
+        /*if(Guaranteed_Revenue != null && (Guaranteed_Revenue.value !='' && Guaranteed_Revenue.value != null)) {
+            quaranty = Number(Guaranteed_Revenue.value.replace(new RegExp(",",'g'),""));
+        }*/
+
+        var Guaranteed_Revenue = document.getElementById(mainPath+'Guaranteed_Revenue');
+        var x1stMonth = document.getElementById(mainPath+'x1stMonth');
+        var x2stMonth = document.getElementById(mainPath+'x2stMonth');
+        var x3stMonth = document.getElementById(mainPath+'x3stMonth');
+        var x4stMonth = document.getElementById(mainPath+'x4stMonth');
+        var x5stMonth = document.getElementById(mainPath+'x5stMonth');
+        var x6stMonth = document.getElementById(mainPath+'x6stMonth');
+        var x7stMonth = document.getElementById(mainPath+'x7stMonth');
+        var x8stMonth = document.getElementById(mainPath+'x8stMonth');
+        var x9stMonth = document.getElementById(mainPath+'x9stMonth');
+        var x10stMonth = document.getElementById(mainPath+'x10stMonth');
+        var x11stMonth = document.getElementById(mainPath+'x11stMonth');
+        var x12stMonth = document.getElementById(mainPath+'x12stMonth');
+        x1stMonth.value =(((total - quaranty)/100 ) * 2).toFixed(2);
+        x2stMonth.value = (((total - quaranty)/100 ) * 4).toFixed(2);
+        x3stMonth.value = (((total - quaranty)/100 ) * 6).toFixed(2);
+        x4stMonth.value = (((total - quaranty)/100 ) * 5).toFixed(2);
+        x5stMonth.value = (((total - quaranty)/100 ) * 5).toFixed(2);
+        x6stMonth.value = (((total - quaranty)/100 ) * 8).toFixed(2);
+        x7stMonth.value = (((total - quaranty)/100 ) * 9).toFixed(2);
+        x8stMonth.value = (((total - quaranty)/100 ) * 12).toFixed(2);
+        x9stMonth.value = (((total - quaranty)/100 ) * 11).toFixed(2);
+        x10stMonth.value = (((total - quaranty)/100 ) * 11).toFixed(2);
+        x11stMonth.value = (((total - quaranty)/100 ) * 11).toFixed(2);
+        x12stMonth.value = (((total - quaranty)/100 ) * 16).toFixed(2);
+    }
+    
+</script>
+</apex:page>

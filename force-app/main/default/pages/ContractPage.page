@@ -1,0 +1,107 @@
+<apex:page standardController="Opportunity" extensions="ContactContract" lightningStylesheets="true">
+<style>
+    .deleteIcon{
+        background:url(/img/func_icons/util/trash20.gif) no-repeat left top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    .deleteIcon:hover{
+        background:url(/img/func_icons/util/trash20.gif) no-repeat right  top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    
+    .calculateTotal{
+        background:url(/img/func_icons/util/combobox20.gif) no-repeat left top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    .calculateTotal:hover{
+        background:url(/img/func_icons/util/combobox20.gif) no-repeat right  top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    
+    .calculateMonth{
+        transform: rotate(180deg);
+        background:url(/img/func_icons/util/combobox20.gif) no-repeat left top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    .calculateMonth:hover{
+        transform: rotate(180deg);
+        background:url(/img/func_icons/util/combobox20.gif) no-repeat right top;
+        display:inline-block; 
+        width:21px; 
+        height:20px; 
+        margin-left:5px;
+    }
+    .headerclass{
+        background: #f2f3f3;
+        color: #000;
+        font-size: .9em;
+        font-weight: bold;
+        border-bottom: 1px solid #e0e3e5;
+    }
+    .tableclass{
+        border: 1px solid #ededed;;
+        border-collapse: collapse;
+    }
+    .tableclass TH, .tableclass TD {
+        border: 1px solid #ededed;;
+        text-align: left;
+        padding: 4px; 
+        font-family: Arial,Helvetica,sans-serif;
+        color: #222;
+    }
+</style>
+<apex:sectionHeader title="New Contract" subtitle="Select Contract Record Type"/>
+<apex:form >
+<apex:outputpanel rendered="{!AND(OR(Opportunity.Account.Account_Status__c = 'Suspended',Opportunity.Account.Account_Status__c='Blocked'), $Profile.Name = 'Adform Standard User')}">
+    <apex:pageMessage summary="{!$Label.Error_Message_to_create_contract_for_Blocked_Accounts}" severity="error" strength="3" />
+    <apex:pageMessages />
+    <div class="ptBreadcrumb">&nbsp;«&nbsp;<apex:commandLink action="{!cancel}" style="color: #015ba7;text-decoration: none;" value="{!$Label.Cancel}" id="cancel"/></div>
+</apex:outputpanel>
+
+    <apex:outputpanel rendered="{!NOT(AND(OR(Opportunity.Account.Account_Status__c = 'Suspended',Opportunity.Account.Account_Status__c='Blocked'), $Profile.Name = 'Adform Standard User'))}">
+        <apex:pageMessages />
+        {!$Profile.Name}{!Opportunity.Account.Account_Status__c}
+        <apex:outputText >Select a record type for the new contract. To skip this page in the future, change your record type settings on your personal setup page.</apex:outputText>
+        <apex:pageBlock title="Select Contract Record Type" id="search_results_id" mode="edit">
+            <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton action="{!selectAction}" value="Continue"/>
+                <apex:commandButton action="{!cancel}" value="{!$Label.Cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1"  id="recordTypeSection">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Record_Type_of_new_record}"/>
+                    <apex:selectList value="{!selectedContract}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!l_recordtypes}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <h3 class="recordTypesHeading">Available Contract Record Types</h3>
+         <table class="tableclass" style="table-layout: auto">
+            <th class="headerclass">{!$Label.Record_Type_Name}</th>
+            <th class="headerclass">{!$Label.Description}</th>
+            <apex:repeat value="{!l_recordTypesInfo }" var="item">
+                <tr>
+                    <td style="font-weight: bold;">{!item.Name}</td>
+                    <td>{!item.Description}</td>
+                </tr>
+            </apex:repeat>
+         </table>
+    </apex:outputpanel>
+</apex:form>
+</apex:page>

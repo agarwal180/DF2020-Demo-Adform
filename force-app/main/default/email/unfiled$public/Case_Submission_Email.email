@@ -1,0 +1,14 @@
+The following Support Request Case has been submitted:
+{!Case.Link} 
+
+Please review and assign the Case, and use Case Comments to request any necessary clarifications from the submitter:
+
+Subject: {!Case.Subject}
+Priority: {!Case.Priority}
+Created By: {!Case.CreatedBy}
+Submitter Email: {!Case.Submitter_Email_Stamp__c}
+Primary Stakeholder: {!Case.Primary_User_Stakeholder__c}
+Issue Prevents User From Working?: {!Case.Prevented_from_working__c}
+
+Description:
+{!Case.Description}

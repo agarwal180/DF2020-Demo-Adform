@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Model__c</fullName>
+    <externalId>false</externalId>
+    <label>Pricing Model</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>File_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Activity Based</fullName>
+                <default>false</default>
+                <label>Activity Based</label>
+            </value>
+            <value>
+                <fullName>Fixed Fee</fullName>
+                <default>false</default>
+                <label>Fixed Fee</label>
+            </value>
+            <value>
+                <fullName>Net Amount</fullName>
+                <default>false</default>
+                <label>Net Amount</label>
+            </value>
+            <value>
+                <fullName>Pure media + Data</fullName>
+                <default>false</default>
+                <label>Pure media + Data</label>
+            </value>
+            <value>
+                <fullName>Gross Platform Spend</fullName>
+                <default>false</default>
+                <label>Gross Platform Spend</label>
+            </value>
+            <value>
+                <fullName>Pure Media</fullName>
+                <default>false</default>
+                <label>Pure Media</label>
+            </value>
+            <value>
+                <fullName>Net Amount + RTB</fullName>
+                <default>false</default>
+                <label>Net Amount + RTB</label>
+            </value>
+            <value>
+                <fullName>Net Amount + RTB - TPB</fullName>
+                <default>false</default>
+                <label>Net Amount + RTB - TPB</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Creative service</controllingFieldValue>
+            <controllingFieldValue>Minimum Fee</controllingFieldValue>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <controllingFieldValue>Master Data</controllingFieldValue>
+            <controllingFieldValue>SE Integrations</controllingFieldValue>
+            <controllingFieldValue>TPAS</controllingFieldValue>
+            <valueName>Fixed Fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <controllingFieldValue>Master Data</controllingFieldValue>
+            <controllingFieldValue>SE Integrations</controllingFieldValue>
+            <controllingFieldValue>TPAS</controllingFieldValue>
+            <valueName>Activity Based</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <controllingFieldValue>SE Integrations</controllingFieldValue>
+            <controllingFieldValue>TPAS</controllingFieldValue>
+            <valueName>Net Amount</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <controllingFieldValue>RTB Own Inventory</controllingFieldValue>
+            <controllingFieldValue>RTB</controllingFieldValue>
+            <valueName>Pure media + Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <controllingFieldValue>RTB Own Inventory</controllingFieldValue>
+            <controllingFieldValue>RTB</controllingFieldValue>
+            <valueName>Gross Platform Spend</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>INTERNAL</controllingFieldValue>
+            <controllingFieldValue>RTB Own Inventory</controllingFieldValue>
+            <controllingFieldValue>RTB</controllingFieldValue>
+            <valueName>Pure Media</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TPAS</controllingFieldValue>
+            <valueName>Net Amount + RTB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TPAS</controllingFieldValue>
+            <valueName>Net Amount + RTB - TPB</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

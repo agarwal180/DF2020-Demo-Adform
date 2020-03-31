@@ -1,0 +1,20 @@
+<apex:page standardController="Account" extensions="AccountRequestTier" lightningStylesheets="true">
+<apex:sectionHeader title="Update Tier" subtitle="{!Account.Name}"/>
+<apex:form >
+<apex:pageMessages />
+    <apex:pageBlock title="Update Tier" mode="edit" >
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!SaveAction}" value="Send Request"/>
+            <apex:commandButton action="{!cancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="1" title="Tier information" >
+            <apex:inputfield required="true" value="{!Account.Requested_Tier__c}"/>
+            <apex:inputfield required="true" value="{!Account.Notes__c}"/>
+            <apex:inputfield required="true" value="{!Account.Potential_Annual_Spend__c}"/>
+            <apex:inputfield required="true" value="{!Account.Number_of_Countries_Available__c}"/>
+            <apex:inputfield required="true" value="{!Account.Number_of_Brands__c}"/>
+            <apex:inputfield required="true" value="{!Account.Annual_Projected_Revenue__c}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>  
+</apex:page>

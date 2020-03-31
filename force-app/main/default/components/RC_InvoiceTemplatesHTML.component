@@ -1,0 +1,47 @@
+<apex:component controller="RC_InvoiceTemplatesHTMLController" access="global">
+  <apex:attribute name="contrId" description="Contract Id value "
+                  type="String" required="required" assignTo="{!contractId}"/>
+    <div><span class="titlemainText">Pricing Information</span></div>
+<br/>
+<br/>
+<apex:repeat var="it" value="{!templates}">
+    <div><span class="titlemainText"></span><apex:outputField value="{!it.Product_Group__r.Label__c}"/></div>
+    <apex:outputpanel layout="block" rendered="{!it.Pricing_Model__c != null}"><span class="titlemainText">Pricing Model:</span>&nbsp;<apex:outputField value="{!it.Pricing_Model__c}"/></apex:outputpanel>
+    <apex:outputpanel layout="block" rendered="{!it.Fees_Calculation_model__c != null}"><span class="titlemainText">Fees Calculation Model:</span>&nbsp;<apex:outputField value="{!it.Fees_Calculation_model__c}"/></apex:outputpanel>
+    <apex:outputpanel layout="block" rendered="{!it.Payment_Terms_Code__c != null}"><span class="titlemainText">Payment Terms:</span>&nbsp;<apex:outputField value="{!it.Payment_Terms_Code__c}"/></apex:outputpanel>
+    <apex:outputpanel layout="block" rendered="{!it.Invoice_Details__c != null}"><span class="titlemainText">Invoice Details:</span>&nbsp;<apex:outputField value="{!it.Invoice_Details__c}"/></apex:outputpanel>
+    <apex:outputpanel layout="block" rendered="{!it.Invoice_Level__c != null}"><span class="titlemainText">Invoice Level:</span>&nbsp;<apex:outputField value="{!it.Invoice_Level__c}"/></apex:outputpanel>
+    
+    <br/>
+    <table class="list"  style=" border: 2px solid black;  border-style: solid;border-collapse: collapse; border-color: black;"  border ="1">
+        <tbody>
+            <tr class="headerRow">
+                <th>Product</th>
+                <th>Currency</th>
+                <th>Measure</th>
+                <th>Price</th>
+                <th>Minimum Price</th>
+            </tr>
+            <apex:repeat var="cp" value="{!it.Contract_Prices__r}">
+                <apex:outputPanel rendered="{!IF(cp.Main_Contract_Price__c != 'false', true, false)}">
+                    <tr>
+                        <td><apex:outputfield value="{!cp.ProductCustom__r.Name}"/></td>
+                        <td>{!currencyStr}</td>
+                        <td><apex:outputfield value="{!cp.ProductCustom__r.Measure__c}"/></td>
+                        <td style="{!IF(cp.Is_Price_Lower__c = true,'color:red','color:black')}">
+                            <c:ContractPriceOutPut price="{!cp}"/>
+                        </td>
+                        <td>
+                            <apex:outputfield value="{!cp.Product_Price__r.Minimum_Price_Currency__c}" rendered="{!cp.Price__c != null}"/>
+                            <apex:outputfield value="{!cp.Product_Price__r.Minimum_Price_Percent__c}" rendered="{!cp.Price_Percent__c != null}"/>
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+            </apex:repeat>
+        </tbody>
+    </table>
+    <br/>
+    <br/>
+</apex:repeat>
+
+</apex:component>

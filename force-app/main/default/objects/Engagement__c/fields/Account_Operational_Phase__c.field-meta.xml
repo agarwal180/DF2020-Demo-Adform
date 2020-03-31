@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Operational_Phase__c</fullName>
+    <description>Account operational phase</description>
+    <externalId>false</externalId>
+    <formula>TEXT( Opportunity__r.Account.Operational_Phase__c )</formula>
+    <label>Account Operational Phase</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

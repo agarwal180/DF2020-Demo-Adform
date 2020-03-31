@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trainings_Needed__c</fullName>
+    <externalId>false</externalId>
+    <label>Trainings Needed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TPAS basic training</fullName>
+                <default>false</default>
+                <label>TPAS basic training</label>
+            </value>
+            <value>
+                <fullName>RTB basic training</fullName>
+                <default>false</default>
+                <label>RTB basic training</label>
+            </value>
+            <value>
+                <fullName>RTB optimization</fullName>
+                <default>false</default>
+                <label>RTB optimization</label>
+            </value>
+            <value>
+                <fullName>Site-tracking</fullName>
+                <default>false</default>
+                <label>Site-tracking</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>Rich media</fullName>
+                <default>false</default>
+                <label>Rich media</label>
+            </value>
+            <value>
+                <fullName>HTML5 Studio</fullName>
+                <default>false</default>
+                <label>HTML5 Studio</label>
+            </value>
+            <value>
+                <fullName>Adform Creative Toolkit</fullName>
+                <default>false</default>
+                <label>Adform Creative Toolkit</label>
+            </value>
+            <value>
+                <fullName>Video</fullName>
+                <default>false</default>
+                <label>Video</label>
+            </value>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+            <value>
+                <fullName>DCO banners</fullName>
+                <default>false</default>
+                <label>DCO banners</label>
+            </value>
+            <value>
+                <fullName>Dynamic content ads</fullName>
+                <default>false</default>
+                <label>Dynamic content ads</label>
+            </value>
+            <value>
+                <fullName>ABC of programmatic digital media buying</fullName>
+                <default>false</default>
+                <label>ABC of programmatic digital media buying</label>
+            </value>
+            <value>
+                <fullName>DMP</fullName>
+                <default>false</default>
+                <label>DMP</label>
+            </value>
+            <value>
+                <fullName>Adform Support</fullName>
+                <default>false</default>
+                <label>Adform Support</label>
+            </value>
+            <value>
+                <fullName>Tailored Trainings</fullName>
+                <default>false</default>
+                <label>Tailored Trainings</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

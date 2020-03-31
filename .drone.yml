@@ -1,0 +1,82 @@
+---
+workspace:
+  base: /home/node
+
+pipeline:
+
+  build:
+    image: docker.artifactory.adform.com/bss/sfdx-cli:1-7.47.0
+    commands:
+      - echo "$SERVER_KEY" > server.key
+      - sfdx force:auth:jwt:grant --clientid $PR_CLIENT_ID --jwtkeyfile server.key --username $PR_USERNAME --setdefaultdevhubusername -r https://login.salesforce.com
+      - sfdx force:org:create -f config/project-scratch-def.json -a ci-org -d 1
+      - sfdx force:source:push -f -u ci-org
+      - sfdx force:org:delete -u ci-org -p
+    secrets: [ server_key, pr_client_id, pr_username ]
+    when:
+      event: push
+
+  register_deployment:
+    image: docker.artifactory.adform.com/drone-plugins/meta-deployment
+    deploy_environment: "${DRONE_DEPLOY_TO,,}"
+    release_type: regular
+    when:
+      event: deployment
+      status: [failure, success]
+
+  check-compliance-sandbox:
+    image: docker.artifactory.adform.com/drone-plugins/check-compliance
+    approvals:
+      - review
+    when:
+      event: deployment
+      environment: [ d1, pp ]
+
+  check-compliance-production:
+    image: docker.artifactory.adform.com/drone-plugins/check-compliance
+    approvals:
+      - review
+      - qa
+      - tpm
+    when:
+      event: deployment
+      environment: [ pr ]
+
+  deploy-sandbox:
+    image: docker.artifactory.adform.com/bss/sfdx-cli:1-7.47.0
+    commands:
+      - npm install
+      - node permissionRemover.js
+      - echo "$SERVER_KEY" > server.key
+      - export CLIENT_ID=$${${DRONE_DEPLOY_TO^^}_CLIENT_ID}
+      - export USERNAME=$${${DRONE_DEPLOY_TO^^}_USERNAME}
+      - mkdir convertedPackage
+      - sfdx force:source:convert --outputdir convertedPackage/
+      - sfdx force:auth:jwt:grant --clientid $CLIENT_ID --jwtkeyfile server.key --username $USERNAME --setdefaultdevhubusername --instanceurl https://test.salesforce.com --setalias ${DRONE_DEPLOY_TO^^}
+      - sfdx force:org:list
+      - sfdx force:mdapi:deploy --deploydir convertedPackage/ --targetusername $USERNAME -w -1
+    secrets: [ "${DRONE_DEPLOY_TO,,}_client_id", "${DRONE_DEPLOY_TO,,}_username", server_key ]
+    when:
+      event: deployment
+      environment: [ d1, pp ]
+
+  deploy-production:
+    image: docker.artifactory.adform.com/bss/sfdx-cli:1-7.47.0
+    commands:
+      - npm install
+      - node permissionRemover.js
+      - echo "$SERVER_KEY" > server.key
+      - export CLIENT_ID=$${${DRONE_DEPLOY_TO^^}_CLIENT_ID}
+      - export USERNAME=$${${DRONE_DEPLOY_TO^^}_USERNAME}
+      - mkdir convertedPackage
+      - sfdx force:source:convert --outputdir convertedPackage/
+      - sfdx force:auth:jwt:grant --clientid $CLIENT_ID --jwtkeyfile server.key --username $USERNAME --setdefaultdevhubusername --instanceurl https://login.salesforce.com --setalias ${DRONE_DEPLOY_TO^^}
+      - sfdx force:org:list
+      - sfdx force:mdapi:deploy --deploydir convertedPackage/ --targetusername $USERNAME -w -1
+    secrets: [ "${DRONE_DEPLOY_TO,,}_client_id", "${DRONE_DEPLOY_TO,,}_username", server_key ]
+    when:
+      event: deployment
+      environment: [ pr ]
+
+branches:
+  exclude: master

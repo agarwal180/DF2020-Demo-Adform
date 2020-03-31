@@ -1,0 +1,14 @@
+<apex:page standardController="Opportunity" lightningStylesheets="true"> 
+    <apex:form >
+        <apex:commandButton onclick="redirect()" id="startSurvey"  />
+    </apex:form>
+    <script>
+        if({!Opportunity.Display_Popup__c == true}){
+            document.getElementById('j_id0:j_id1:startSurvey').click();
+        }
+        
+        function redirect(){
+            window.open("/flow/Survey_Flow?RecordId={!Opportunity.Id}&retURL={!Opportunity.Id}", "_top");
+        }
+    </script>
+</apex:page>

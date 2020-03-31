@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Conference</fullName>
+        <default>false</default>
+        <label>Conference</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Demo requests</fullName>
+        <default>false</default>
+        <label>Demo requests</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Newsletter subscriptions</fullName>
+        <default>false</default>
+        <label>Newsletter subscriptions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web</fullName>
+        <default>false</default>
+        <label>Web</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Webinar registrations</fullName>
+        <default>false</default>
+        <label>Webinar registrations</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Whitepaper / One Pager downloads</fullName>
+        <default>false</default>
+        <label>Whitepaper / One Pager downloads</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gartner Magic Quadrant</fullName>
+        <default>false</default>
+        <label>Gartner Magic Quadrant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Sizmek hit list</fullName>
+        <default>false</default>
+        <label>Sizmek hit list</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Enterprise Hunting OKR</fullName>
+        <default>false</default>
+        <label>Enterprise Hunting OKR</label>
+    </standardValue>
+    <standardValue>
+        <fullName>USA Lead Gen Team</fullName>
+        <default>false</default>
+        <label>USA Lead Gen Team</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gartner Critical Capabilities</fullName>
+        <default>false</default>
+        <label>Gartner Critical Capabilities</label>
+    </standardValue>
+</StandardValueSet>

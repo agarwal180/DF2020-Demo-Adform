@@ -1,0 +1,185 @@
+<apex:page standardController="Contract" extensions="IoContractController"  showHeader="false" standardStylesheets="false"  renderAs="pdf" applyHtmlTag="false" applyBodyTag="false" lightningStylesheets="true">
+<head>
+    <style type="text/css">
+        
+        @page {
+            margin-left: 1cm;
+            margin-right: 1cm;
+        }
+        body {
+            font-family: "Arial" "Sans-Serif";
+            font-size:13px;
+        }
+        .bottomBlock{
+            font-size:8px;
+            //border-top: 2px solid black;
+        }
+        .signblockhelpText {
+            font-size:8px;
+            font-style:italic;
+        }
+        .titleblockMain{
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .infoBlock {
+            font-weight: bold;
+            background-color:#D3D3D3;
+            display: inline-block;
+        }
+        .bb1{
+            font-weight: bold;
+            font-style:italic;
+        }
+        .boldCls{
+            font-weight: bold;
+        }
+        .italicCls{
+            font-style:italic;
+        }
+        .contentBlock{
+            height: 100%;
+            padding: 3px;
+        }
+        .titleBlock{
+            font-weight: bold;
+        }
+        .titlemainText{
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .table{
+            margin: 3px 0 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <apex:image url="{!URLFOR($Resource.AdFormLogo)}"  width="122px" height="32px"/>
+    </div>
+    <br/>
+    <center>
+        <div class="titleblockMain">{!$Label.Creative_production_order}</div>
+    </center>
+    <br/>
+    <div><span class="titlemainText">{!$Label.Order_date}</span>&nbsp;<apex:outputfield value="{!Contract.Order_date__c}"/></div>
+    <div><span class="titlemainText">{!$Label.Adform_contact}&nbsp;</span><apex:outputfield value="{!Contract.Owner.Name}"/></div>
+    <table class="table" width="100%">
+        <tr>
+            <td style="border:1px solid black; min-height:140px;">
+                <div class="contentBlock">
+                    <div class="titleBlock">{!$Label.Client_information}</div>
+                    <div>{!$Label.Full_company_name}&nbsp;<apex:outputfield value="{!Contract.Full_company_name__c}"/></div>
+                    <div>{!$Label.VAT_number}&nbsp; <apex:outputfield value="{!Contract.VAT_number__c}"/></div>
+                    <div>{!$Label.Company_registration_number}&nbsp;<apex:outputfield value="{!Contract.Company_registration_number__c}"/></div>
+                    <div>{!$Label.Info_Contact_Position}&nbsp;<apex:outputfield value="{!Contract.Client_s_contact_name__r.Title}"/></div>
+                    <div>{!$Label.Client_s_contact_name_position}&nbsp;<apex:outputfield value="{!Contract.Client_s_contact_name__r.Name}"/></div>
+                    <div>{!$Label.Client_s_contact_e_mail}&nbsp;<apex:outputtext value="{!Contract.Client_s_contact_e_mail__c}"/></div>
+                    <div>{!$Label.Client_Internal_Order_Number_Needed}&nbsp;<apex:outputtext value="{!Contract.Client_Internal_Order_Number_Needed__c}"/></div>
+                    <div>{!$Label.Internal_order_number}&nbsp;<apex:outputfield value="{!Contract.Client_Internal_Order_Number__c}"/> </div>
+                </div>
+            </td>
+            <td width="20px">
+            </td>
+            <td style="border:1px solid black; min-height:140px;">
+                <div class="contentBlock">
+                    <div  class="titleBlock">{!$Label.Billing_information}</div>
+                    <div>{!$Label.Billing_address}
+                                        <apex:outputText value="{!Contract.BillingStreet}"/> <br/>
+                                        <apex:outputText value="{!Contract.BillingCity}" />,&nbsp;<apex:outputText value="{!Contract.BillingState}" />&nbsp;<apex:outputText value="{!Contract.BillingPostalCode}" /> <br/>
+                                         <apex:outputText value="{!Contract.BillingCountry}" />
+                                        </div>
+                    <div>{!$Label.Billing_Contact_Position}&nbsp;<apex:outputfield value="{!Contract.Billing_contact_name_position__r.Title}"/></div>
+                    <div>{!$Label.Billing_contact_name_position}&nbsp;<apex:outputfield value="{!Contract.Billing_contact_name_position__r.Name}"/></div>
+                    <div>{!$Label.Invoicing_e_mail}&nbsp;<apex:outputtext value="{!Contract.Invoicing_e_mail__c}"/></div>
+                    <div>{!$Label.Payment_terms}&nbsp;<apex:outputfield value="{!Contract.Payment_terms__c}"/></div>
+                    <div>{!$Label.Invoicing_period}&nbsp;<apex:outputfield value="{!Contract.Invoicing_period__c}"/> </div>
+                    
+                    
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <div  class="titleBlock">{!$Label.Description_of_the_creative_production}</div>
+    <div>{!$Label.Format}&nbsp;<apex:outputfield value="{!Contract.Format__c}"/></div>
+    <div>{!$Label.Number_of_ordered_units}&nbsp;<apex:outputfield value="{!Contract.Number_of_ordered_units__c}"/></div>
+    <div>{!$Label.Advertiser} <apex:outputfield value="{!Contract.Advertiser__c}"/></div>
+    <div>{!$Label.Devices}
+        <apex:repeat value="{!devices}" var="val">
+            <apex:image value="/img/checkbox_unchecked.gif"  rendered="{!NOT(val.isSelected)}"/>
+            <apex:image value="/img/checkbox_checked.gif" rendered="{!val.isSelected}"/>
+             {!val.deviceName } &nbsp;
+        </apex:repeat>
+    </div>
+    <div>{!$Label.Other_information_requirements}&nbsp;<apex:outputfield value="{!Contract.Other_information_requirements__c}"/></div>
+    <br/>
+    <div  class="titleBlock">{!$Label.Pricing_terms}</div>
+    <div>{!$Label.Currency}&nbsp;<apex:outputfield value="{!Contract.CurrencyIsoCode}"/></div>
+    <div>{!$Label.Price_for_creative_production}&nbsp;<apex:outputfield value="{!Contract.Price_for_creative_production_Formula__c}"/></div>
+    <div>{!$Label.CPM_for_booked_impressions}&nbsp;<apex:outputfield value="{!Contract.CPM_For_Booked_Impressions_Formula__c}"/></div>
+    <div>{!$Label.Other_pricing_details}&nbsp;<apex:outputfield value="{!Contract.Other_pricing_details__c}"/></div>
+
+<br/>
+<div ><apex:outputfield value="{!Contract.CustomerSigned.Title}"/> &nbsp; <apex:outputfield value="{!Contract.CustomerSigned.Name}"/> </div>
+<div style="width: 350px; border-top: 1px solid black;">{!$Label.Name_surname_signature_of_the_representative_of_the_Client}</div>
+<br/>
+<div class="bottomBlock">
+<div class="bb1">{!$Label.General_Terms_Conditions}</div>
+<div>{!$Label.These_General_Terms_Conditions}</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Ordered_creative_production_and_provided_assets}</span>
+By confirming this order Adform undertakes to deliver creative production as specified above produced in the line of the provided assets. After the design sample is signed off by the Client, Adform undertakes to provide up to 2 rounds of amends of its delivered production upon request by the Client. Any additional amends will be subject to extra fees applied by Adform.
+Any requests to deliver creative production during out of office hours 17.00 – 8.00 CET, weekends or state holidays will be subject to additional charges.
+</div>
+<div  align="justify">
+<span class="boldCls">{!$Label.Rich_Media_Ad_Serving_Services}</span>
+All material uploaded to Adform system by this Order is treated as rich media material. Banners uploaded to Adform system using other than rich media module are also treated and charged as rich media banners under this Agreement. Adform rich media services include the following: Ad serving of standard rich media formats, which may be updated from time to time, a completed list available at http://www.adform.com/site/products/rich-media/. Client will be solely responsible for any creative, content and other materials contained in the ads, advertising materials, websites, or any other data transferred to Adform or furnished for delivery using Ad Serving Services. None of the Content shall infringe any applicable laws and/or third party rights. 
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Trafficking_Services}</span>
+Adform Traffic and Support team has a service level of 2 hours e-mail response time during normal business hours 08.00-17.00 CET for traffic emails sent to traffic@adform.com. The Trafficking Services offered by Adform include the following: implementing media plan by this Order in the Adform system; providing banner specifications for creative agencies and assistance if needed; uploading of creative in the system; test of creative; dispatch of tags to the media; change of creative banner; obtain feedback regarding campaign issues during the campaign and inform relevant parties about this. 
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Reporting_Services}</span>
+Adform Reporting Services include the following: customized reports, i.e. development of Native Excel report; improvement of Native Excel; rich media evaluation report (Native Excel).
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Payment_terms_text}</span>
+Client agrees to pay the total amount of this order and invoices issued for the Ad Serving Services according to the payment and pricing terms set out in sections "Billing information" and “Pricing terms” above. Unless specific payment term is indicated in the “Billing Information”, standard payment term shall be thirty (30) days from the issue of invoice for the production and/or Ad Serving Services.  In the event of late payment, Adform shall be entitled to charge interest on the unpaid amount which will accrue at a rate equal to 0,05% per each day of the delay and request compensation for any related debt collection services. 
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Technical_information}</span>
+Adform’s ads are built and tested to be supported on the newest browser versions. Internet Explorer support starts from the IE 10th and above. If new browser updates come out during the campaign period or clients’ websites are changed, Adform‘s delivered products can be adapted for an extra service fee. Live testing environment should be provided by the client and/or publisher (either web or in-app) in order to complete quality assurance/testing process.
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Intellectual_Property}</span>
+By submitting an order for Creative Production Client grants to Adform, to the extent necessary to enable Adform to perform Creative Production Services, a limited, revocable, non-exclusive, non-sublicensable and non-transferable right and license to use the information,  content  and  other  materials  provided  by  Client  to  Adform  under  the  order, including all software, audio files, audio-visual files, programming, clips, segments, source art, graphics,  images,  trademarks,  logos  and  meta  data  in  connection  with  the  provision  of Creative Production Services by Adform under the order (“Client Licensed Materials”). Adform retains all right, title and interest in and to (a) Adform‘s proprietary technology or any other Adform intellectual property, information, processes, methodologies, products, goods, services or materials, tangible or intangible, which were independently developed by Adform outside  the  scope  of  this  Agreement  and,  (b)  components  of  proprietary  technology  and processes,  including  computer  programs,  source  code,  software,  technology  and  related materials  developed  by  Adform  and/or  its  suppliers  or  licensors,  which  are  embedded  in, incidental  to  or  otherwise  intended  to  interact  or  interoperate  with  delivered  Creative Production (“Adform Licensed Materials”). Adform grants to Client a limited, revocable, non-exclusive, non-sublicensable and non-transferable right and license to use Adform Licensed Materials.  For  purposes  of  clarity,  any  processes,  methodologies  or  know  how  developed during  the  course  of  providing  Creative  Production  Services  to  Client  is  also  deemed  to  be Adform Licensed Materials. Client will not infringe, violate or challenge, and will use its best efforts to preserve and protect, all such Adform Licensed Materials.
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Data_collection_processing_and_storage}</span>
+The following link is to the DPA which is an integral part of this Agreement: <apex:outputlink value="https://site.adform.com/terms-and-conditions/adform-data-processing-agreement/"> Adform data processing agreement. </apex:outputlink> Annexes B and C shall not be applicable.
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Indemnification}</span>
+Client shall indemnify and keep indemnified Adform from and against all costs, claims, demands, liabilities, expenses, damages and losses and interest, penalties and legal and other professional costs and expenses suffered, incurred or arising out of or in connection with any failure by Client to observe and perform the provisions set in this Agreement, including, without limitation, any third party claim brought against Adform, which alleges that any materials provided by the Client to Adform in respect of ordered production and/or services violates any law, or violates, infringes upon or misappropriates any intellectual property right, publicity/privacy rights of a third party.
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Liability_Warranty_terms}</span>
+The parties shall not be liable for any loss of profits, customers, damage to reputation, indirect, special, incidental, consequential, exemplary or punitive damages, whether based on contract, tort, or otherwise. Adform’s liability in connection with this order shall not exceed the amounts paid by the Client for this order. Each party represents and warrants that it shall comply with all applicable laws and regulations. Adform services and products are provided with no warranties, representations, or other terms of any kind, and Adform disclaims, and Client hereby waives, all warranties and other terms with respect to Adform services and products, express or implied, including without limitation any implied warranty of merchantability, satisfactory quality, fitness for a particular purpose or any implied warranty arising from course of performance or course of dealing. 
+</div>
+<div align="justify">
+<span class="boldCls">{!$Label.Governing_law_and_jurisdiction}</span>
+This order shall be construed and governed in accordance with the laws of Denmark and the parties consent to the exclusive jurisdiction and venue of the Danish courts.
+</div>
+<!-- <div class="italicCls">
+{!$Label.Mandatory_fields}
+</div>
+<div class="italicCls">
+{!$Label.Applicable_when_Ad_Serving}
+</div> -->
+</div>
+</body>
+    
+
+</apex:page>

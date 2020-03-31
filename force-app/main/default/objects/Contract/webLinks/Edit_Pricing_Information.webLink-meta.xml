@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Edit_Pricing_Information</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Edit Pricing Information</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>var status = &#39;{!Contract.Approval_Status__c}&#39;;
+var contractStatus = &#39;{!Contract.Status}&#39;;
+var profilename = &#39;{!$Profile.Name}&#39;;
+if (status === &#39;Need approval&#39;) {
+     alert(&#39;You cannot Edit prices when contract in Need approval status &#39;);
+}
+else if (contractStatus === &#39;Activated&#39; &amp;&amp; profilename != &#39;System Administrator&#39;) {
+    alert(&#39;You cannot Edit prices when contract Activated&#39;);
+}
+else {
+   window.open(&quot;/apex/RC_MSAContract?id={!Contract.Id}&quot;);
+}</url>
+</WebLink>

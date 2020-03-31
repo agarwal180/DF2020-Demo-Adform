@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the full name of the Account under which this prospect company should fall in the overall AdForm SFDC Account Hierarchy. Contact your Account management team if unsure which Account to enter here.</inlineHelpText>
+    <label>Parent Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Current Leads</relationshipLabel>
+    <relationshipName>Leads</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

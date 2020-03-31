@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adform_Legal_Entities__c</fullName>
+    <externalId>false</externalId>
+    <label>Adform Legal Entities</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adform A/S</fullName>
+                <default>false</default>
+                <label>Adform A/S</label>
+            </value>
+            <value>
+                <fullName>Adform Inc.</fullName>
+                <default>false</default>
+                <label>Adform Inc.</label>
+            </value>
+            <value>
+                <fullName>Adform Software Spain S.L.</fullName>
+                <default>false</default>
+                <label>Adform Software Spain S.L.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

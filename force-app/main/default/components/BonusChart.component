@@ -1,0 +1,40 @@
+<apex:component access="global">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <apex:attribute name="sales" description="Sales" type="Decimal" />
+    <apex:attribute name="bonus" description="Bonus" type="Decimal" />
+    <apex:attribute name="chartId" description="Bonus" type="String" />
+    <apex:attribute name="linaName" description="Bonus" type="String" />
+    <apex:attribute name="xName" description="Bonus" type="String" />
+    <apex:attribute name="yName" description="Bonus" type="String" />
+    
+    <script>
+        google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+              var data = new google.visualization.DataTable();
+              data.addColumn('number', 'X');
+              data.addColumn('number', '{!linaName}');
+
+              data.addRows([
+                [{!sales * 0.75}, {!bonus * 0.5}],   [{!sales}, {!bonus}] ,   [{!sales * 1.25}, {!bonus * 1.5}]
+              ]);
+
+              var options = {
+                hAxis: {
+                  title: '{!xName}'
+                },
+                vAxis: {
+                  title: '{!yName}'
+                }
+              };
+
+              var chart = new google.visualization.LineChart(document.getElementById('{!chartId}'));
+
+              chart.draw(data, options);
+            }
+    </script>
+
+      <div id="{!chartId}"></div>
+</apex:component>

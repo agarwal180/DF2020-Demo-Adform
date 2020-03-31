@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CampaignAgencyClient_Ids_Fields_Required</fullName>
+    <active>true</active>
+    <description>If IDs are not added an error appears</description>
+    <errorConditionFormula>AND( 
+OR( 
+RecordTypeId = &#39;0120J000000cnLP&#39;, 
+RecordTypeId = &#39;01220000000B5RY&#39; 
+), 
+ISPICKVAL(Status, &#39;Production done and ready to bill&#39;), 
+Not_Served_Through_Adform__c = false, 
+OR( 
+ISBLANK(Campaign_ID__c), 
+ISBLANK(Time_Spent__c), 
+ISBLANK(Daily_Rate__c) 
+) 
+)</errorConditionFormula>
+    <errorMessage>Please add missing information - Campaign ID, Daily rate and Time Spent</errorMessage>
+</ValidationRule>

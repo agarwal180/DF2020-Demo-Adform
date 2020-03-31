@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_a_change_of_user_from_Queue</fullName>
+    <active>true</active>
+    <description>If Status = Closed, must be a non-queue user.</description>
+    <errorConditionFormula>AND(
+ISCHANGED( Status ),
+ISPICKVAL(Status,&quot;Closed Resolved&quot;),
+Owner:Queue.QueueName = &quot;Adform Issues Queue&quot;
+)</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>You must accept ownership of the Case from the Queue in order to Close it out.</errorMessage>
+</ValidationRule>

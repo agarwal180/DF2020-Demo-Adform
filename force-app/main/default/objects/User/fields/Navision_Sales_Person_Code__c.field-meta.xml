@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Navision_Sales_Person_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>UPPER(LEFT(FirstName, 1)&amp; IF(LEN(LastName) &lt; 9 ,LastName, LEFT(LastName, 9)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Navision Sales Person Code</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
